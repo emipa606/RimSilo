@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DlgTitleFAQ>FAQs</DlgTitleFAQ>
+  <DlgFAQ>
+Q : Any benefits from subscribing Vault?
+A : Money stored in the Vault will be absolutely safe, and raids on the ground will be a bit less intensive because you actually hide your wealth. The Vault is also the foundation of a cash-free system in all RimSilo™ Services. Fees can be charged directly from the Vault.
+
+Q : Any benefits from subscribing Warehouse?
+A : Space-saving, no more deteriorating. A global supply network will come true with the help of Global DropPod Service.
+
+Q : What can a Static Chamber do?
+A : A Static Chamber will completely freeze its passanger, so it can be used as an aid when you lack medicine. There are other creative usages : raid any settlements, send backups to the battleground or extract prisoners from hot zones (with the help of Global DropPod Service).
+
+Q : Does the Global DropPod Service have any advantages over the vanilla transport pods?
+A : No distance limit, instant arrival, and no more chemfuel shortages! Also comes in handy when delivering contents from Vault, Warehouse and Static Chambers.
+
+Q : What will happen if the silver in vault isn't enough for a bill but the banknotes is?
+A : One banknote will be exchanged into siver for paying the bill. The rest of the silver will be stored back into your vault.
+
+Q : Why I should pay a fee when fetching goods from my warehouse?
+A : That's the shipping fee, which will be charged when you store or retrieve items.
+
+Q : The starting capacity isn't enough for me...
+A : Find the "Capacity Expansion Manager" icon in the Client Interface, which looks like a plus sign with a minus sign in Management Options.
+
+Q : Will a Static Chamber take up pod capacity when using Global DropPod Service?And extra fees?
+A : No. And no extra fees.
+
+Q : Why I cannot find my local goods in the interface?
+A : Please make sure those items are within the range of an orbital beacon, or they won't be recognized.
+
+Q : The dialog says "Restricted" "Freezed",what the?
+A : You have an unpaid bill, please clear it ASAP.
+
+Q : I stored Sth into the warehouse at base A, can I get it from the warehouse at base B?
+A : You can retrieve your goods at any place, as long as you have a powered ATM terminal or some other gears.
+
+Q : I cannot understand anything...
+A : Try mouse over somewhere you can't figure out, and a tooltip will appear.
+
+Q : I failed to find any explanations for my problems...
+A : Post it in the Ludeon Forum thread or Steam Workshop page for this mod. If it's a valueable question, I'll put it into FAQs in the upcoming updates.
+
+</DlgFAQ>
+</LanguageData>

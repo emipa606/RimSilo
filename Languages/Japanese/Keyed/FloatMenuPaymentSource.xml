@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PayButton>支払</PayButton>
+  <PaySourceVault>リムサイロ™貸金庫から</PaySourceVault>
+  <PaySourceVaultNotRented>リムサイロ™貸金庫から（未契約）</PaySourceVaultNotRented>
+  <PaySourceVaultRestricted>リムサイロ™貸金庫から（制限中）</PaySourceVaultRestricted>
+  <PaySourceVaultNotEnough>リムサイロ™貸金庫から（残高不足）</PaySourceVaultNotEnough>
+  <PaySourceLocal>コロニーから</PaySourceLocal>
+  <MsgPaymentVaultComplete>貸金庫から$ {0}を支出しました。</MsgPaymentVaultComplete>
+</LanguageData>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <StaticChamberFee>  租用费：
+$ {0}  每人</StaticChamberFee>
+  <NoOneInSquadTitle>警告：无人之境！</NoOneInSquadTitle>
+  <NoOneInSquadConfirm>这次交易将带走地图上最后一名殖民者！
+地图上没有殖民者会使你养殖的动物无人饲养，地图上的资产无人维护，留下的囚犯可能会逃跑或者饿死。
+
+同时由于地图上没有人能使用通讯装置，你只能等待冷冻舱合同到期后自动空投，才能让殖民者回到地图上。
+
+确定要进行这次交易吗？</NoOneInSquadConfirm>
+</LanguageData>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <StaticChamberFee>  임대 :
+이용자당 $ {0} </StaticChamberFee>
+  <NoOneInSquadTitle>경고 : 정착지에 아무도 없음!</NoOneInSquadTitle>
+  <NoOneInSquadConfirm>이 작업을 실행하면 지도에 남아있는 정착민이 한명도 남아있지 않게됩니다.!
+당신의 동물들은 먹지 않을 것이고, 지도에 있는 건물들은 유지되지 않을 것이며, 지도에 정착민이 없으면 죄수들은 도망 가거나 굶어 죽을 것입니다.
+
+그 사이에 아무도 터미널을 조작 할 수 없으므로 정착민이이 돌아올 때까지 이 지도에서 서비스에 액세스 할 수 없습니다.
+
+마지막 정착민을 이동시키겠습니까?</NoOneInSquadConfirm>
+</LanguageData>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Professional Storing Service" as English text-->
+  <MainUIBannerTitle>リムサイロ™ プロフェッショナル管理サービス</MainUIBannerTitle>
+  <MainUILoggedIn>ログイン中</MainUILoggedIn>
+  <LEDTipOk>正常</LEDTipOk>
+  <LEDTipNotRented>サービス未利用</LEDTipNotRented>
+  <LEDTipDanger>サービスが完全に制限されています。
+延滞料を支払ってください。</LEDTipDanger>
+  <LEDTipCaution>サービスが一部制限されています。
+延滞料を支払ってください。</LEDTipCaution>
+  <TextCapacityUsage>容量使用状況： {0} / {1}</TextCapacityUsage>
+  <TextCapacityNotRented>未利用</TextCapacityNotRented>
+  <TextManBar>管理オプション</TextManBar>
+  <TextPodBar>購入済みポッド： {0} （{1} Kg）</TextPodBar>
+  <LabelMiscBar>その他</LabelMiscBar>
+  <TextMiscBar>FAQ、維持費計算、料金見積もり、延滞支払、
+RimSiloModの無効化</TextMiscBar>
+  <CaptionManFeeCalc>貸倉庫維持費計算機</CaptionManFeeCalc>
+  <CaptionBillPreview>料金見積もり</CaptionBillPreview>
+  <CaptionPayFineEnabled>延滞料を払ってください</CaptionPayFineEnabled>
+  <CaptionPayFineDisabled>延滞料支払（該当なし）</CaptionPayFineDisabled>
+  <CaptionDeleteAccount>リムサイロ™アカウントの削除</CaptionDeleteAccount>
+  <TipCapacityDetail>使用中容量： {0}
+
+総容量： {1}
+-初期プラン容量： {2}</TipCapacityDetail>
+  <LineCapacityDetail>
+-拡張プラン容量： {0} * {1}</LineCapacityDetail>
+  <TipServiceInfoIcon>取引条件を見る</TipServiceInfoIcon>
+  <TipCapManIcon>容量拡張マネージャー</TipCapManIcon>
+  <TipAbortIcon>サービス利用停止</TipAbortIcon>
+  <TipBuyPodIcon>グローバル輸送ポッドを購入
+
+右クリックで5個分購入できます。</TipBuyPodIcon>
+  <AccessButton>アクセス</AccessButton>
+  <RentServiceButton>サービス利用開始</RentServiceButton>
+  <MsgUnlocked>延滞料を払い終えました。サービスを正常に利用できます。</MsgUnlocked>
+  <MsgVaultRented>貸金庫にアクセスできます。</MsgVaultRented>
+  <MsgWarehouseRented>貸倉庫にアクセスできます。</MsgWarehouseRented>
+  <MsgPodPurchased>グローバル輸送ポッドを購入しました。</MsgPodPurchased>
+  <MsgShouldRentVaultFirst>貸倉庫を契約する前に、貸金庫を契約してください。</MsgShouldRentVaultFirst>
+  <MsgNoAbortDuringFirstPeriod>契約に従い、契約後最初の季節中は解約できません。</MsgNoAbortDuringFirstPeriod>
+  <MsgShouldRentServiceFirst>まだ貸金庫を契約していません。</MsgShouldRentServiceFirst>
+  <MsgAccountDeleted>アカウントを削除しました。RimSilo Modの全要素が取り除かれました。安全にセーブ及びModの取り外しができます。</MsgAccountDeleted>
+  <TraderTitleRetainer>契約料支払</TraderTitleRetainer>
+  <TraderTitleTipRetainer>契約料を支払ってください。
+契約料は契約開始季の賃料とみなされます。</TraderTitleTipRetainer>
+  <TraderTitleBuyPod>グローバル輸送ポッドを購入</TraderTitleBuyPod>
+  <TraderTitleTipBuyPod>グローバル輸送ポッドを購入します。</TraderTitleTipBuyPod>
+  <DlgTitleAbortService>警告：サービスを停止しようとしています！</DlgTitleAbortService>
+  <DlgAbortService>あなたは以下の契約及びサービスを停止しようとしています。
+
+{0}
+
+サービス利用を停止すると、賃料は返金されず、残された保管物がすべて失われます！
+保管物をすべて回収したことを確認してください。
+
+
+サービスを停止しますか？</DlgAbortService>
+  <DlgTitleDeleteAccount>警告：アカウントを削除しようとしています！</DlgTitleDeleteAccount>
+  <DlgDeleteAccount>アカウントを削除すると、リムサイロ™との契約及びサービスがすべて失効します。
+
+残された保管物がすべて失われます！
+アカウントを削除する前に、保管物をすべて回収したことを確認してください！
+
+アカウント削除はRimSilo Modを安全に抜く唯一の方法です。実行されると、すべてのRimSilo Mod要素が取り除かれます。その後直ちにセーブを行い、RimSilo ModをModリストから抜くことで、このMod無しでも安全にデータをロードできるようになります。
+
+最終確認：本当にアカウントを削除しますか？</DlgDeleteAccount>
+  <DlgTitleRentService>サービス利用開始</DlgTitleRentService>
+  <DlgRentService>以下のサービスの利用を開始します：
+
+{0}
+
+料金（契約料） $ {1} 。
+
+本当に実行しますか？
+
+その前に、必ず「取引条件」に目を通してください！
+問題があれば、「取引条件」（管理オプションの最初のアイコン）やFAQ（その他メニュー内）を参照してください。</DlgRentService>
+  <DlgTitleBuyPod>グローバル輸送ポッドを購入</DlgTitleBuyPod>
+  <DlgBuyPod>リム銀行™グローバル輸送サービスに以下の契約を申請します：
+
+アイテム：グローバル輸送ポッド
+数量： {0}
+単価： $ {1}
+
+計： $ {2}
+
+本当に実行しますか？
+
+その前に、必ず「取引条件」に目を通してください！
+問題があれば、「取引条件」（管理オプションの最初のアイコン）やFAQ（その他メニュー内）を参照してください。
+
+大量に購入する場合、プラスアイコンを右クリックすることで5個ずつ購入できます。</DlgBuyPod>
+</LanguageData>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MsgGetLocked>你的獲取權限被鎖定了，因此不能進行交易。</MsgGetLocked>
+  <MsgPutLocked>你的存放權限被鎖定了，因此不能進行交易。</MsgPutLocked>
+  <MsgVaultLocked>你的保險庫權限被鎖定了，因此不能取回你的貨幣。</MsgVaultLocked>
+  <DlgWarehouseLockAccess>由於上次收費時你未能交齊所有費用，管理員鎖定了你的下列權限：
+
+{0}
+
+{1}
+
+
+請盡快付清欠款以保證倉庫的正常使用。如果下一次收費時欠款仍未付清，你將失去倉庫的使用權和其中所有貨物。</DlgWarehouseLockAccess>
+  <DlgVaultLockAccess>由於你拖欠保險庫租金，管理員鎖定了你的權限。
+
+在結清欠款前，你無法使用保險庫的如下服務：
+-取回你的貨幣
+-使用保險庫內的貨幣進行支付
+-使用環球空投倉業務發送保險庫內的貨幣
+
+你仍可以向保險庫中存放貨幣，且可以使用保險庫結清欠款。
+
+
+請盡快結清欠款以保證保險庫的正常使用。如果下一次收費時欠款仍未付清，你將失去保險庫的使用權和其中所有貨幣。</DlgVaultLockAccess>
+  <DlgNoPods>你還沒有訂購任何空投倉，這意味著你完全沒有可用容量。
+如果你執意繼續，這次空投最終仍會因為無空投倉而失敗。
+
+請先在管理面板中至少訂購一個空投倉。</DlgNoPods>
+  <DlgGlobalDropNotice>你有一項或多項服務受到了限制，因此您的部分物品無法被空投。
+
+請盡快結清欠款以使這些物品重新出現在列表中。
+
+
+冷凍艙合同簽訂時已預付租金，因此到期前您可以隨時取回其中的乘員。</DlgGlobalDropNotice>
+  <DlgTitleLockAccess>提示：服務受限</DlgTitleLockAccess>
+  <DlgTitleNoPods>提示：訂購空投倉</DlgTitleNoPods>
+  <MsgChamberContentBack>你的一份冷凍艙租用合同到期了，冷凍艙的乘員已乘空投倉安全返回。</MsgChamberContentBack>
+</LanguageData>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineWarehouseDropped>!-According to the contract, most of the goods in your warehouse have been withdrawn by RimSilo™, the rest will be delivered to your base.</LineWarehouseDropped>
+  <LineWarehouseDeprived>!-Your Warehouse have been deprived by RimSilo™ because you didn't clear your overdue bills.</LineWarehouseDeprived>
+  <LineVaultDropped>!-According to the contract, all your currency stored in the vault have been withdrawn by RimSilo™.</LineVaultDropped>
+  <LineVaultDeprived>!-Your Vault have been deprived by RimSilo™ because you didn't clear your overdue bills.</LineVaultDeprived>
+  <LineRentdVault>  Vault Rent : $ {0}</LineRentdVault>
+  <LineRentdWarehouse>  Warehouse Rent : $ {0}</LineRentdWarehouse>
+  <LineRentdMaintainanceFee>  Warehouse Maintenance Fee : $ {0}</LineRentdMaintainanceFee>
+  <LineUnRentdVault>--Insufficient balance to pay the Valut Rent ($ {0})</LineUnRentdVault>
+  <LineUnRentdWarehouse>--Insufficient balance to pay the Warehouse Rent ($ {0})</LineUnRentdWarehouse>
+  <LineUnRentdMaintainanceFee>--Insufficient balance to pay the Warehouse Maintenance Fee ($ {0})</LineUnRentdMaintainanceFee>
+  <LineRentReportHeader>Rent Details: </LineRentReportHeader>
+  <LinePayFineTail>Please refer to the management page to clear your overdue bills, or you're at the risk of losing the service(s) and the contents!</LinePayFineTail>
+  <LetterTitleNorm>Rent Details</LetterTitleNorm>
+  <LetterTitleWarn>Service Restricted!</LetterTitleWarn>
+  <LetterTitleViolation>Contract Terminated!</LetterTitleViolation>
+</LanguageData>

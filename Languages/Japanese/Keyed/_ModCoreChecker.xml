@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <CheckerTitle>Modに問題があります！</CheckerTitle>
+  <DownloadLatestButton>最新版をダウンロードしてください。</DownloadLatestButton>
+  <TextCoreTooOld>RimBankのコアMod（Rimbank.Core.dll）のバージョンがサブModより古いです。
+古いバージョンをダウンロードしたか、コアModの更新を済ませていない可能性があります。
+
+サブModを正しく稼働させるために、RimBankのコアModとサブModのバージョンが同じになるようにしてください。
+Steam版でバージョンを確認してもうまくいかない場合、一旦RimWorldを終了し、ゲームライブラリのゲーム一覧でRimWorldを右クリック→プロパティ→ローカルファイル→ゲームファイルの整合性を確認　を試してください。</TextCoreTooOld>
+  <TextMissingCore>RimbankのサブModが一つ以上有効になっていますが、コアModが無効です。
+コアModが先に読み込まれるよう、サブModより上に配置してください。
+
+Modフォルダを手動で導入している場合には、フォルダの順序が正常か確認してください。
+（もしくは、Modコンフィグ画面で赤字警告が出ていないか確認してください。）</TextMissingCore>
+  <TextOrderOrVersionException>Rimbank Modをご利用いただき有難うございます。しかしいくつか問題が発生しているようです。
+
+-サブModがコアMod（Rimbank.Core）より前でロードされている：
+{0}
+すべてのサブModがコアModより後にロードされるようにしてください。
+
+-サブModのバージョンがコアModより古い：
+{1}
+RimbankのコアModとサブModはすべて同じバージョンのものを導入してください。</TextOrderOrVersionException>
+  <TextNone>（無し）</TextNone>
+</LanguageData>

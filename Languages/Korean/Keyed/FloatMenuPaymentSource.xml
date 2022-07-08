@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PayButton>지불</PayButton>
+  <PaySourceVault>금고 잔액으로 지불</PaySourceVault>
+  <PaySourceVaultNotRented>금고 잔액으로 지불 (가입되지 않음)</PaySourceVaultNotRented>
+  <PaySourceVaultRestricted>금고 잔액으로 지불 (계약 위반 상태)</PaySourceVaultRestricted>
+  <PaySourceVaultNotEnough>금고 잔액으로 지불 (잔액 부족)</PaySourceVaultNotEnough>
+  <PaySourceLocal>지도상의 현금으로 지불</PaySourceLocal>
+  <MsgPaymentVaultComplete>$ {0}가 금고에서 지불되었습니다.</MsgPaymentVaultComplete>
+</LanguageData>

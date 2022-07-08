@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <CheckerTitle>Warning : Mod Problems!</CheckerTitle>
+  <DownloadLatestButton>Get the latest version</DownloadLatestButton>
+  <TextCoreTooOld>The version of the Rimbank Core mod (Rimbank.Core.dll) is lower (older) than a sub mod.Maybe you just downloaded an older version,or you forgot to update the core when updating the sub mod.
+
+Make sure that the RimBank Core mod and all its sub mods are with the same version,or sub mods will not be load properly.</TextCoreTooOld>
+  <TextMissingCore>You enabled at least one RimBank Series sub mod,but you are not doing the same on the RimBank Core mod.Please download and enable the core first so that sub mods can work properly.
+
+*If you are installing the mod by unzipping,take a look whether that mod is wrapped by another layer of folder (or RED name with no description in Mods Config page*</TextMissingCore>
+  <TextOrderOrVersionException>Thanks for using RimBank Mod Series,but there are some problems...
+
+-Sub mods below are loaded BEFORE RimBank Core mod:
+{0}
+All sub mods should be loaded AFTER the core mod.
+
+-Sub mods below have lower (older) version codes than RimBank Core mod:
+{1}
+You should update these mods to make sure that the RimBank Core mod and all its sub mods are with the same version,or sub mods will not be load properly.</TextOrderOrVersionException>
+  <TextNone>(None)</TextNone>
+</LanguageData>

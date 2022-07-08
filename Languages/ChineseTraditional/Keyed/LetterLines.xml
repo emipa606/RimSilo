@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineWarehouseDropped>!-按照合同協定，你貯存在倉庫中的大部分貨物被管理方拍賣了，剩餘的物品會被空投到你的基地。</LineWarehouseDropped>
+  <LineWarehouseDeprived>!-由於你連續欠費，倉庫的使用權被收回了！</LineWarehouseDeprived>
+  <LineVaultDropped>!-按照合同協定，你貯存在保險庫中的貨幣全部歸管理方所有。</LineVaultDropped>
+  <LineVaultDeprived>!-由於你連續欠費，保險庫的使用權被收回了！</LineVaultDeprived>
+  <LineRentdVault>  保險庫租金： $ {0}</LineRentdVault>
+  <LineRentdWarehouse>  倉庫租金： $ {0}</LineRentdWarehouse>
+  <LineRentdMaintainanceFee>  倉庫維護費： $ {0}</LineRentdMaintainanceFee>
+  <LineUnRentdVault>--餘額不足以支付保險庫租金（$ {0}）</LineUnRentdVault>
+  <LineUnRentdWarehouse>--餘額不足以支付倉庫租金（$ {0}）</LineUnRentdWarehouse>
+  <LineUnRentdMaintainanceFee>--餘額不足以支付倉庫維護費（$ {0}）</LineUnRentdMaintainanceFee>
+  <LineRentReportHeader>本租期收費明細：</LineRentReportHeader>
+  <LinePayFineTail>請訪問賬戶管理面板及時結清欠款，以免影響正常使用！</LinePayFineTail>
+  <LetterTitleNorm>繳費明細</LetterTitleNorm>
+  <LetterTitleWarn>欠費</LetterTitleWarn>
+  <LetterTitleViolation>賬戶違約！</LetterTitleViolation>
+</LanguageData>

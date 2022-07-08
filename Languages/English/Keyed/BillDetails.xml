@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineBillDetailTitle>Bill Details</LineBillDetailTitle>
+  <LineVaultRent>Vault - Rent</LineVaultRent>
+  <LineWarehouseRent>Warehouse - Rent</LineWarehouseRent>
+  <LineWarehouseMaintainanceFee>Warehouse - Maintenance Fee</LineWarehouseMaintainanceFee>
+  <LineFeeOfPenalty>Overdue Fine</LineFeeOfPenalty>
+  <LineBillTotal>Total</LineBillTotal>
+  <LinePayFine>Please pay all the charges and the fine to restore your service(s).
+
+If the overdue charges hasn't been paid at the beginning of the next Cycle, the contract will be terminated, and RimSilo™ has the right to withdraw your service(s) and the contents you stored.</LinePayFine>
+</LanguageData>

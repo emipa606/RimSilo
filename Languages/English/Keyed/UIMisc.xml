@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Client Interface" as English text-->
+  <RimBankExtDepositFloatMenuEntryLabel>RimSilo™ Client Interface</RimBankExtDepositFloatMenuEntryLabel>
+  <MaintainanceFeeDesc>As is mentioned in the contract, a Maintainance Fee shall be charged and will be used to keep the cargo away from deteriorating,e.g. by freezing or sealing.
+If the total market value of the goods isn't very high, you'll be free of this charge. Certainly, if the market value is over a specific amount, maintenance fee will be charged according to a stepped set of prices.
+
+Mouse over the scale below to check the maintainance fee for a specific total market value.</MaintainanceFeeDesc>
+  <MaintainanceFeeText>Total Market Value : $ {0}            Maintenance Fee : $ {1}
+
+Details : </MaintainanceFeeText>
+  <TipSelectColumn>Click to choose which column to display.</TipSelectColumn>
+  <LabelMarketValue>Col : Market Value</LabelMarketValue>
+  <LabelMass>Col : Weight</LabelMass>
+  <LabelDaysLeft>Col : Days Left</LabelDaysLeft>
+  <TipTradeableMarketValue>The market value of an item.
+This is the basic value and will not be influenced by Social Skill of a negotiator, the kind of a trader or any extra multipliers.</TipTradeableMarketValue>
+  <TipTradeableMass>The weight of an item.</TipTradeableMass>
+  <TipDaysLeft>Days before the expiration of a chamber.
+If expired, the chamber will be delivered to a currently-active map.
+
+This will be listed one by one if more than one animals in chambers are arranged into the same group in the interface.</TipDaysLeft>
+  <FormatDaysLeft> {0} day</FormatDaysLeft>
+  <FormatMass> {0} kg</FormatMass>
+  <FormatVaultCapacity> ${0} (Total value)</FormatVaultCapacity>
+  <NoMapDrop>Cannot target another map.</NoMapDrop>
+  <NoSettlementDrop>Cannot target another settlement.</NoSettlementDrop>
+  <LabelCurrentMax>Total</LabelCurrentMax>
+  <LabelCurrentUsage>Used
+{0}</LabelCurrentUsage>
+  <ReportStrCapacity>Total Capacity : {0}</ReportStrCapacity>
+  <ReportStrRent>Total Rent : {0}</ReportStrRent>
+  <ReportStrBase>- Starting : {0}</ReportStrBase>
+  <ReportStrExtension>- Expansions : {0}</ReportStrExtension>
+  <CapacityExpansionDesc>Capacity per Expansion slot : {0}
+Rent per Expansion slot : $ {1}
+Subscription fee per Expansion slot : $ {2}
+</CapacityExpansionDesc>
+  <CapacityExpansionDesc2>Total subscription expense : $ {0}</CapacityExpansionDesc2>
+  <MsgCannotShrinkCapUsageLowerBound>Total capacity will be smaller than the usage. Please take out some contents first.</MsgCannotShrinkCapUsageLowerBound>
+  <MsgBoxConfirmShrinkCapTitle>Reminder : Give Up Extensions!</MsgBoxConfirmShrinkCapTitle>
+  <MsgBoxConfirmShrinkCap>If you give up these capacity extensions, you do lower your cost. But subscription fees won't be refunded, so you'll have to pay them for a second time when buying extensions again. If you do need the capacity, maybe that will be better if you leave them for a while instead of giving it up and subscribing it again.
+
+Are you sure to give up the capacity extensions?</MsgBoxConfirmShrinkCap>
+</LanguageData>

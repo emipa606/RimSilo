@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MsgGetLocked>제한됨 : 물품을 찾을 수 없습니다. 작업이 실패했습니다.</MsgGetLocked>
+  <MsgPutLocked>제한됨 : 물품을 보관할 수 없습니다. 작업이 실패했습니다.</MsgPutLocked>
+  <MsgVaultLocked>제한됨 : 통화를 인출 할 수 없습니다. 작업이 실패했습니다.</MsgVaultLocked>
+  <DlgWarehouseLockAccess>체납금 때문에 계약 위반상태가 되었습니다. 체납금을 납부할때 까지 다음 기능이 제한됩니다. :
+
+{0}
+
+{1}
+
+
+체납금을 최대한 빨리 납부해서 모든 제한 사항을 제거하십시오. 두 번째 서비스주기가 시작될 때까지 체납금이 납부되지 않으면 창고에 대한 계약이 파기되어 그 내용물이 모두 손실됩니다.</DlgWarehouseLockAccess>
+  <DlgVaultLockAccess>체납금 때문에 계약 위반상태가 되었습니다. 체납금을 납부할때 까지 다음 기능이 제한됩니다. :
+
+- 현금 인출 서비스.
+- 다른 서비스의 이용료의 자동이체.
+림 사일로™ 글로벌 낙하 포드 서비스를 통해 금고로 통화 전달.
+
+하지만 여전히 통화를 입금할 수 있고, 잔액으로 체납금을 납부할 수 있습니다.
+
+
+체납금을 최대한 빨리 납부해서 모든 제한 사항을 제거하십시오. 두 번째 서비스주기가 시작될 때까지 체납금이 납부되지 않으면 금고에 대한 계약이 파기되어 그 내용물이 모두 손실됩니다.</DlgVaultLockAccess>
+  <DlgNoPods>구입한 낙하 포드가 없습니다. 물품 배송에 필요한 용량이 없습니다.
+계속하려고 시도한다면 사용 가능한 포드 수가 0개이므로 배송이 실패할것입니다.
+
+버튼 근처에 "플러스"아이콘으로 적어도 하나의 낙하 포드를 구입하십시오.</DlgNoPods>
+  <DlgGlobalDropNotice>일부 서비스가 제한되어 있으므로 해당 서비스의 항목을 전달할 수 없습니다.
+
+체납금을 최대한 빨리 납부해서 이 페이지에서 해당 서비스를 사용 가능하게하십시오.
+
+
+계약이 시작되면 정적 챔버 임대료가 미리 지불됩니다. 그래서 챔버가 만료되기 전까지는 누군가를 안으로 데려 올 수 있습니다.</DlgGlobalDropNotice>
+  <DlgTitleLockAccess>알림 : 액세스 제한됨</DlgTitleLockAccess>
+  <DlgTitleNoPods>알림 : 낙하 포드를 구입하십시오.</DlgTitleNoPods>
+  <MsgChamberContentBack>정적 챔버의 계약이 만료되었습니다. 이용자가 귀하의 위치로 배달됩니다.</MsgChamberContentBack>
+</LanguageData>

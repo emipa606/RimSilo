@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MsgGetLocked>Restricted : Cannot retrieve goods. Operation failed.</MsgGetLocked>
+  <MsgPutLocked>Restricted : Cannot store goods. Operation failed.</MsgPutLocked>
+  <MsgVaultLocked>Restricted : Cannot withdraw currency. Operation failed.</MsgVaultLocked>
+  <DlgWarehouseLockAccess>You have violated the contract because of an overdue bill. The following permit will be restricted until you clear all the overdue bills :
+
+{0}
+
+{1}
+
+
+Please clear the overdue bill ASAP to remove all the restrictions. If the bill remains unpaid at the beginning of a second Service Cycle, your access to the warehouse would be locked permanently and you would lost all the contents in it.</DlgWarehouseLockAccess>
+  <DlgVaultLockAccess>You have violated the contract because of an overdue bill. The following permit will be restricted until you clear all the overdue bills :
+
+-Withdraw your currencies
+-Pay by vault balance in other services
+-Delivering the currency in your valut by RimSilo™ Global DropPod Delivery Service
+
+But you can still put money in and clear the overdue bill with the balance.
+
+
+Please clear the overdue bill ASAP to remove all the restrictions. If the bill remains unpaid at the beginning of a second Service Cycle, your access to the vault would be locked permanently and you would lost all the currency in it.</DlgVaultLockAccess>
+  <DlgNoPods>You haven't purchased any pod. There will be no available capacity for this delivery.
+If you still try to continue, the delivery would be failed due to 0 available pods at last.
+
+Please purchase at least one droppod with the "Plus" icon near the button.</DlgNoPods>
+  <DlgGlobalDropNotice>Some services are restricted, so items in them cannot be delivered.
+
+Please clear the overdue bill ASAP to make these items available in this page.
+
+
+Rent for a static chamber is paid in advance when contract starts. So you can bring anyone inside back before the expiration of a chamber.</DlgGlobalDropNotice>
+  <DlgTitleLockAccess>Reminder : Access Restricted</DlgTitleLockAccess>
+  <DlgTitleNoPods>Reminder : Please Purchase Droppods</DlgTitleNoPods>
+  <MsgChamberContentBack>A static chamber contract is expired. Passanger will be delivered to your position.</MsgChamberContentBack>
+</LanguageData>

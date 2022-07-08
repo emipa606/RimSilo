@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MsgGetLocked>品物の回収が制限されています！</MsgGetLocked>
+  <MsgPutLocked>品物の預入が制限されています！</MsgPutLocked>
+  <MsgVaultLocked>金銭の引き出しが制限されています！</MsgVaultLocked>
+  <DlgWarehouseLockAccess>支払いが滞ったため、契約違反状態になりました。延滞料を支払わない限り、以下の制限が課されます：
+
+{0}
+
+{1}
+
+
+制限を解除するため、可及的速やかに延滞料を支払ってください。次の季節が始まるまでに支払われなかった場合、貸金庫へのアクセスができなくなり、貸金庫に保管している金銭がすべて没収されます。</DlgWarehouseLockAccess>
+  <DlgVaultLockAccess>支払いが滞ったため、契約違反状態になりました。延滞料を支払わない限り、以下の制限が課されます：
+
+-金銭の引き出し
+-他リムサイロ™サービスへの自動支払いシステム
+-グローバル輸送サービス
+
+ただし、延滞料を支払うために貸金庫に資金を納入することは可能です。
+
+
+制限を解除するため、可及的速やかに延滞料を支払ってください。次の季節が始まるまでに支払われなかった場合、貸金庫へのアクセスができなくなり、貸金庫に保管している金銭がすべて没収されます。</DlgVaultLockAccess>
+  <DlgNoPods>グローバル輸送ポッドを購入していません。
+
+「プラス」アイコンを押して、少なくとも1個、グローバル輸送ポッドを購入してください。</DlgNoPods>
+  <DlgGlobalDropNotice>制限されているサービスがあるため、この内容で輸送することが出来ません。
+
+このページに目的の品物を表示するには、該当するサービスへの延滞料を払い、制限を解除する必要があります。
+
+
+冬眠室の賃料は契約時に支払われます。そのため、契約終了までにいつでも呼び戻すことができます。</DlgGlobalDropNotice>
+  <DlgTitleLockAccess>注意：アクセス制限</DlgTitleLockAccess>
+  <DlgTitleNoPods>注意：グローバル輸送ポッドを購入してください</DlgTitleNoPods>
+  <MsgChamberContentBack>冬眠室の契約が終了しました。対象の乗客が帰還します。</MsgChamberContentBack>
+</LanguageData>

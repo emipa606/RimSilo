@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <StaticChamberFee>  Rent :
+$ {0}  per passanger</StaticChamberFee>
+  <NoOneInSquadTitle>Warning : No One In Squad!</NoOneInSquadTitle>
+  <NoOneInSquadConfirm>This operation will take away the last colonist in this map!
+Your animals won't be fed, buildings on the map won't be maintained, prisoners  will escape or starve to death if there are no colonists in a map.
+
+Meanwhile, no one is able to operate the terminal, so you'll not be able to access your services in this map until the return of a colonist.
+
+Are you sure to take away the last colonist?</NoOneInSquadConfirm>
+</LanguageData>

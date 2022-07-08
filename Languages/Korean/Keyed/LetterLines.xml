@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineWarehouseDropped>!-계약에 따라 창고에있는 대부분의 물품이 림 사일로™에 의해 회수되고, 나머지는 귀하의 기지로 배달됩니다.</LineWarehouseDropped>
+  <LineWarehouseDeprived>!-연체금이 지불되지 않았으므로 림 사일로™에 의해 귀하의 창고가 박탈되었습니다.</LineWarehouseDeprived>
+  <LineVaultDropped>!-계약에 따라 금고에 저장된 모든 통화가 림 사일로™에 의해 회수되었습니다.</LineVaultDropped>
+  <LineVaultDeprived>!-연체금이 지불되지 않았으므로 림 사일로™에 의해 귀하의 금고가 박탈되었습니다</LineVaultDeprived>
+  <LineRentdVault>  금고 임대비 : $ {0}</LineRentdVault>
+  <LineRentdWarehouse>  창고 임대비 : $ {0}</LineRentdWarehouse>
+  <LineRentdMaintainanceFee>  창고 유지 보수비 : $ {0}</LineRentdMaintainanceFee>
+  <LineUnRentdVault>--금고 임대비용을 지불하기에 부족한 잔액 ($ {0})</LineUnRentdVault>
+  <LineUnRentdWarehouse>--창고 임대비용을 지불하기에 부족한 잔액 ($ {0})</LineUnRentdWarehouse>
+  <LineUnRentdMaintainanceFee>--창고 유지 보수비용을 지불하기에 부족한 잔액 ($ {0})</LineUnRentdMaintainanceFee>
+  <LineRentReportHeader>임대 세부 정보: </LineRentReportHeader>
+  <LinePayFineTail>체납금을 지불하려면 관리 페이지를 참조하십시오. 그렇지 않으면 서비스와 내용물을 잃을 위험이 있습니다!</LinePayFineTail>
+  <LetterTitleNorm>임대 세부 정보</LetterTitleNorm>
+  <LetterTitleWarn>서비스 제한됨!</LetterTitleWarn>
+  <LetterTitleViolation>계약 종료됨!</LetterTitleViolation>
+</LanguageData>

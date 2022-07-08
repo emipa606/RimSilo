@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <WarehouseLabel>貨物倉庫</WarehouseLabel>
+  <TraderWarehouseTitle>支付運費</TraderWarehouseTitle>
+  <TraderWarehouseTitleTip>支付這次存取的運費。
+運費只與貨物重量有關。
+
+請注意，倉庫管理員不會為你多交出的部分找零，所以請謹慎確定支付的比例。</TraderWarehouseTitleTip>
+  <WarehouseSilverTip>本次結算中，以白銀支付的比例。</WarehouseSilverTip>
+  <VaultLabel>保險庫</VaultLabel>
+  <TraderVaultTitleTip>將你的血汗錢安全地存放在這裡。
+
+保險庫中的錢不會被收取額外手續費，但其中所有貨幣的總值不能超過你的保險庫容量（$ {0}）。</TraderVaultTitleTip>
+  <VaultSilverTip>將要存取的白銀</VaultSilverTip>
+  <VaultBankNoteTip>將要存取的電子鈔票</VaultBankNoteTip>
+  <MsgExceedsVaultCapacity>不能進行操作，因為超過了保險庫的容量（$ {0}）。</MsgExceedsVaultCapacity>
+  <StaticChamberLabel>冷凍艙</StaticChamberLabel>
+  <TraderStaticChamberTitle>支付租金</TraderStaticChamberTitle>
+  <TraderStaticChamberTitleTip>支付冷凍艙的租金，每位 $ {0} 。
+租金中已包含艙體的使用費和往來的空投倉費用，因此從冷凍艙中召回不需要額外費用。
+
+請注意，管理員不會為你多交出的部分找零，所以請謹慎確定支付的比例。</TraderStaticChamberTitleTip>
+  <GlobalDropPodLabel>環球空投倉</GlobalDropPodLabel>
+  <GlobalDropPodCaption>待空投物品</GlobalDropPodCaption>
+  <TraderCapManTitle>支付手續費</TraderCapManTitle>
+  <TraderCapManTitleTip>為擴展容量的租用支付手續費，每個擴展位 $ {0} 。
+如果擴展位使用不足一個週期，將不會收取租金，但手續費一旦繳納將無法退還。
+
+請注意，管理員不會為你多交出的部分找零，所以請謹慎確定支付的比例。</TraderCapManTitleTip>
+  <TraderPayBillTitle>結清欠款</TraderPayBillTitle>
+  <TraderPayBillTitleTip>結清欠款並繳納罰金，以恢復正常使用。
+
+請注意，管理員不會為你多交出的部分找零，所以請謹慎確定支付的比例。</TraderPayBillTitleTip>
+</LanguageData>

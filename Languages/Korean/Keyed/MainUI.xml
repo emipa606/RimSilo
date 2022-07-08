@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Professional Storing Service" as English text-->
+  <MainUIBannerTitle>림 사일로™ 전문 보관 서비스</MainUIBannerTitle>
+  <MainUILoggedIn>로그인</MainUILoggedIn>
+  <LEDTipOk>녹색 - 정상</LEDTipOk>
+  <LEDTipNotRented>회색 - 가입되지 않은 서비스</LEDTipNotRented>
+  <LEDTipDanger>적색 - 서비스가 완전히 제한됨
+제한을 해제하려면 체납금을 납부하십시오.</LEDTipDanger>
+  <LEDTipCaution>황색 - 서비스가 부분적으로 제한됨
+제한을 해제하려면 체납금을 납부하십시오.</LEDTipCaution>
+  <TextCapacityUsage>용량 : 사용량 {0} / {1} 전체 용량</TextCapacityUsage>
+  <TextCapacityNotRented>계약되지않음</TextCapacityNotRented>
+  <TextManBar>관리 옵션</TextManBar>
+  <TextPodBar>{0} 개의 포드 구매됨 (종합 용량: {1} Kg)</TextPodBar>
+  <LabelMiscBar>기타...</LabelMiscBar>
+  <TextMiscBar>FAQ, 청구서, 유지 보수비 계산기 등을 클릭하십시오.</TextMiscBar>
+  <CaptionManFeeCalc>창고 유지 보수비 계산기</CaptionManFeeCalc>
+  <CaptionBillPreview>예상 비용</CaptionBillPreview>
+  <CaptionPayFineEnabled>체납금 납부</CaptionPayFineEnabled>
+  <CaptionPayFineDisabled>체납금 납부 (없음)</CaptionPayFineDisabled>
+  <CaptionDeleteAccount>계정 삭제</CaptionDeleteAccount>
+  <TipCapacityDetail>사용 용량 : {0}
+
+전체 용량 : {1}
+-시작 용량 : {2}</TipCapacityDetail>
+  <LineCapacityDetail>-확장 : {0} * {1}</LineCapacityDetail>
+  <TipServiceInfoIcon>이용 약관 보기</TipServiceInfoIcon>
+  <TipCapManIcon>용량 확장 매니저</TipCapManIcon>
+  <TipAbortIcon>계약 파기</TipAbortIcon>
+  <TipBuyPodIcon>낙하 포드를 구입합니다.
+
+오른쪽 클릭으로 5개씩 구매 할 수 있습니다..</TipBuyPodIcon>
+  <AccessButton>접속</AccessButton>
+  <RentServiceButton>계약하기</RentServiceButton>
+  <MsgUnlocked>체납금을 납부하였으므로 제한사항이 사라지고 서비스가 정상으로 돌아갑니다.</MsgUnlocked>
+  <MsgVaultRented>이제 금고에 다시 접속 할 수 있습니다.</MsgVaultRented>
+  <MsgWarehouseRented>이제 창고에 다시 접속 할 수 있습니다.</MsgWarehouseRented>
+  <MsgPodPurchased>낙하 포드 구입됨.</MsgPodPurchased>
+  <MsgShouldRentVaultFirst>창고서비스에 가입하기 전에 먼저 금고서비스에 가입하십시오.</MsgShouldRentVaultFirst>
+  <MsgNoAbortDuringFirstPeriod>계약에 따르면 첫 번째주기 동안 서비스를 종료 할 수 없습니다.</MsgNoAbortDuringFirstPeriod>
+  <MsgShouldRentServiceFirst>먼저 금고 서비스에 가입하십시오. 또는 표시할만한 것이 없습니다.</MsgShouldRentServiceFirst>
+  <MsgAccountDeleted>계정이 삭제되었습니다. 모든 모드 구성 요소가 제거되었습니다. 이제 게임을 안전하게 저장하고 이 모드를 비활성화 할 수 있습니다.</MsgAccountDeleted>
+  <TraderTitleRetainer>의뢰비용 지불</TraderTitleRetainer>
+  <TraderTitleTipRetainer>의뢰비용 지불.
+의뢰비용은 첫 번째 서비스주기의 계약금으로 사용됩니다.</TraderTitleTipRetainer>
+  <TraderTitleBuyPod>낙하 포드 구입</TraderTitleBuyPod>
+  <TraderTitleTipBuyPod>하나 또는 그 이상의 낙하 포드를 구입합니다.</TraderTitleTipBuyPod>
+  <DlgTitleAbortService>경고 : 서비스 중단됨!</DlgTitleAbortService>
+  <DlgAbortService>계약을 해지하고 다음 서비스를 중단합니다. :
+
+{0}
+
+일단 중단되면 임대료는 환불되지 않으며 남아있는 모든 내용물을 잃게됩니다!
+
+
+서비스를 중지 하시겠습니까?</DlgAbortService>
+  <DlgTitleDeleteAccount>경고 : 계정 삭제됨!</DlgTitleDeleteAccount>
+  <DlgDeleteAccount>계정이 삭제되고 계약이 해지되며 가입 한 모든 서비스가 중지됩니다..
+
+이 작업을 실행하면 남아있는 모든 물품을 잃을 것입니다!
+계정을 삭제하면 내용물을 영원히 잃게됩니다.
+
+
+계정을 삭제하는것이 이 모드를 안전하게 제거 할 수있는 유일한 방법입니다. 확인하면 이 모드의 모든 구성 요소가 제거됩니다. 그런 다음 게임을 즉시 저장해야합니다. 이 모드를 해제 한 후에는 안전하게 이 모드를 사용하지 않고 세이브를 로드 할 수 있습니다.
+
+
+
+최종 확인: 정말 계정을 삭제하시겠습니까?</DlgDeleteAccount>
+  <DlgTitleRentService>서비스 가입</DlgTitleRentService>
+  <DlgRentService>다음의 서비스에 가입합니다:
+
+{0}
+
+그리고 수수료 (의뢰비용) $ {1} .
+
+서비스에 가입하시겠습니까?
+
+'이용 약관' 에서 모든 단어를 읽었는지 확인하십시오!
+궁금한 사항이 있으면 "이용 약관"(관리 옵션의 첫 번째 아이콘) 또는 "기타 ..."메뉴의 "FAQ"를 참조하십시오.</DlgRentService>
+  <DlgTitleBuyPod>낙하 포드 구입</DlgTitleBuyPod>
+  <DlgBuyPod>글로벌 낙하 포드 배송 서비스에 다음 주문서를 제출합니다. :
+
+상품 : 낙하 포드
+개수 : {0}
+개당 가격 : $ {1}
+
+총합 : $ {2}
+
+구입하시겠습니까?
+
+'이용 약관' 에서 모든 단어를 읽었는지 확인하십시오!
+궁금한 사항이 있으면 "이용 약관"(관리 옵션의 첫 번째 아이콘) 또는 "기타 ..."메뉴의 "FAQ"를 참조하십시오.
+
+하나씩 주문하는게 귀찮으십니까? 구매 아이콘을 마우스 오른쪽으로 클릭하십시오!</DlgBuyPod>
+</LanguageData>

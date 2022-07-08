@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Professional Storing Service" as English text-->
+  <MainUIBannerTitle>邊緣倉儲™ 專業貯存服務</MainUIBannerTitle>
+  <MainUILoggedIn>已登入</MainUILoggedIn>
+  <LEDTipOk>綠色 - 一切正常</LEDTipOk>
+  <LEDTipNotRented>灰色 - 此項服務未開通</LEDTipNotRented>
+  <LEDTipDanger>紅色 - 此項服務被凍結了
+請及時結清欠款以恢復正常使用</LEDTipDanger>
+  <LEDTipCaution>黃色 - 部分功能受限
+請及時結清欠款以恢復正常使用</LEDTipCaution>
+  <TextCapacityUsage>容量使用情況： {0} / {1}</TextCapacityUsage>
+  <TextCapacityNotRented>未租用</TextCapacityNotRented>
+  <TextManBar>管理選項</TextManBar>
+  <TextPodBar>擁有 {0} 個空投倉（總容量 {1} Kg）</TextPodBar>
+  <LabelMiscBar>其他...</LabelMiscBar>
+  <TextMiscBar>點擊以使用常見問題解答、繳費等各種小功能</TextMiscBar>
+  <CaptionManFeeCalc>倉庫維護費計算器</CaptionManFeeCalc>
+  <CaptionBillPreview>打印賬單預覽</CaptionBillPreview>
+  <CaptionPayFineEnabled>付清欠款</CaptionPayFineEnabled>
+  <CaptionPayFineDisabled>付清欠款（無欠款）</CaptionPayFineDisabled>
+  <CaptionDeleteAccount>刪除賬戶</CaptionDeleteAccount>
+  <TipCapacityDetail>已使用的容量： {0}
+
+總容量： {1}
+-基礎容量： {2}</TipCapacityDetail>
+  <LineCapacityDetail>
+-擴展容量： {0} * {1}</LineCapacityDetail>
+  <TipServiceInfoIcon>查看服務簡介和條款</TipServiceInfoIcon>
+  <TipCapManIcon>管理擴展容量</TipCapManIcon>
+  <TipAbortIcon>終止該項服務</TipAbortIcon>
+  <TipBuyPodIcon>訂購空投倉
+
+右鍵點擊可一次購買5個空投倉。</TipBuyPodIcon>
+  <AccessButton>訪問</AccessButton>
+  <RentServiceButton>租用該服務</RentServiceButton>
+  <MsgUnlocked>你已結清欠款，所有服務均已恢復正常。</MsgUnlocked>
+  <MsgVaultRented>你現在可以訪問保險庫了。</MsgVaultRented>
+  <MsgWarehouseRented>你現在可以訪問倉庫了。</MsgWarehouseRented>
+  <MsgPodPurchased>空投倉已訂購。</MsgPodPurchased>
+  <MsgShouldRentVaultFirst>租用倉庫前必須先租用保險庫。</MsgShouldRentVaultFirst>
+  <MsgNoAbortDuringFirstPeriod>根據合同約定，第一段租期內不能終止服務。</MsgNoAbortDuringFirstPeriod>
+  <MsgShouldRentServiceFirst>你需要租用保險庫才能打印賬單，不然就沒什麼可以給你記賬的了。</MsgShouldRentServiceFirst>
+  <MsgAccountDeleted>賬戶已刪除，所有mod組件已經被移除，你可以存檔並安全關閉本mod了。</MsgAccountDeleted>
+  <TraderTitleRetainer>支付定金</TraderTitleRetainer>
+  <TraderTitleTipRetainer>支付定金。
+定金將會用來支付首次租金。</TraderTitleTipRetainer>
+  <TraderTitleBuyPod>訂購空投倉</TraderTitleBuyPod>
+  <TraderTitleTipBuyPod>訂購一個空投倉。</TraderTitleTipBuyPod>
+  <DlgTitleAbortService>警告：終止服務！</DlgTitleAbortService>
+  <DlgAbortService>你即將終止以下服務：
+
+{0}
+
+一旦服務終止，你將失去其中未轉移的所有物品！按照合同規定，剩餘的租金等一律不退還！
+
+
+你確定要終止服務嗎？</DlgAbortService>
+  <DlgTitleDeleteAccount>嚴重警告：刪除賬戶！</DlgTitleDeleteAccount>
+  <DlgDeleteAccount>你將要刪除這個賬戶，這將使你租用的服務完全失效！
+
+一旦服務終止，你將失去其中未轉移的所有物品！
+如果你仍有物資尚未取回，在刪除賬戶之後你將永久失去它們！
+
+
+刪除賬戶是安全卸載本mod的唯一方式。當你確認刪除賬戶後，本mod在遊戲中註冊的所有組件將被移除，然後你需要立刻保存遊戲。之後關閉這個mod，你就可以安全地加載這個存檔了。
+
+
+
+最後確認：你確定要刪除賬戶嗎？</DlgDeleteAccount>
+  <DlgTitleRentService>租用服務</DlgTitleRentService>
+  <DlgRentService>你即將租用下列服務：
+
+{0}
+
+並將支出手續費 $ {1} 。
+
+你確認進行此項操作嗎？
+
+請務必確認你已通讀了“服務簡介和條款”！
+如果你對此有任何疑義，請參閱“服務簡介和條款”（管理選項中第一項）或“FAQ（常見問題解答）”（“其他...”菜單內）。</DlgRentService>
+  <DlgTitleBuyPod>訂購空投倉</DlgTitleBuyPod>
+  <DlgBuyPod>你即將向邊緣倉儲™全球空投服務提交以下訂單：
+
+項目：空投倉
+數量： {0}
+單價： $ {1}
+
+總計： $ {2}
+
+你確認進行此項操作嗎？
+
+請務必確認你已通讀了“服務簡介和條款”！
+如果你對此有任何疑義，請參閱“服務簡介和條款”（管理選項中第一項）或“FAQ（常見問題解答）”（“其他...”菜單內）。
+
+一個一個訂購太麻煩？你可以右鍵訂購按鈕，試一試！</DlgBuyPod>
+</LanguageData>

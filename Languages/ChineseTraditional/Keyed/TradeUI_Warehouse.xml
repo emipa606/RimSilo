@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TipWarehouseMass>最終倉庫用量與倉庫總容量。</TipWarehouseMass>
+  <TipWarehouseMarketValue>最終倉庫裡所有貨物的市場價值之和。
+這些貨物每季度的維護費：$ {0}
+
+如果不願意支付過多的維護費，就請合理控制物品價值總和。</TipWarehouseMarketValue>
+  <ValuePerMassUnit>  運費：
+每Kg $ {0}</ValuePerMassUnit>
+  <TotalValueLabel>貨物總價值：$ {0}</TotalValueLabel>
+  <TipArrowGet>權限 - 獲取
+從倉庫中獲取物品並空投到當前地圖。
+
+環球空投倉業務也需要該權限。</TipArrowGet>
+  <TipArrowPut>權限 - 存放
+將當前地圖的物品發送到倉庫並存放。</TipArrowPut>
+  <TipLockAccess>由於你拖欠了相關費用，這項權限被鎖定了。</TipLockAccess>
+  <MsgExceedMassLimit>不能存取這些物品，因為貨物總質量將超過容量。</MsgExceedMassLimit>
+</LanguageData>

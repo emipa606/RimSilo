@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TipPodMass>배달 할 물품의 총 중량과 낙하 포드의 총 용량.
+정적 챔버 이용자의 무게는 제외됩니다.</TipPodMass>
+  <TextPodUsage> {0}개의 포드 발사됨.</TextPodUsage>
+</LanguageData>

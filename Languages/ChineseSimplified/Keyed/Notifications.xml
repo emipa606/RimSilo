@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MsgGetLocked>你的获取权限被锁定了，因此不能进行交易。</MsgGetLocked>
+  <MsgPutLocked>你的存放权限被锁定了，因此不能进行交易。</MsgPutLocked>
+  <MsgVaultLocked>你的保险库权限被锁定了，因此不能取回你的货币。</MsgVaultLocked>
+  <DlgWarehouseLockAccess>由于上次收费时你未能交齐所有费用，管理员锁定了你的下列权限：
+
+{0}
+
+{1}
+
+
+请尽快付清欠款以保证仓库的正常使用。如果下一次收费时欠款仍未付清，你将失去仓库的使用权和其中所有货物。</DlgWarehouseLockAccess>
+  <DlgVaultLockAccess>由于你拖欠保险库租金，管理员锁定了你的权限。
+
+在结清欠款前，你无法使用保险库的如下服务：
+-取回你的货币
+-使用保险库内的货币进行支付
+-使用环球空投仓业务发送保险库内的货币
+
+你仍可以向保险库中存放货币，且可以使用保险库结清欠款。
+
+
+请尽快结清欠款以保证保险库的正常使用。如果下一次收费时欠款仍未付清，你将失去保险库的使用权和其中所有货币。</DlgVaultLockAccess>
+  <DlgNoPods>你还没有订购任何空投仓，这意味着你完全没有可用容量。
+如果你执意继续，这次空投最终仍会因为无空投仓而失败。
+
+请先在管理面板中至少订购一个空投仓。</DlgNoPods>
+  <DlgGlobalDropNotice>你有一项或多项服务受到了限制，因此您的部分物品无法被空投。
+
+请尽快结清欠款以使这些物品重新出现在列表中。
+
+
+冷冻舱合同签订时已预付租金，因此到期前您可以随时取回其中的乘员。</DlgGlobalDropNotice>
+  <DlgTitleLockAccess>提示：服务受限</DlgTitleLockAccess>
+  <DlgTitleNoPods>提示：订购空投仓</DlgTitleNoPods>
+  <MsgChamberContentBack>你的一份冷冻舱租用合同到期了，冷冻舱的乘员已乘空投仓安全返回。</MsgChamberContentBack>
+</LanguageData>

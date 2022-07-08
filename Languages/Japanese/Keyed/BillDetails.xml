@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineBillDetailTitle>勘定明細</LineBillDetailTitle>
+  <LineVaultRent>貸金庫 - 賃貸料</LineVaultRent>
+  <LineWarehouseRent>貸倉庫 - 賃貸料</LineWarehouseRent>
+  <LineWarehouseMaintainanceFee>貸倉庫 - 維持費</LineWarehouseMaintainanceFee>
+  <LineFeeOfPenalty>延滞料金</LineFeeOfPenalty>
+  <LineBillTotal>合計</LineBillTotal>
+  <LinePayFine>サービスを復旧させるには、陳亮と延滞料を支払う必要があります。
+
+次の季節が始まるまでに支払いができなかった場合、契約は破棄され、RimSilo™が貸金庫内の金銭を没収してしまうでしょう！</LinePayFine>
+</LanguageData>

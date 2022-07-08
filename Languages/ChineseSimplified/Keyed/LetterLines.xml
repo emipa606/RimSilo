@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineWarehouseDropped>!-按照合同协定，你贮存在仓库中的大部分货物被管理方拍卖了，剩余的物品会被空投到你的基地。</LineWarehouseDropped>
+  <LineWarehouseDeprived>!-由于你连续欠费，仓库的使用权被收回了！</LineWarehouseDeprived>
+  <LineVaultDropped>!-按照合同协定，你贮存在保险库中的货币全部归管理方所有。</LineVaultDropped>
+  <LineVaultDeprived>!-由于你连续欠费，保险库的使用权被收回了！</LineVaultDeprived>
+  <LineRentdVault>  保险库租金： $ {0}</LineRentdVault>
+  <LineRentdWarehouse>  仓库租金： $ {0}</LineRentdWarehouse>
+  <LineRentdMaintainanceFee>  仓库维护费： $ {0}</LineRentdMaintainanceFee>
+  <LineUnRentdVault>--余额不足以支付保险库租金（$ {0}）</LineUnRentdVault>
+  <LineUnRentdWarehouse>--余额不足以支付仓库租金（$ {0}）</LineUnRentdWarehouse>
+  <LineUnRentdMaintainanceFee>--余额不足以支付仓库维护费（$ {0}）</LineUnRentdMaintainanceFee>
+  <LineRentReportHeader>本租期收费明细：</LineRentReportHeader>
+  <LinePayFineTail>请访问账户管理面板及时结清欠款，以免影响正常使用！</LinePayFineTail>
+  <LetterTitleNorm>缴费明细</LetterTitleNorm>
+  <LetterTitleWarn>欠费</LetterTitleWarn>
+  <LetterTitleViolation>账户违约！</LetterTitleViolation>
+</LanguageData>

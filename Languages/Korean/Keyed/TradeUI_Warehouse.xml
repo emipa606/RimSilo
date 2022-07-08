@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TipWarehouseMass>사용 된 용량과 합계.</TipWarehouseMass>
+  <TipWarehouseMarketValue>작업 후 창고에있는 물품의 총 시장 가치.
+물품 유지비(서비스주기 당) : $ {0}
+
+유지 보수 비용을 너무 많이 내고 싶지 않다면 상품의 총 가치를 관리하십시오.</TipWarehouseMarketValue>
+  <ValuePerMassUnit>  배송비:
+ Kg당 $ {0}</ValuePerMassUnit>
+  <TotalValueLabel>총 가치 : $ {0}</TotalValueLabel>
+  <TipArrowGet>권한 - 회수
+창고에 보관된 물품을 지도로 회수합니다 .
+
+또한 글로벌 낙하 포드 배송 서비스가 필요합니다.</TipArrowGet>
+  <TipArrowPut>권한 - 보관
+현재 지도의 물품을 창고에 보관합니다.</TipArrowPut>
+  <TipLockAccess>체납금으로 인해 사용이 제한됩니다.</TipLockAccess>
+  <MsgExceedMassLimit>작업 실패 : 총 중량이 용량을 초과합니다.</MsgExceedMassLimit>
+</LanguageData>

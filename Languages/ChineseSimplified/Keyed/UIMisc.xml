@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Client Interface" as English text-->
+  <RimBankExtDepositFloatMenuEntryLabel>边缘仓储™管理界面</RimBankExtDepositFloatMenuEntryLabel>
+  <MaintainanceFeeDesc>仓库需要收取一笔维护费，这笔费用会被用来封装、冷冻你的货物，防止货物老化。
+如果你的货物总市场价值不高，这将是免费的。当然，总价值超过一定限度之后，将会以阶梯价位收取维护费。
+
+拉动下面的标尺，查看特定的货物总市场价值对应的维护费。</MaintainanceFeeDesc>
+  <MaintainanceFeeText>当前总市场价值： $ {0}            维护费： $ {1}
+
+明细：</MaintainanceFeeText>
+  <TipSelectColumn>点击选择显示哪一列数据</TipSelectColumn>
+  <LabelMarketValue>列：市场价值</LabelMarketValue>
+  <LabelMass>列：重量</LabelMass>
+  <LabelDaysLeft>列：剩余天数</LabelDaysLeft>
+  <TipTradeableMarketValue>一件此物品的市场价值。
+此价值为基础价值，不包含各种交易价格系数，也与你殖民者的社交技能无关。</TipTradeableMarketValue>
+  <TipTradeableMass>一件此物品的重量。</TipTradeableMass>
+  <TipDaysLeft>这个冷冻舱的租用合同到期之前所剩的天数。
+到期后，这个冷冻舱会被直接空投回到地图上。
+
+一组多个同类生物只显示最少的剩余天数，其他将以提示形式分条呈现。</TipDaysLeft>
+  <FormatDaysLeft> {0}  天</FormatDaysLeft>
+  <FormatMass> {0} 千克</FormatMass>
+  <FormatVaultCapacity> ${0} （货币总值）</FormatVaultCapacity>
+  <NoMapDrop>不能向另一张地图空投。</NoMapDrop>
+  <NoSettlementDrop>不能以定居点为目标空投。</NoSettlementDrop>
+  <LabelCurrentMax>拥有容量</LabelCurrentMax>
+  <LabelCurrentUsage>当前已用
+{0}</LabelCurrentUsage>
+  <ReportStrCapacity>容量总计： {0}</ReportStrCapacity>
+  <ReportStrRent>租金总计： {0}</ReportStrRent>
+  <ReportStrBase>- 基本： {0}</ReportStrBase>
+  <ReportStrExtension>- 扩充： {0}</ReportStrExtension>
+  <CapacityExpansionDesc>每个扩展位的容量： {0}
+每个扩展位的租金：$ {1}
+租用一个扩展位需支付的手续费：$ {2}
+</CapacityExpansionDesc>
+  <CapacityExpansionDesc2>手续费总计：$ {0}</CapacityExpansionDesc2>
+  <MsgCannotShrinkCapUsageLowerBound>请先降低你的容量占用，再减少扩展位的数量。</MsgCannotShrinkCapUsageLowerBound>
+  <MsgBoxConfirmShrinkCapTitle>注意： 放弃容量！</MsgBoxConfirmShrinkCapTitle>
+  <MsgBoxConfirmShrinkCap>如果放弃这些扩展容量，你固然可以降低租金开销，但再次租用时需再次缴纳手续费。
+如果你的确需要这么多容量，那么让它闲置一段时间可能比需要时再租更加划算。
+
+你确认要放弃这些容量吗？</MsgBoxConfirmShrinkCap>
+</LanguageData>

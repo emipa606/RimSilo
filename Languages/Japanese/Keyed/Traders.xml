@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <WarehouseLabel>貸倉庫</WarehouseLabel>
+  <TraderWarehouseTitle>送料支払</TraderWarehouseTitle>
+  <TraderWarehouseTitleTip>送料を支払ってください。
+金額は輸送する品物の重量よって定められます。
+
+お釣りは支払われません。シルバーを用意し、過払いに注意してください。</TraderWarehouseTitleTip>
+  <WarehouseSilverTip>今回の取引で以下の額が支払われます。</WarehouseSilverTip>
+  <VaultLabel>貸金庫</VaultLabel>
+  <TraderVaultTitleTip>金銭を安全に保管しましょう。
+
+容量を超えない限り、追加料金は発生しません（$ {0}）。</TraderVaultTitleTip>
+  <VaultSilverTip>総シルバー所持量</VaultSilverTip>
+  <VaultBankNoteTip>総紙幣所持量</VaultBankNoteTip>
+  <MsgExceedsVaultCapacity>貸金庫の容量を超過しています（$ {0}）。</MsgExceedsVaultCapacity>
+  <StaticChamberLabel>冬眠室</StaticChamberLabel>
+  <TraderStaticChamberTitle>賃料支払</TraderStaticChamberTitle>
+  <TraderStaticChamberTitleTip>1体につき $ {0} の賃料がかかります。
+帰還のための料金も含まれているため、追加料金は発生しません。
+
+お釣りは返還されません。
+シルバーを用意し、過払いに注意してください。</TraderStaticChamberTitleTip>
+  <GlobalDropPodLabel>グローバル輸送サービス</GlobalDropPodLabel>
+  <GlobalDropPodCaption>品物輸送</GlobalDropPodCaption>
+  <TraderCapManTitle>契約金支払</TraderCapManTitle>
+  <TraderCapManTitleTip>1スロットの拡張ごとに $ {0} を支払ってください。
+契約金は返還されません。
+
+お釣りは返還されません。
+シルバーを用意し、過払いに注意してください。</TraderCapManTitleTip>
+  <TraderPayBillTitle>延滞料支払い</TraderPayBillTitle>
+  <TraderPayBillTitleTip>延滞料を支払うことで、サービスにかかっている制限を解除できます。
+
+お釣りは変換されません。
+シルバーを用意し、過払いに注意してください。</TraderPayBillTitleTip>
+</LanguageData>

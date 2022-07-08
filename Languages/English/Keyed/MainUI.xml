@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Professional Storing Service" as English text-->
+  <MainUIBannerTitle>RimSilo™ Professional Storing Service</MainUIBannerTitle>
+  <MainUILoggedIn>Logged In</MainUILoggedIn>
+  <LEDTipOk>Green - OK</LEDTipOk>
+  <LEDTipNotRented>Grey - Service Not Subscribed</LEDTipNotRented>
+  <LEDTipDanger>Red - Service Completely Restricted
+Please clear the overdue bills to remove the restrictions.</LEDTipDanger>
+  <LEDTipCaution>Yellow - Service Partially Restricted
+Please clear the overdue bills to remove the restrictions.</LEDTipCaution>
+  <TextCapacityUsage>Capacity : Used {0} / {1} Total</TextCapacityUsage>
+  <TextCapacityNotRented>Not Subscribed</TextCapacityNotRented>
+  <TextManBar>Management Options</TextManBar>
+  <TextPodBar>{0} Pods Purchased (Total capacity : {1} Kg)</TextPodBar>
+  <LabelMiscBar>Misc...</LabelMiscBar>
+  <TextMiscBar>Click for FAQs, bills, Maintainance Fee Calculator, etc.</TextMiscBar>
+  <CaptionManFeeCalc>Warehouse Maintenance Fee Calculator</CaptionManFeeCalc>
+  <CaptionBillPreview>Bill Preview</CaptionBillPreview>
+  <CaptionPayFineEnabled>Pay Overdue Bills</CaptionPayFineEnabled>
+  <CaptionPayFineDisabled>Pay Overdue Bills (None)</CaptionPayFineDisabled>
+  <CaptionDeleteAccount>Delete Account</CaptionDeleteAccount>
+  <TipCapacityDetail>Capacity Used : {0}
+
+Total Capacity : {1}
+-Starting Capacity : {2}</TipCapacityDetail>
+  <LineCapacityDetail>-Expansions : {0} * {1}</LineCapacityDetail>
+  <TipServiceInfoIcon>View Terms and Conditions</TipServiceInfoIcon>
+  <TipCapManIcon>Capacity Expansion Manager</TipCapManIcon>
+  <TipAbortIcon>Unsubscribe</TipAbortIcon>
+  <TipBuyPodIcon>Purchase Droppods
+
+Right click to purchase 5 pods at one time.</TipBuyPodIcon>
+  <AccessButton>Access</AccessButton>
+  <RentServiceButton>Subscribe Now</RentServiceButton>
+  <MsgUnlocked>You've cleared all overdue bills, and service(s) will return to normal.</MsgUnlocked>
+  <MsgVaultRented>Now you can access your vault.</MsgVaultRented>
+  <MsgWarehouseRented>Now you can access your warehouse.</MsgWarehouseRented>
+  <MsgPodPurchased>Droppod purchased.</MsgPodPurchased>
+  <MsgShouldRentVaultFirst>Please subscribe the vault before subscribing warehouse.</MsgShouldRentVaultFirst>
+  <MsgNoAbortDuringFirstPeriod>According to the contract, you cannot terminate the service during the first Cycle.</MsgNoAbortDuringFirstPeriod>
+  <MsgShouldRentServiceFirst>Please subscribe the vault first, or there will be nothing to show.</MsgShouldRentServiceFirst>
+  <MsgAccountDeleted>Account deleted. All the mod components have been removed. Now you can save the game safely and disable this mod.</MsgAccountDeleted>
+  <TraderTitleRetainer>Pay the retainer</TraderTitleRetainer>
+  <TraderTitleTipRetainer>Pay the retainer.
+The retainer serves as the rent for the first Service Cycle.</TraderTitleTipRetainer>
+  <TraderTitleBuyPod>Purchase Droppods</TraderTitleBuyPod>
+  <TraderTitleTipBuyPod>Purchase one or more droppods.</TraderTitleTipBuyPod>
+  <DlgTitleAbortService>Warning : Stop Service(s)!</DlgTitleAbortService>
+  <DlgAbortService>You are going to terminate a contract and stop the following service(s) :
+
+{0}
+
+Once stopped, rent will not be refunded and you will lose all the contents left! 
+
+
+Are you sure to stop the service(s)?</DlgAbortService>
+  <DlgTitleDeleteAccount>Warning : Delete Account!</DlgTitleDeleteAccount>
+  <DlgDeleteAccount>Account will be deleted, contracts will be terminated and all services you subscribed will be stopped.
+
+Once ended, you will lose all the cotents remaining!
+If any, you will lose the items forever once delete your account.
+
+
+Delete the account is the only way to safely uninstall this mod. When confirmed, all the components of this mod will be removed. Then you should save the game immediately. After disabling this mod, you can load the save without this mod safely.
+
+
+
+Final Conformation: Are you sure to delete your account?</DlgDeleteAccount>
+  <DlgTitleRentService>Subscribe Service</DlgTitleRentService>
+  <DlgRentService>You will subscribe the following service:
+
+{0}
+
+with fees (retainer) $ {1} .
+
+Are you sure to do this?
+
+Please ensure that you have read EVERY words in "Terms and Conditions"!
+If you have any concerns, please refer to "Terms and Conditions" (the first icon in Management Options) or "FAQs" (in the "Misc..." Menu).</DlgRentService>
+  <DlgTitleBuyPod>Purchase Droppods</DlgTitleBuyPod>
+  <DlgBuyPod>Your are submitting the following order to RimBank™ Global DropPod Delivery Service :
+
+Item : DropPod
+Amount : {0}
+Unit Price : $ {1}
+
+Total : $ {2}
+
+Are you sure to do this?
+
+Please ensure that you have read EVERY words in "Terms and Conditions"!
+If you have any concerns, please refer to "Terms and Conditions" (the first icon in Management Options) or "FAQs" (in the "Misc..." Menu).
+
+Tired of odering one by one? Try right click the purchase icon!</DlgBuyPod>
+</LanguageData>

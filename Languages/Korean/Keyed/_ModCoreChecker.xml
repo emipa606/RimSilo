@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <CheckerTitle>경고 : 모드에 문제발생!</CheckerTitle>
+  <DownloadLatestButton>최신버전 받기</DownloadLatestButton>
+  <TextCoreTooOld>림 뱅크 코어모드(Rimbank.Core.dll)의 버전이 이 모드보다 낮습니다. 어쩌면 구버전일 수 있습니다. 
+	
+	림 뱅크 코어 모드와 모든 하위 모드가 같은 버전인지 확인하십시오. 그렇지 않으면 하위 모드가 제대로 로드되지 않습니다.</TextCoreTooOld>
+  <TextMissingCore>최소한 하나의 림 뱅크 시리즈 하위 모드를 활성화했으나 림 뱅크 코어 모드에서 동일한 작업을 수행하지 않았습니다. 하위 모드가 올바르게 작동 할 수 있도록 코어를 먼저 다운로드하여 활성화하십시오.
+
+* 압축을 풀어 모드를 설치하는 경우, 해당 모드가 폴더의 다른 레이어로 감싸여져 있는지 확인하십시오. (또는 Mods Config 페이지에 설명이 없는 붉은 이름)*</TextMissingCore>
+  <TextOrderOrVersionException>림 뱅크 모드 시리즈를 사용해 주셔서 감사합니다. 그러나 몇 가지 문제가 있습니다 ...
+
+-하위모드가 림 뱅크 코어모드보다 먼저 로드됩니다.:
+{0}
+모든 하위모드는 '반드시' 코어모드보다 먼저 로드해야합니다.
+
+-서브모드가 림 뱅크 코어모드보다 낮습니다.:
+{1}
+림 뱅크 코어 모드와 모든 하위 모드가 동일한 버전인지 확인하려면 이 모드를 업데이트해야합니다. 그렇지 않으면 하위 모드가 제대로 로드되지 않습니다.</TextOrderOrVersionException>
+  <TextNone>(None)</TextNone>
+</LanguageData>

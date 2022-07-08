@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TipWarehouseMass>最终仓库用量与仓库总容量。</TipWarehouseMass>
+  <TipWarehouseMarketValue>最终仓库里所有货物的市场价值之和。
+这些货物每季度的维护费：$ {0}
+
+如果不愿意支付过多的维护费，就请合理控制物品价值总和。</TipWarehouseMarketValue>
+  <ValuePerMassUnit>  运费：
+每Kg $ {0}</ValuePerMassUnit>
+  <TotalValueLabel>货物总价值：$ {0}</TotalValueLabel>
+  <TipArrowGet>权限 - 获取
+从仓库中获取物品并空投到当前地图。
+
+环球空投仓业务也需要该权限。</TipArrowGet>
+  <TipArrowPut>权限 - 存放
+将当前地图的物品发送到仓库并存放。</TipArrowPut>
+  <TipLockAccess>由于你拖欠了相关费用，这项权限被锁定了。</TipLockAccess>
+  <MsgExceedMassLimit>不能存取这些物品，因为货物总质量将超过容量。</MsgExceedMassLimit>
+</LanguageData>

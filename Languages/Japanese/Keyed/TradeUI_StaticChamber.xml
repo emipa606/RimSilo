@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <StaticChamberFee>  賃料：
+1人につき$ {0}  </StaticChamberFee>
+  <NoOneInSquadTitle>警告：入植者がいなくなります！</NoOneInSquadTitle>
+  <NoOneInSquadConfirm>これを実行すると、このマップから入植者がいなくなります。
+ペットは飢え、建築物は維持されなくなり、囚人は逃げ出すか餓死してしまうでしょう。
+
+またリム銀行ATMを操作できる入植者がいなくなるので、入植者が帰還するまで各サービスにアクセスできなくなります。
+
+本当に最後の入植者を送り出しますか？</NoOneInSquadConfirm>
+</LanguageData>

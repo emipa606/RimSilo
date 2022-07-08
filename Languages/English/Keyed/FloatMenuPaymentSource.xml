@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PayButton>Pay</PayButton>
+  <PaySourceVault>By vault balance</PaySourceVault>
+  <PaySourceVaultNotRented>By vault balance (Not Subscribed)</PaySourceVaultNotRented>
+  <PaySourceVaultRestricted>By vault balance (Restricted)</PaySourceVaultRestricted>
+  <PaySourceVaultNotEnough>By vault balance (Insufficient Balance)</PaySourceVaultNotEnough>
+  <PaySourceLocal>By currency on map</PaySourceLocal>
+  <MsgPaymentVaultComplete>$ {0} has been withdrawn from your vault.</MsgPaymentVaultComplete>
+</LanguageData>

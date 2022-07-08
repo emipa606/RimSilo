@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <CheckerTitle>Mod狀態異常</CheckerTitle>
+  <DownloadLatestButton>下載最新版</DownloadLatestButton>
+  <TextCoreTooOld>RimBank邊緣銀行系列的主mod（Rimbank.Core.dll）版本比子mod低。這可能是因為你下載了老版本的主mod，或者只更新了子mod。
+
+你需要保持主mod和所有子mod版本一致，否則子mod將無法加載。</TextCoreTooOld>
+  <TextMissingCore>你啟用了RimBank邊緣銀行系列的子mod，卻沒有啟用主mod（Rimbank.Core）。請先下載並啟用主mod，這樣才能使子mod工作正常。
+
+*如果你是手動下載的mod，請先注意mod是否多套了一層文件夾（mod列表裡顯示為紅色且無介紹）*</TextMissingCore>
+  <TextOrderOrVersionException>感謝使用RimBank邊緣銀行系列mod，然而...
+
+-以下子mod在主mod（Rimbank.Core）前加載了：
+{0}
+你需要保證主mod在所有子mod之前加載，否則子mod將無法加載。
+
+-以下子mod版本比主mod低，你需要更新這些子mod：
+{1}
+你需要保持主mod和所有子mod版本一致，否則子mod將無法加載。</TextOrderOrVersionException>
+  <TextNone>（無）</TextNone>
+</LanguageData>

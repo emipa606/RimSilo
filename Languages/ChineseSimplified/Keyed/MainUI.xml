@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Professional Storing Service" as English text-->
+  <MainUIBannerTitle>边缘仓储™ 专业贮存服务</MainUIBannerTitle>
+  <MainUILoggedIn>已登入</MainUILoggedIn>
+  <LEDTipOk>绿色 - 一切正常</LEDTipOk>
+  <LEDTipNotRented>灰色 - 此项服务未开通</LEDTipNotRented>
+  <LEDTipDanger>红色 - 此项服务被冻结了
+请及时结清欠款以恢复正常使用</LEDTipDanger>
+  <LEDTipCaution>黄色 - 部分功能受限
+请及时结清欠款以恢复正常使用</LEDTipCaution>
+  <TextCapacityUsage>容量使用情况： {0} / {1}</TextCapacityUsage>
+  <TextCapacityNotRented>未租用</TextCapacityNotRented>
+  <TextManBar>管理选项</TextManBar>
+  <TextPodBar>拥有 {0} 个空投仓（总容量 {1} Kg）</TextPodBar>
+  <LabelMiscBar>其他...</LabelMiscBar>
+  <TextMiscBar>点击以使用常见问题解答、缴费等各种小功能</TextMiscBar>
+  <CaptionManFeeCalc>仓库维护费计算器</CaptionManFeeCalc>
+  <CaptionBillPreview>打印账单预览</CaptionBillPreview>
+  <CaptionPayFineEnabled>付清欠款</CaptionPayFineEnabled>
+  <CaptionPayFineDisabled>付清欠款（无欠款）</CaptionPayFineDisabled>
+  <CaptionDeleteAccount>删除账户</CaptionDeleteAccount>
+  <TipCapacityDetail>已使用的容量： {0}
+
+总容量： {1}
+-基础容量： {2}</TipCapacityDetail>
+  <LineCapacityDetail>
+-扩展容量： {0} * {1}</LineCapacityDetail>
+  <TipServiceInfoIcon>查看服务简介和条款</TipServiceInfoIcon>
+  <TipCapManIcon>管理扩展容量</TipCapManIcon>
+  <TipAbortIcon>终止该项服务</TipAbortIcon>
+  <TipBuyPodIcon>订购空投仓
+
+右键点击可一次购买5个空投仓。</TipBuyPodIcon>
+  <AccessButton>访问</AccessButton>
+  <RentServiceButton>租用该服务</RentServiceButton>
+  <MsgUnlocked>你已结清欠款，所有服务均已恢复正常。</MsgUnlocked>
+  <MsgVaultRented>你现在可以访问保险库了。</MsgVaultRented>
+  <MsgWarehouseRented>你现在可以访问仓库了。</MsgWarehouseRented>
+  <MsgPodPurchased>空投仓已订购。</MsgPodPurchased>
+  <MsgShouldRentVaultFirst>租用仓库前必须先租用保险库。</MsgShouldRentVaultFirst>
+  <MsgNoAbortDuringFirstPeriod>根据合同约定，第一段租期内不能终止服务。</MsgNoAbortDuringFirstPeriod>
+  <MsgShouldRentServiceFirst>你需要租用保险库才能打印账单，不然就没什么可以给你记账的了。</MsgShouldRentServiceFirst>
+  <MsgAccountDeleted>账户已删除，所有mod组件已经被移除，你可以存档并安全关闭本mod了。</MsgAccountDeleted>
+  <TraderTitleRetainer>支付定金</TraderTitleRetainer>
+  <TraderTitleTipRetainer>支付定金。
+定金将会用来支付首次租金。</TraderTitleTipRetainer>
+  <TraderTitleBuyPod>订购空投仓</TraderTitleBuyPod>
+  <TraderTitleTipBuyPod>订购一个空投仓。</TraderTitleTipBuyPod>
+  <DlgTitleAbortService>警告：终止服务！</DlgTitleAbortService>
+  <DlgAbortService>你即将终止以下服务：
+
+{0}
+
+一旦服务终止，你将失去其中未转移的所有物品！按照合同规定，剩余的租金等一律不退还！
+
+
+你确定要终止服务吗？</DlgAbortService>
+  <DlgTitleDeleteAccount>严重警告：删除账户！</DlgTitleDeleteAccount>
+  <DlgDeleteAccount>你将要删除这个账户，这将使你租用的服务完全失效！
+
+一旦服务终止，你将失去其中未转移的所有物品！
+如果你仍有物资尚未取回，在删除账户之后你将永久失去它们！
+
+
+删除账户是安全卸载本mod的唯一方式。当你确认删除账户后，本mod在游戏中注册的所有组件将被移除，然后你需要立刻保存游戏。之后关闭这个mod，你就可以安全地加载这个存档了。
+
+
+
+最后确认：你确定要删除账户吗？</DlgDeleteAccount>
+  <DlgTitleRentService>租用服务</DlgTitleRentService>
+  <DlgRentService>你即将租用下列服务：
+
+{0}
+
+并将支出手续费 $ {1} 。
+
+你确认进行此项操作吗？
+
+请务必确认你已通读了“服务简介和条款”！
+如果你对此有任何疑义，请参阅“服务简介和条款”（管理选项中第一项）或“FAQ（常见问题解答）”（“其他...”菜单内）。</DlgRentService>
+  <DlgTitleBuyPod>订购空投仓</DlgTitleBuyPod>
+  <DlgBuyPod>你即将向边缘仓储™全球空投服务提交以下订单：
+
+项目：空投仓
+数量： {0}
+单价： $ {1}
+
+总计： $ {2}
+
+你确认进行此项操作吗？
+
+请务必确认你已通读了“服务简介和条款”！
+如果你对此有任何疑义，请参阅“服务简介和条款”（管理选项中第一项）或“FAQ（常见问题解答）”（“其他...”菜单内）。
+
+一个一个订购太麻烦？你可以右键订购按钮，试一试！</DlgBuyPod>
+</LanguageData>

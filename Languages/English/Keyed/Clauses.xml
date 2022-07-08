@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MainClauseTitle>Terms and Conditions</MainClauseTitle>
+  <MainClause_Vault>RimSilo™ Vault
+[System：Contents that may not interest you have been hidden automatically]
+
+RimSilo™ Vault is a currency safekeeping service provided by RimSilo™, making it possible for clients to securely store banknotes and silver in bulk. (...)
+
+Features
+1. A highly reliable solution for the storage of currency
+2. Access your vault at any time, any map and at a cost of 0
+3. Large starting capacity with flexible expansion plans
+4. *Rent auto-charged directly from vault
+5. *A cash-less system : Charges produced by any RimSilo™ services can be charged directly from vault
+6. **Suitable for RimSilo™ Global DropPod Delivery Service, feeding your caravan with cash in no time
+
+*All bills that are auto-charged from the vault will use banknotes as a preferred mode of payment. If insufficient, or the remaining part of the bill is less than the denomination of a banknote (which is $1000), silver will be used to pay for the left. If silver is still insufficient, a banknote will be converted into silver.The fees during this conversion subject to RimBank Service Policy.
+**Please refer to the Terms and Conditions for RimSilo™ Global DropPod Delivery Service.
+
+Contract Example (extracts)
+1. Service Cycle : 1 Quadrum
+2. Service Charges :
+	2.1 Rent : $ {0} per Cycle (Starting capacity)
+	2.2 Retainer : Only $ {1} when subscribing this service
+	2.3 For charges for capacity expansions, please refer to the descriptions in its user interface.
+3. Charging Regulations :
+	3.1 The rent will be charged at the beginning of a Cycle, including the rents for starting capacity and your capacity expansions.
+	3.2 New Cycle starts when last Cycle is finished, or the client subscribes to this service.
+	3.3 The Fee mentioned in 2.1 serves as the rent for the first Cycle, so rent will not be charged for the first Cycle.
+4. Violations :
+	4.1 That the account balance is not sufficient to pay the vault rent at the beginning of a new Cycle will be considered as a violation.
+	4.2 If you have been convicted of violation, you will be banned from withdrawing the balance from your vault.
+	4.3 If you have been convicted of violation, you will no longer benefit from Features,5th Term.
+	4.4 Violation will be erased once the overdue charges and the overdue fine are paid.
+	4.5 If your state of violation hasn't been erased at the beginning of a second Cycle, the contract will be terminated automatically, and RimSilo™ has the right to withdraw the vault and all the contents in your vault.
+	4.6 Under the circumstance of violation, you can still manage your capacity expansions, and storing more currency to pay the overdue charges with the balance in vault.
+
+</MainClause_Vault>
+  <MainClause_Warehouse>RimSilo™ Warehouse
+[System：Contents that may not interest you have been hidden automatically]
+
+RimSilo™ Warehouse is a bulk cargo storage service provided by RimSilo™, clients can store their goods and keep them away from deteriorating. (...)
+
+Features
+1. *A highly reliable solution for the storage of goods
+2. Access your warehouse at any time, any map with incredible low shipping expenses
+3. **Constant temperature at -5℃ to keep food fresh and goods brand-new
+4. Large starting capacity with flexible expansion plans
+5. ***Rent or shipping fees auto-charged directly from vault
+6. ****Suitable for RimSilo™ Global DropPod Delivery Service, resupply your caravan in no time
+
+*The warehouse is not designed to store any currency, chunks and bodies. To store your currency, please use RimBank™ Vault.
+**Maintenance fee required. The specific amount is based on the total value of the goods, but you can benefit from the fee-free credit if the total value of the goods is less than  $ {0} . The "Warehouse Maintenance Fee Calculator" might come in handy.
+***Please refer to the Terms and Conditions for RimSilo™ Vault.
+****Please refer to the Terms and Conditions for RimSilo™ Global DropPod Delivery Service.
+
+Contract Example (extracts)
+1. Service Cycle : 1 Quadrum
+2. Service Charges :
+	2.1 Rent : $ {1} per Cycle (Starting capacity)
+	2.2 Retainer : Only $ {2} when subscribing this service
+	2.3 Shipping Fee : $ {3} per Kg while storing (retrieving) items
+	2.4 For more details about the maintenance fee, please refer to "Warehouse Maintenance Fee Calculator".
+	2.5 For charges for capacity expansions, please refer to the descriptions in its user interface.
+3. Charging Regulations：
+	3.1 The rent will be charged at the beginning of a Cycle, including the rents for starting capacity and your capacity expansions.
+	3.2 Maintenance Fee will be charged together with the rent.
+	3.3 Shipping Fee will be collected when any items will be transfered between client and the warehouse.
+	3.4 New Cycle starts when last Cycle is finished, or the client subscribes to this service.
+	3.5 The Fee mentioned in 2.1 serves as the rent for the first Cycle, so rent will not be charged for the first Cycle.
+4. Violations :
+	4.1 That the Vault account balance is not sufficient to pay the maintenance fee at the beginning of a new Cycle will be considered as a "Light Violation".
+	4.2 That the Vault account balance is not sufficient to pay the warehouse rent at the beginning of a new Cycle will be considered as a "Serious Violation".
+	4.3 If you have been considered as "Light Violation", you will be banned from storing your goods.
+	4.4 If you have been considered as "Serious Violation", you will be banned from both storing and fetching your goods.
+	4.5 Any violation will be erased once the overdue charges and the overdue fine are paid.
+	4.6 If any of your violation states hasn't been erased at the beginning of a second Cycle, the contract will be terminated automatically, and RimSilo™ has the right to withdraw the warehouse and most of the contents in your warehouse.
+	4.7 Under the state of any violations, you can still manage your capacity expansions, and if you are under "Light Violation", it is suggested THAT you retrieve some of your goods to reduce the maintenance fees.
+
+</MainClause_Warehouse>
+  <MainClause_StaticChamber>RimSilo™ Static Chamber
+[System：Contents that may not interest you have been hidden automatically]
+
+RimSilo™ Static Chamber, consisted of arrays of cryptosleep caskets, is suitable for all kinds of living creatures. (...)
+
+Features
+1. *A highly reliable solution for freezing and securing your personnel
+2. **Prevents any diseases from getting worse, bying time for the dying
+3. Access your chamber group at any time, any map without extra fees
+4. ***Secured airdrops for prisoners
+5. Count unlimited
+6. ****Suitable for RimSilo™ Global DropPod Delivery Service, forming your global strike team
+
+*Weapons and goods carried by a creature will be dropped onto the ground before entering static chamber,due to safety concerns.
+**The tending timer for chronic diseases will not be frozen, but the diseases won't get worse even the time is out when staying in a static chamber.
+***At least one unroofed, enclosed (surrounded by walls and doors) beacon is required. When manually recalling a chamber with a prisioner inside, that prisoner would be delivered to such a position, if any.
+****Please refer to the Terms and Conditions for RimSilo™ Global DropPod Delivery Service.
+
+Contract Example (extracts)
+1. Serivce Cycle : 7 days, NOT RENEWABLE
+2. Service Charges :  $ {0} per individual, including all the fees from sending to recalling.
+3. Charging Regulations： $ {0} per chamber
+4. Contract Termination：
+	4.1 Service Cycles for different chambers will be calculated individually.
+	4.2 At the end of a Cycle, expired chambers will be dropped onto the current map. If you have no active maps, the chambers will be dropped where your (a random) caravans stay.
+	4.3 Once you recall a chamber in advance, the contract for this chamber will be terminated automatically.
+
+</MainClause_StaticChamber>
+  <MainClause_GlobalDropPod>RimSilo™ Global DropPod Delivery Service
+[System：Contents that may not interest you have been hidden automatically]
+
+RimSilo™ Global DropPod Delivery Service can target any settlements or caravans on your planet, and deliver anything you stored in other services. (...)
+
+Features
+1. *Instant arrival with 100% coverage of the planet
+2. Resupplying caravans, transfering resources and creating mobile strike teams
+3. **All contents are deliverable from RimSilo™ Vault, Warehouse and Static Chamber
+4. Pay only for each droppod you will use, and again, No distance limits
+
+*Only faction bases, caravans or generated maps can be valid targets.
+**If your vault service is under the state of violation, you cannot load the pods with vault contents. If your warehouse service is under "Serious Violation", you cannot load the pods with warehouse contents.
+
+...
+
+Reminders
+1. The amount of goods or currency you can load subjects to the capacity of droppods you purchased. Make sure that you've ordered enough pods before sending your goods away.
+2. The capacity of a droppod is {0} Kg, and you should pay $ {1} for a pod.
+3. Delivering a static chamber will not take up any capacity of your droppods, also you don't have to pay extra fees for that, for they're covered by the expense of a chamber.
+4. If you are targeting a generated map, you can jump into it and designate a drop center.
+5. If you are targeting a friendly faction base and choosing "Visit" in the float menu, all the droppods will land here and contents will be formed into a caravan. If do so, don't forget to add a colonist into the delivery order as well.
+6. Colonists are not allowed to bring weapons or food into the static chambers. If you are sending them to the battleground, remember to send some weapons as well.
+6. Always keep it in mind : if there are no backups at your destination, you must add at least one colonist into the delivery order.
+
+</MainClause_GlobalDropPod>
+</LanguageData>

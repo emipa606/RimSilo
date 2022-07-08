@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TipWarehouseMass>使用料と最大容量</TipWarehouseMass>
+  <TipWarehouseMarketValue>実行後の貸倉庫内の品物の総市場価値
+各季ごとの維持費：$ {0}
+
+維持費の高騰を防ぎたい場合、保管している品物の総市場価値を抑えてください。</TipWarehouseMarketValue>
+  <ValuePerMassUnit>  送料：
+1Kgごとに $ {0}</ValuePerMassUnit>
+  <TotalValueLabel>計：$ {0}</TotalValueLabel>
+  <TipArrowGet>搬出
+貸倉庫から品物を引き出し、グローバル輸送サービスによって目的地に輸送します。
+</TipArrowGet>
+  <TipArrowPut>搬入
+マップ上の品物を貸倉庫に搬入します。</TipArrowPut>
+  <TipLockAccess>延滞が発生しているため、アクセスできません。</TipLockAccess>
+  <MsgExceedMassLimit>総重量が貸倉庫の容量を超えるので搬入できません。</MsgExceedMassLimit>
+</LanguageData>

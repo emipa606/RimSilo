@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineWarehouseDropped>契約に従い、貸倉庫内の品物の課徴金相当分がリムサイロ™に没収されました。残りはコロニーに届けられます。</LineWarehouseDropped>
+  <LineWarehouseDeprived>延滞料が支払われなかったので、貸倉庫内の品物がリムサイロ™に差し押さえられました！</LineWarehouseDeprived>
+  <LineVaultDropped>契約に従い、貸金庫内の全金銭がリムサイロ™に没収されました。</LineVaultDropped>
+  <LineVaultDeprived>延滞料が支払われなかったので、貸金庫内の金銭がリムサイロ™に差し押さえられました！</LineVaultDeprived>
+  <LineRentdVault>  貸金庫賃料： $ {0}</LineRentdVault>
+  <LineRentdWarehouse>  貸倉庫賃料： $ {0}</LineRentdWarehouse>
+  <LineRentdMaintainanceFee>  貸倉庫維持費： $ {0}</LineRentdMaintainanceFee>
+  <LineUnRentdVault>--残高不足（貸金庫賃料）（$ {0}）</LineUnRentdVault>
+  <LineUnRentdWarehouse>--残高不足（貸倉庫賃料）（$ {0}）</LineUnRentdWarehouse>
+  <LineUnRentdMaintainanceFee>--残高不足（貸倉庫維持費）（$ {0}）</LineUnRentdMaintainanceFee>
+  <LineRentReportHeader>賃料明細：</LineRentReportHeader>
+  <LinePayFineTail>管理画面を確認して、延滞料を支払ってください。さもなければ、サービスの利用権を保管物ともども失う危険があります！</LinePayFineTail>
+  <LetterTitleNorm>賃料明細</LetterTitleNorm>
+  <LetterTitleWarn>サービスが制限されました！</LetterTitleWarn>
+  <LetterTitleViolation>破産しました！</LetterTitleViolation>
+</LanguageData>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TipPodMass>最终重量与空投仓载重最大值。
+冷冻舱乘员不计入用空投仓重量使用。</TipPodMass>
+  <TextPodUsage>需要 {0} 个空投仓</TextPodUsage>
+</LanguageData>

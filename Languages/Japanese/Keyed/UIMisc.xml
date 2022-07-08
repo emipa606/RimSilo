@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!--Notice:Use "RimSilo™ Client Interface" as English text-->
+  <RimBankExtDepositFloatMenuEntryLabel>リムサイロ™管理画面</RimBankExtDepositFloatMenuEntryLabel>
+  <MaintainanceFeeDesc>リムサイロ™貸倉庫を利用する際、品物の劣化などを防ぐ冷凍・密封処理のため、維持費が必要になります。
+品物の合計市場価値が一定以下の場合、この維持費は無料になります。
+
+マウスオーバーすると維持費用が確認できます。</MaintainanceFeeDesc>
+  <MaintainanceFeeText>合計市場価値： $ {0}            維持費： $ {1}
+
+明細：</MaintainanceFeeText>
+  <TipSelectColumn>どの列を表示するか選択してください。</TipSelectColumn>
+  <LabelMarketValue>列：市場価値</LabelMarketValue>
+  <LabelMass>列：重量</LabelMass>
+  <LabelDaysLeft>列：残り日数</LabelDaysLeft>
+  <TipTradeableMarketValue>1個当たりの市場価値。
+この値は交渉者の社交スキルやトレーダーの種類などに左右されない一定の価値です。</TipTradeableMarketValue>
+  <TipTradeableMass>1個当たりの重量。</TipTradeableMass>
+  <TipDaysLeft>冬眠室の残り日数。
+期限が切れると、冬眠カプセルはその時点でアクティブなマップの中のどれかに配置されます。
+一つの冷凍室に複数の動物が収められている場合、それらは一つのグループとして表示されます。</TipDaysLeft>
+  <FormatDaysLeft> {0}  日</FormatDaysLeft>
+  <FormatMass> {0} ㎏</FormatMass>
+  <FormatVaultCapacity> ${0} （合計価値）</FormatVaultCapacity>
+  <NoMapDrop>未生成のマップには投下できません。</NoMapDrop>
+  <NoSettlementDrop>他の入植地には投下できません。</NoSettlementDrop>
+  <LabelCurrentMax>計</LabelCurrentMax>
+  <LabelCurrentUsage>使用中
+{0}</LabelCurrentUsage>
+  <ReportStrCapacity>合計容量： {0}</ReportStrCapacity>
+  <ReportStrRent>合計使用量： {0}</ReportStrRent>
+  <ReportStrBase>- 初期プラン： {0}</ReportStrBase>
+  <ReportStrExtension>- 拡張プラン： {0}</ReportStrExtension>
+  <CapacityExpansionDesc>拡張スロット一つ当たりの容量： {0}
+拡張スロット一つ当たりの賃料：$ {1}
+拡張スロット一つ当たりの契約金：$ {2}
+</CapacityExpansionDesc>
+  <CapacityExpansionDesc2>合計契約料：$ {0}</CapacityExpansionDesc2>
+  <MsgCannotShrinkCapUsageLowerBound>合計容量が使用料を下回ってしまいます。先にいくらか品物を搬出してください。</MsgCannotShrinkCapUsageLowerBound>
+  <MsgBoxConfirmShrinkCapTitle>注意： 拡張は計画的に！</MsgBoxConfirmShrinkCapTitle>
+  <MsgBoxConfirmShrinkCap>この拡張を取り消した場合、賃料は安くなりますが、契約金は返金されません。
+再度拡張しようとしたときには、もう一度契約金を支払う必要があります。
+今後再び拡張する公算が高いようなら、むしろこのまま置いておく方が安上がりかもしれません。
+
+本当に拡張を取り消しますか？</MsgBoxConfirmShrinkCap>
+</LanguageData>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineBillDetailTitle>賬單明細</LineBillDetailTitle>
+  <LineVaultRent>保險庫 - 租金</LineVaultRent>
+  <LineWarehouseRent>倉庫 - 租金</LineWarehouseRent>
+  <LineWarehouseMaintainanceFee>倉庫 - 維護費</LineWarehouseMaintainanceFee>
+  <LineFeeOfPenalty>由於欠費，需繳納罰金</LineFeeOfPenalty>
+  <LineBillTotal>總計</LineBillTotal>
+  <LinePayFine>請及時結清欠款並繳納罰金，以恢復正常使用。
+
+如果下一次收取租金時欠款仍未結清，合同將被立即終止！你的所有權將被回收！</LinePayFine>
+</LanguageData>

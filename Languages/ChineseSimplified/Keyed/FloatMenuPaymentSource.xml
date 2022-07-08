@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <PayButton>支付</PayButton>
+  <PaySourceVault>从保险库自动转账</PaySourceVault>
+  <PaySourceVaultNotRented>从保险库自动转账（尚未激活）</PaySourceVaultNotRented>
+  <PaySourceVaultRestricted>从保险库自动转账（权限受限）</PaySourceVaultRestricted>
+  <PaySourceVaultNotEnough>从保险库自动转账（余额不足）</PaySourceVaultNotEnough>
+  <PaySourceLocal>从本地支付</PaySourceLocal>
+  <MsgPaymentVaultComplete>已从保险库中成功转账$ {0} 。</MsgPaymentVaultComplete>
+</LanguageData>

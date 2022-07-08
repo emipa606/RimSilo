@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LineBillDetailTitle>상세 비용</LineBillDetailTitle>
+  <LineVaultRent>금고 - 임대</LineVaultRent>
+  <LineWarehouseRent>창고 - 임대t</LineWarehouseRent>
+  <LineWarehouseMaintainanceFee>창고 - 유지 보수 비용</LineWarehouseMaintainanceFee>
+  <LineFeeOfPenalty>연체료</LineFeeOfPenalty>
+  <LineBillTotal>합계</LineBillTotal>
+  <LinePayFine>모든 비용과 벌금을 지불하여 서비스를 복원하십시오.
+
+연체료가 다음 계약 시점까지 지불되지 않을 경우, 계약이 해지되며 림 사일로™은 서비스 및 귀하가 보관한 컨텐츠를 철회 할 권리가 있습니다.</LinePayFine>
+</LanguageData>

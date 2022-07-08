@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TipWarehouseMass>Capacity used and in total.</TipWarehouseMass>
+  <TipWarehouseMarketValue>Total market value of the goods in the warehouse, after your operation.
+Maintenance fee for the goods (per Service Cycle) : $ {0}
+
+If you don't want to afford too much for the maintenance fee, please control the total value of your goods.</TipWarehouseMarketValue>
+  <ValuePerMassUnit>  Shipping fee:
+ $ {0} per Kg</ValuePerMassUnit>
+  <TotalValueLabel>Total Value : $ {0}</TotalValueLabel>
+  <TipArrowGet>Permission - Fetch
+Retrieve items from the warehouse and deliver them.
+
+Also required by the Global DropPod Delivery Service.</TipArrowGet>
+  <TipArrowPut>Authority - Store
+Extract items from the current map and store them into the warehosue.</TipArrowPut>
+  <TipLockAccess>Permission restricted due to an overdue bill.</TipLockAccess>
+  <MsgExceedMassLimit>Operation Failed : Total weight exceeds the capacity.</MsgExceedMassLimit>
+</LanguageData>

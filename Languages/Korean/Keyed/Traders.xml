@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <WarehouseLabel>창고</WarehouseLabel>
+  <TraderWarehouseTitle>배송비 지불</TraderWarehouseTitle>
+  <TraderWarehouseTitleTip>현재 작업에 대한 배송비를 지불합니다.
+배송비는은 귀하가 운송 할 상품의 무게에 따라 다릅니다.
+
+[유의 사항] 림 뱅크™는 잔금을 귀하에게 반환하지 않습니다. 초과 지불되지 않도록 한번 더 확인하십시오.</TraderWarehouseTitleTip>
+  <WarehouseSilverTip>지불 할 은의 양.</WarehouseSilverTip>
+  <VaultLabel>금고</VaultLabel>
+  <TraderVaultTitleTip>돈을 안전하게 보관하십시오.
+
+금고에있는 통화에 대한 추가 비용은 없지만, 합계 금액은 용량 ($ {0})을 초과하지 않아야 합니다.</TraderVaultTitleTip>
+  <VaultSilverTip>정착지나 금고에 있는 은.</VaultSilverTip>
+  <VaultBankNoteTip>정착지나 금고에 있는 지폐.</VaultBankNoteTip>
+  <MsgExceedsVaultCapacity>작업 실패 : 통화가 금고 용량 ($ {0})을 초과합니다.</MsgExceedsVaultCapacity>
+  <StaticChamberLabel>정적 챔버</StaticChamberLabel>
+  <TraderStaticChamberTitle>임대료 지불</TraderStaticChamberTitle>
+  <TraderStaticChamberTitleTip>임대료를 지불합니다. 개인 당 $ {0}
+정적 챔버를 회수하는 비용은 임대료에 포함되어 있으므로 추가 비용이 들지 않습니다.
+
+[유의 사항] 림 뱅크™는 잔금을 귀하에게 반환하지 않습니다. 초과 지불되지 않도록 한번 더 확인하십시오.</TraderStaticChamberTitleTip>
+  <GlobalDropPodLabel>글로벌 낙하 포드</GlobalDropPodLabel>
+  <GlobalDropPodCaption>배송할 물품</GlobalDropPodCaption>
+  <TraderCapManTitle>이용료 지불</TraderCapManTitle>
+  <TraderCapManTitleTip>모든 새로운 확장에 대한 구독료를 지불하십시오. 슬롯 당 $ {0}.
+확장은 다른주기 전에 임대료가 부과되지 않지만 구독료는 환불되지 않습니다.
+
+[유의 사항] 림 뱅크™는 잔금을 귀하에게 반환하지 않습니다. 초과 지불되지 않도록 한번 더 확인하십시오.</TraderCapManTitleTip>
+  <TraderPayBillTitle>체납금 지불</TraderPayBillTitle>
+  <TraderPayBillTitleTip>체납금을 지불하고 서비스 제한을 해제하십시오.
+
+[유의 사항] 림 뱅크™는 잔금을 귀하에게 반환하지 않습니다. 초과 지불되지 않도록 한번 더 확인하십시오.</TraderPayBillTitleTip>
+</LanguageData>

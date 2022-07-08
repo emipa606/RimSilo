@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <WarehouseLabel>Warehouse</WarehouseLabel>
+  <TraderWarehouseTitle>Pay Shipping Fee</TraderWarehouseTitle>
+  <TraderWarehouseTitleTip>Pay the shipping fee for current operation.
+The amount of the shipping fee depends on the weight of the goods you will transfer.
+
+Note that RimBank™ will keep the change instead of returning it to you. Think twice before executing an over-paying.</TraderWarehouseTitleTip>
+  <WarehouseSilverTip>The amount of silver to be paid.</WarehouseSilverTip>
+  <VaultLabel>Vault</VaultLabel>
+  <TraderVaultTitleTip>Keep your money here, safely.
+
+No extra fees for the currency in your vault, but that in total shouldn't exceed the capacity ($ {0}).</TraderVaultTitleTip>
+  <VaultSilverTip>Silver on the ground or in vault.</VaultSilverTip>
+  <VaultBankNoteTip>Banknotes on the ground or in vault.</VaultBankNoteTip>
+  <MsgExceedsVaultCapacity>Operation failed : currency will exceed vault capacity ($ {0}).</MsgExceedsVaultCapacity>
+  <StaticChamberLabel>Static Chamber</StaticChamberLabel>
+  <TraderStaticChamberTitle>Pay Rent</TraderStaticChamberTitle>
+  <TraderStaticChamberTitleTip>Pay the rent. $ {0} per individual
+The cost of recalling a static chamber is included in the rent,so there will be no extra fees.
+
+Note that RimBank™ will keep the change instead of returning it to you. Think twice before executing an over-paying.</TraderStaticChamberTitleTip>
+  <GlobalDropPodLabel>Global DropPod</GlobalDropPodLabel>
+  <GlobalDropPodCaption>Items To Deliver</GlobalDropPodCaption>
+  <TraderCapManTitle>Pay Subscription Fee</TraderCapManTitle>
+  <TraderCapManTitleTip>Pay the subscription fees for all the new expansions. $ {0} per slot.
+Expansions will not be charged rent before another Cycle,but subscription fees will not be refunded.
+
+Note that RimBank™ will keep the change instead of returning it to you. Think twice before executing an over-paying.</TraderCapManTitleTip>
+  <TraderPayBillTitle>Pay Overdue Bills</TraderPayBillTitle>
+  <TraderPayBillTitleTip>Clear overdue bills to remove restrictions on your services.
+
+Note that RimBank™ will keep the change instead of returning it to you. Think twice before executing an over-paying.</TraderPayBillTitleTip>
+</LanguageData>
