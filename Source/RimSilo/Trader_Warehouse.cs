@@ -25,18 +25,7 @@ public class Trader_Warehouse : VirtualTrader
         transferingUpOnly = upOnly;
     }
 
-    public override IEnumerable<Thing> Goods
-    {
-        get
-        {
-            if (transferingUpOnly)
-            {
-                return new List<Thing>();
-            }
-
-            return Static.contentWarehouse;
-        }
-    }
+    public override IEnumerable<Thing> Goods => transferingUpOnly ? new List<Thing>() : Static.contentWarehouse;
 
     public override string TraderName => "WarehouseLabel".Translate();
 

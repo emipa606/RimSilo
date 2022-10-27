@@ -114,13 +114,14 @@ internal static class Utility
                 continue;
             }
 
-            if (allTradeable.ActionToDo == TradeAction.PlayerBuys)
+            switch (allTradeable.ActionToDo)
             {
-                num += allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
-            }
-            else if (allTradeable.ActionToDo == TradeAction.PlayerSells)
-            {
-                num2 -= allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
+                case TradeAction.PlayerBuys:
+                    num += allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
+                    break;
+                case TradeAction.PlayerSells:
+                    num2 -= allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
+                    break;
             }
         }
 
@@ -138,13 +139,14 @@ internal static class Utility
                 continue;
             }
 
-            if (allTradeable.ActionToDo == TradeAction.PlayerBuys)
+            switch (allTradeable.ActionToDo)
             {
-                num += allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
-            }
-            else if (allTradeable.ActionToDo == TradeAction.PlayerSells)
-            {
-                num2 -= allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
+                case TradeAction.PlayerBuys:
+                    num += allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
+                    break;
+                case TradeAction.PlayerSells:
+                    num2 -= allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
+                    break;
             }
         }
 
@@ -622,7 +624,7 @@ internal static class Utility
     {
         foreach (var item in Static.contentWarehouse)
         {
-            Log.Message(item.def.defName + "*" + item.stackCount);
+            Log.Message($"{item.def.defName}*{item.stackCount}");
         }
     }
 
@@ -630,13 +632,13 @@ internal static class Utility
     {
         foreach (var item in Static.contentStaticChamber)
         {
-            Log.Message(item.NameShortColored + ",Humanlike=" + (item.RaceProps is { Humanlike: true }) +
-                        ",IsPrisoner=" + item.IsPrisoner);
+            Log.Message(
+                $"{item.NameShortColored + ",Humanlike="}{item.RaceProps is { Humanlike: true }},IsPrisoner={item.IsPrisoner}");
         }
 
         foreach (var item2 in Static.ticksStaticChamber)
         {
-            Log.Message("enterTick=" + item2);
+            Log.Message($"enterTick={item2}");
         }
     }
 
@@ -646,7 +648,7 @@ internal static class Utility
         var text = "";
         foreach (var item in MarketValueMultiplier.ResolveExplanation(CalculateWarehouseMarketValue()))
         {
-            text = text + item + "\n";
+            text = $"{text}{item}\n";
         }
 
         Log.Message(text);

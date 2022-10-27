@@ -146,7 +146,7 @@ internal static class Static
 
             if (frozenWarehousePut && contentWarehouse.Any())
             {
-                text2 = text2 + "\n" + "LineWarehouseDropped".Translate();
+                text2 = $"{text2}\n" + "LineWarehouseDropped".Translate();
                 DropWarehouse();
                 dropped = false;
             }
@@ -241,24 +241,24 @@ internal static class Static
         if (!text4.NullOrEmpty())
         {
             text5 = "LetterTitleWarn".Translate();
-            text = text + "\n" + text4;
+            text = $"{text}\n{text4}";
             letterDef = LetterDefOf.NegativeEvent;
         }
 
         if (!text2.NullOrEmpty())
         {
             text5 = "LetterTitleViolation".Translate();
-            text = text + "\n" + text2;
+            text = $"{text}\n{text2}";
             letterDef = LetterDefOf.ThreatSmall;
         }
 
         if (!text4.NullOrEmpty())
         {
-            text = text + "\n\n" + "LinePayFineTail".Translate();
+            text = $"{text}\n\n" + "LinePayFineTail".Translate();
         }
 
         Find.LetterStack.ReceiveLetter(text5, text, letterDef);
-        Log.Message("[RimBank.Ext] Rent collected at Tick " + Find.TickManager.TicksAbs);
+        Log.Message($"[RimBank.Ext] Rent collected at Tick {Find.TickManager.TicksAbs}");
     }
 
     public static void RentVault()

@@ -174,21 +174,28 @@ public class Trader_StaticChamber : VirtualTrader
     {
         foreach (var allTradeable in TradeSession.deal.AllTradeables)
         {
-            if (allTradeable.ActionToDo == TradeAction.PlayerSells)
+            switch (allTradeable.ActionToDo)
             {
-                continue;
-            }
-
-            if (allTradeable.ActionToDo == TradeAction.None)
-            {
-                if (allTradeable.FirstThingColony is Pawn pawn && pawn.RaceProps.Humanlike && !pawn.IsPrisoner)
+                case TradeAction.PlayerSells:
+                    continue;
+                case TradeAction.None:
                 {
-                    return false;
+                    if (allTradeable.FirstThingColony is Pawn pawn && pawn.RaceProps.Humanlike && !pawn.IsPrisoner)
+                    {
+                        return false;
+                    }
+
+                    break;
                 }
-            }
-            else if (allTradeable.AnyThing is Pawn pawn2 && pawn2.RaceProps.Humanlike && !pawn2.IsPrisoner)
-            {
-                return false;
+                default:
+                {
+                    if (allTradeable.AnyThing is Pawn pawn2 && pawn2.RaceProps.Humanlike && !pawn2.IsPrisoner)
+                    {
+                        return false;
+                    }
+
+                    break;
+                }
             }
         }
 
@@ -241,7 +248,7 @@ public class Trader_StaticChamber : VirtualTrader
         bool NoPower(Building b)
         {
             var compPowerTrader = b.TryGetComp<CompPowerTrader>();
-            return compPowerTrader == null || !compPowerTrader.PowerOn;
+            return compPowerTrader is not { PowerOn: true };
         }
 
         bool NotEnclosed(Building b)

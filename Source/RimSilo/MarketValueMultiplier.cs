@@ -39,7 +39,7 @@ internal static class MarketValueMultiplier
 
     public static string ResolveMaxMultiplierString(double val)
     {
-        return (ResolveMaxMultiplier(val) * 100.0).ToString("F0") + "%";
+        return $"{ResolveMaxMultiplier(val) * 100.0:F0}%";
     }
 
     public static List<string> ResolveRawExplanationString(double val)
@@ -57,7 +57,7 @@ internal static class MarketValueMultiplier
         var list = new List<string>(i * 4);
         for (i--; i > -1; i--)
         {
-            list.Add((multiplier[i] * 100.0).ToString("F0") + "%");
+            list.Add($"{multiplier[i] * 100.0:F0}%");
             list.Add(((val - stages[i]) * multiplier[i]).ToString("F0"));
             list.Add(val.ToString("F0"));
             list.Add(stages[i].ToString());
@@ -79,14 +79,14 @@ internal static class MarketValueMultiplier
             }
 
             var num2 = (val - stages[num]) * multiplier[num];
-            var text = stages[num].ToString().PadLeft(6) + " ~ " + val.ToString("F2");
+            var text = $"{stages[num].ToString(),6} ~ {val:F2}";
             if (text.Length < 15)
             {
                 text = text.PadRight(15);
             }
 
-            text = text + "  :  $ " + num2.ToString("F0");
-            text = text + " (" + (multiplier[num] * 100.0).ToString("F0") + "%)";
+            text = $"{text}  :  $ {num2:F0}";
+            text = $"{text} ({multiplier[num] * 100.0:F0}%)";
             list.Add(text);
             val = stages[num];
         }

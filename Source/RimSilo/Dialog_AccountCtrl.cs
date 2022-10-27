@@ -97,30 +97,28 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                 return;
             }
 
-            if (state == Flags.PayBill)
+            switch (state)
             {
-                Static.UnFreeze();
-                Messages.Message("MsgUnlocked".Translate(), MessageTypeDefOf.PositiveEvent);
-            }
-            else if (state == Flags.Vault)
-            {
-                Static.RentVault();
-                Messages.Message("MsgVaultRented".Translate(), MessageTypeDefOf.PositiveEvent);
-            }
-            else if (state == Flags.Warehouse)
-            {
-                Static.RentWarehouse();
-                Messages.Message("MsgWarehouseRented".Translate(), MessageTypeDefOf.PositiveEvent);
-            }
-            else if (state == Flags.BuyPods)
-            {
-                Static.dropPodCount++;
-                Messages.Message("MsgPodPurchased".Translate(), MessageTypeDefOf.PositiveEvent);
-            }
-            else if (state == Flags.BuyPodsBulk)
-            {
-                Static.dropPodCount += 5;
-                Messages.Message("MsgPodPurchased".Translate(), MessageTypeDefOf.PositiveEvent);
+                case Flags.PayBill:
+                    Static.UnFreeze();
+                    Messages.Message("MsgUnlocked".Translate(), MessageTypeDefOf.PositiveEvent);
+                    break;
+                case Flags.Vault:
+                    Static.RentVault();
+                    Messages.Message("MsgVaultRented".Translate(), MessageTypeDefOf.PositiveEvent);
+                    break;
+                case Flags.Warehouse:
+                    Static.RentWarehouse();
+                    Messages.Message("MsgWarehouseRented".Translate(), MessageTypeDefOf.PositiveEvent);
+                    break;
+                case Flags.BuyPods:
+                    Static.dropPodCount++;
+                    Messages.Message("MsgPodPurchased".Translate(), MessageTypeDefOf.PositiveEvent);
+                    break;
+                case Flags.BuyPodsBulk:
+                    Static.dropPodCount += 5;
+                    Messages.Message("MsgPodPurchased".Translate(), MessageTypeDefOf.PositiveEvent);
+                    break;
             }
         }
     }
@@ -788,11 +786,11 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         var fee = 0;
         for (var num = list2.Count - 1; num > -1; num--)
         {
-            text = list[num].PadLeft(val) + " : " + list2[num] + "\n" + text;
+            text = $"{list[num].PadLeft(val)} : {list2[num]}\n{text}";
             fee += list2[num];
         }
 
-        text = text + "\n" + list.Last().PadLeft(val) + " : " + fee;
+        text = $"{text}\n{list.Last().PadLeft(val)} : {fee}";
         if (usage == Flags.CheckBill)
         {
             Find.WindowStack.Add(new Dialog_MessageBox(text, null, null, null, null,
@@ -804,7 +802,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
             return;
         }
 
-        text = text + "\n\n" + "LinePayFine".Translate();
+        text = $"{text}\n\n" + "LinePayFine".Translate();
         Window dlg = null;
         dlg = new Dialog_MessageBox(text, "PayButton".Translate(), delegate
         {

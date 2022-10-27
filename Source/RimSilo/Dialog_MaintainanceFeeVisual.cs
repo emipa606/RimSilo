@@ -64,15 +64,15 @@ public class Dialog_MaintainanceFeeVisual : Window
         for (num2--; num2 > -1; num2--)
         {
             ref var reference = ref array[5];
-            reference = reference + list[num2 * 4] + "\n";
+            reference = $"{reference}{list[num2 * 4]}\n";
             array[1] += " ~ \n";
             reference = ref array[4];
-            reference = reference + list[(num2 * 4) + 1] + "\n";
+            reference = $"{reference}{list[(num2 * 4) + 1]}\n";
             array[3] += " :  $ \n";
             reference = ref array[2];
-            reference = reference + list[(num2 * 4) + 2] + "\n";
+            reference = $"{reference}{list[(num2 * 4) + 2]}\n";
             reference = ref array[0];
-            reference = reference + list[(num2 * 4) + 3] + "\n";
+            reference = $"{reference}{list[(num2 * 4) + 3]}\n";
         }
 
         var rect3 = new Rect(25f, yMax, 0f, 0f);

@@ -335,10 +335,10 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         reports = new string[6];
         reports[0] = "ReportStrCapacity".Translate(capacityTop);
         reports[1] = "ReportStrBase".Translate(baseCapacity);
-        reports[2] = "ReportStrExtension".Translate(((capacityTop - baseCapacity) / unit) + "*" + unit);
+        reports[2] = "ReportStrExtension".Translate($"{(capacityTop - baseCapacity) / unit}*{unit}");
         reports[3] = "ReportStrRent".Translate(rentCurrent);
         reports[4] = "ReportStrBase".Translate(baseRent);
-        reports[5] = "ReportStrExtension".Translate(((rentCurrent - baseRent) / rentPerUnit) + "*" + rentPerUnit);
+        reports[5] = "ReportStrExtension".Translate($"{(rentCurrent - baseRent) / rentPerUnit}*{rentPerUnit}");
         var num = 5f;
         var num2 = 7f;
         var text = "=";
@@ -353,7 +353,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         val = Math.Max(val, num3);
         num3 = num2 + Text.CalcSize(reports[5]).x;
         val = Math.Max(val, num3);
-        num3 += num + Text.CalcSize(text + extensionSlotsCount + "*" + rentPerUnit).x;
+        num3 += num + Text.CalcSize($"{text}{extensionSlotsCount}*{rentPerUnit}").x;
         return Math.Max(val, num3);
     }
 
@@ -411,7 +411,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         if (canFillMore)
         {
             GUI.color = color2;
-            text = text2 + Math.Abs(((capacityTop - baseCapacity) / unit) - currentSlotCount) + "*" + unit;
+            text = $"{text2}{Math.Abs(((capacityTop - baseCapacity) / unit) - currentSlotCount)}*{unit}";
             size = Text.CalcSize(text);
             rect2 = new Rect(rect2.xMax + num, rect2.y, size.x, size.y);
             Widgets.Label(rect2, text);
@@ -449,7 +449,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         }
 
         GUI.color = color;
-        text = text2 + Math.Abs(((capacityTop - baseCapacity) / unit) - currentSlotCount) + "*" + rentPerUnit;
+        text = $"{text2}{Math.Abs(((capacityTop - baseCapacity) / unit) - currentSlotCount)}*{rentPerUnit}";
         size = Text.CalcSize(text);
         rect2 = new Rect(rect2.xMax + num, rect2.y, size.x, size.y);
         Widgets.Label(rect2, text);
