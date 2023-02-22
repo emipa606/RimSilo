@@ -124,28 +124,29 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
         Widgets.Label(rect2, text);
         GUI.color = new Color(1f, 1f, 1f, 0.6f);
         Text.Font = GameFont.Tiny;
-        var rect3 = new Rect((position.width / 2f) - 100f - 30f, 0f, 200f, position.height);
+        var rect3 = new Rect((position.width / 2f) - 100f - RowInterval, 0f, 200f, position.height);
         Text.Anchor = TextAnchor.LowerCenter;
         Widgets.Label(rect3, "StaticChamberFee".Translate(Utility.StaticChamberFeePerPawn));
         GUI.EndGroup();
         Text.Font = GameFont.Tiny;
         GUI.color = Color.white;
-        Utility.DrawColumnSelectionButton(new Rect(70f, TopAreaHeight / 2f, 130f, 27f));
+        Utility.DrawColumnSelectionButton(new Rect(70f, TopAreaHeight / 2f, 130f, SpaceBetweenTraderNameAndTraderKind));
         var num2 = 0f;
         if (cachedCurrencyTradeable != null)
         {
             var num3 = inRect.width - 16f;
-            Utility.DrawTradeableRow(new Rect(0f, TopAreaHeight, num3, 30f), cachedCurrencyTradeable, 1);
+            Utility.DrawTradeableRow(new Rect(0f, TopAreaHeight, num3, RowInterval), cachedCurrencyTradeable, 1);
             GUI.color = Color.gray;
-            Widgets.DrawLineHorizontal(0f, TopAreaHeight + 30f - 1f, num3);
+            Widgets.DrawLineHorizontal(0f, TopAreaHeight + RowInterval - 1f, num3);
             GUI.color = Color.white;
-            num2 = 30f;
+            num2 = RowInterval;
         }
 
         var mainRect = new Rect(0f, TopAreaHeight + num2, inRect.width,
             inRect.height - TopAreaHeight - 38f - num2 - 20f);
         FillMainRect(mainRect);
-        var rect4 = new Rect((inRect.width / 2f) - (AcceptButtonSize.x / 2f), inRect.height - 55f, AcceptButtonSize.x,
+        var rect4 = new Rect((inRect.width / 2f) - (AcceptButtonSize.x / 2f), inRect.height - BaseTopAreaHeight,
+            AcceptButtonSize.x,
             AcceptButtonSize.y);
         if (Widgets.ButtonText(rect4, "AcceptButton".Translate(), true, false))
         {
@@ -239,21 +240,21 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
     private void FillMainRect(Rect mainRect)
     {
         Text.Font = GameFont.Small;
-        var height = 6f + (cachedTradeables.Count * 30f);
+        var height = FirstCommodityY + (cachedTradeables.Count * RowInterval);
         var viewRect = new Rect(0f, 0f, mainRect.width - 16f, height);
         Widgets.BeginScrollView(mainRect, ref scrollPosition, viewRect);
-        var num = 6f;
-        var num2 = scrollPosition.y - 30f;
+        var num = FirstCommodityY;
+        var num2 = scrollPosition.y - RowInterval;
         var num3 = scrollPosition.y + mainRect.height;
         var num4 = 0;
         foreach (var tradeable in cachedTradeables)
         {
             if (num > num2 && num < num3)
             {
-                Utility.DrawTradeableRow(new Rect(0f, num, viewRect.width, 30f), tradeable, num4);
+                Utility.DrawTradeableRow(new Rect(0f, num, viewRect.width, RowInterval), tradeable, num4);
             }
 
-            num += 30f;
+            num += RowInterval;
             num4++;
         }
 

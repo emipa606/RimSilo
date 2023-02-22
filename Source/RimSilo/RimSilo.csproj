@@ -6,7 +6,7 @@
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DebugType>None</DebugType>
     <LangVersion>latest</LangVersion>
-    <FileVersion>1.4.1</FileVersion>
+    <FileVersion>1.4.2</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
@@ -18,13 +18,13 @@
   <ItemGroup>
     <Reference Include="RimBank.Trade">
       <HintPath>..\..\..\RimBank\1.4\Assemblies\RimBank.Trade.dll</HintPath>
-	    <CopyLocal>False</CopyLocal>
-	    <Private>false</Private>
+      <CopyLocal>False</CopyLocal>
+      <Private>false</Private>
     </Reference>
     <Reference Include="RimBank.Core">
       <HintPath>..\..\..\RimBank\1.4\Assemblies\RimBank.Core.dll</HintPath>
-	    <CopyLocal>False</CopyLocal>
-	    <Private>false</Private>
+      <CopyLocal>False</CopyLocal>
+      <Private>false</Private>
     </Reference>
   </ItemGroup>
 </Project>

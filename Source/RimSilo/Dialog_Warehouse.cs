@@ -170,7 +170,7 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         Widgets.Label(rect3, text);
         GUI.color = new Color(1f, 1f, 1f, 0.6f);
         Text.Font = GameFont.Tiny;
-        var rect4 = new Rect((rect.width / 2f) - 100f - 30f, 0f, 200f, rect.height);
+        var rect4 = new Rect((rect.width / 2f) - 100f - RowInterval, 0f, 200f, rect.height);
         Text.Anchor = TextAnchor.LowerCenter;
         Widgets.Label(rect4, "ValuePerMassUnit".Translate(Utility.MassValue.ToString("F1")));
         Text.Anchor = TextAnchor.UpperLeft;
@@ -179,11 +179,11 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         var unused = (float)MassUsage;
         var unused1 = MassCapacity;
         var rect5 = rect.AtZero();
-        rect5.y = 45f;
+        rect5.y = TitleAreaHeight;
         // TODO: TransferableUIUtility.DrawMassInfo(rect5, num2, massCapacity, Translator.Translate("TipWarehouseMass"), -9999f, false);
         var text2 = "TotalValueLabel".Translate(MarketValue.ToString("F2"));
         var vector = Text.CalcSize(text2);
-        var rect6 = new Rect(rect5.xMax - vector.x, 45f, vector.x, vector.y);
+        var rect6 = new Rect(rect5.xMax - vector.x, TitleAreaHeight, vector.x, vector.y);
         Text.Anchor = TextAnchor.UpperRight;
         GUI.color = MarketValueMultiplier.ResolveColor(MarketValue);
         Widgets.Label(rect6, text2);
@@ -222,22 +222,23 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         GUI.EndGroup();
         Text.Font = GameFont.Tiny;
         GUI.color = Color.white;
-        Utility.DrawColumnSelectionButton(new Rect(70f, TopAreaHeight / 2f, 130f, 27f));
+        Utility.DrawColumnSelectionButton(new Rect(70f, TopAreaHeight / 2f, 130f, SpaceBetweenTraderNameAndTraderKind));
         var num8 = 0f;
         if (cachedCurrencyTradeable != null)
         {
             var num9 = inRect.width - 16f;
-            Utility.DrawTradeableRow(new Rect(0f, TopAreaHeight, num9, 30f), cachedCurrencyTradeable, 1);
+            Utility.DrawTradeableRow(new Rect(0f, TopAreaHeight, num9, RowInterval), cachedCurrencyTradeable, 1);
             GUI.color = Color.gray;
-            Widgets.DrawLineHorizontal(0f, TopAreaHeight + 30f - 1f, num9);
+            Widgets.DrawLineHorizontal(0f, TopAreaHeight + RowInterval - 1f, num9);
             GUI.color = Color.white;
-            num8 = 30f;
+            num8 = RowInterval;
         }
 
         var mainRect = new Rect(0f, TopAreaHeight + num8, inRect.width,
             inRect.height - TopAreaHeight - 38f - num8 - 20f);
         FillMainRect(mainRect);
-        var rect10 = new Rect((inRect.width / 2f) - (AcceptButtonSize.x / 2f), inRect.height - 55f, AcceptButtonSize.x,
+        var rect10 = new Rect((inRect.width / 2f) - (AcceptButtonSize.x / 2f), inRect.height - BaseTopAreaHeight,
+            AcceptButtonSize.x,
             AcceptButtonSize.y);
         if (Widgets.ButtonText(rect10, "AcceptButton".Translate(), true, false))
         {
@@ -315,18 +316,18 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
     private void FillMainRect(Rect mainRect)
     {
         Text.Font = GameFont.Small;
-        var height = 6f + (cachedTradeables.Count * 30f);
+        var height = FirstCommodityY + (cachedTradeables.Count * RowInterval);
         var viewRect = new Rect(0f, 0f, mainRect.width - 16f, height);
         Widgets.BeginScrollView(mainRect, ref scrollPosition, viewRect);
-        var num = 6f;
-        var num2 = scrollPosition.y - 30f;
+        var num = FirstCommodityY;
+        var num2 = scrollPosition.y - RowInterval;
         var num3 = scrollPosition.y + mainRect.height;
         var num4 = 0;
         foreach (var tradeable in cachedTradeables)
         {
             if (num > num2 && num < num3)
             {
-                var rect = new Rect(0f, num, viewRect.width, 30f);
+                var rect = new Rect(0f, num, viewRect.width, RowInterval);
                 var countToTransfer = tradeable.CountToTransfer;
                 Utility.DrawTradeableRow(rect, tradeable, num4);
                 if (countToTransfer != tradeable.CountToTransfer)
@@ -335,7 +336,7 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
                 }
             }
 
-            num += 30f;
+            num += RowInterval;
             num4++;
         }
 

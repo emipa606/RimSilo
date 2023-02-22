@@ -4,29 +4,29 @@ namespace RimBank.Ext.Deposit;
 
 internal static class CapacityExpansion
 {
-    public static int VaultBaseCapacity => 20000;
+    public static int VaultBaseCapacity => 40000;
 
-    public static int VaultBaseRent => 100;
+    public static int VaultBaseRent => 200;
 
-    public static int VaultCapacityPerUnit => 10000;
+    public static int VaultCapacityPerUnit => 20000;
 
-    public static int VaultRentPerUnit => 50;
+    public static int VaultRentPerUnit => 100;
 
-    public static int VaultSubscriptionPerUnit => 850;
+    public static int VaultSubscriptionPerUnit => 1700;
 
-    public static int VaultMaxCapacity => 230000;
+    public static int VaultMaxCapacity => 500000;
 
-    public static int WarehouseBaseCapacity => 3000;
+    public static int WarehouseBaseCapacity => 6000;
 
-    public static int WarehouseBaseRent => 100;
+    public static int WarehouseBaseRent => 200;
 
-    public static int WarehouseCapacityPerUnit => 1000;
+    public static int WarehouseCapacityPerUnit => 2000;
 
-    public static int WarehouseRentPerUnit => 25;
+    public static int WarehouseRentPerUnit => 50;
 
-    public static int WarehouseSubscriptonPerUnit => 800;
+    public static int WarehouseSubscriptonPerUnit => 1600;
 
-    public static int WarehouseMaxCapacity => 15000;
+    public static int WarehouseMaxCapacity => 30000;
 
     public static int WarehouseExpansionSlotsCount =>
         (WarehouseMaxCapacity - WarehouseBaseCapacity) / WarehouseCapacityPerUnit;
