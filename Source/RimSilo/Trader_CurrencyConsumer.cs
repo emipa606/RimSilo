@@ -5,25 +5,13 @@ using Verse;
 
 namespace RimBank.Ext.Deposit;
 
-public class Trader_CurrencyConsumer : VirtualTrader
+public class Trader_CurrencyConsumer(Window parent, string[] tipstrings, bool isVaultSource) : VirtualTrader
 {
-    private readonly bool isVaultSource;
-
-    private readonly string[] tipstrings;
-    private readonly Window windowParent;
-
-    public Trader_CurrencyConsumer(Window parent, string[] tipstrings, bool isVaultSource)
-    {
-        windowParent = parent;
-        this.tipstrings = tipstrings;
-        this.isVaultSource = isVaultSource;
-    }
-
     public override IEnumerable<Thing> Goods => new List<Thing>();
 
     public override void CloseTradeUI()
     {
-        if (windowParent is ICurrencyConsumer currencyConsumer)
+        if (parent is ICurrencyConsumer currencyConsumer)
         {
             currencyConsumer.Consumed = true;
         }

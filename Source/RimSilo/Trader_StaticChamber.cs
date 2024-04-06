@@ -6,31 +6,21 @@ using Verse;
 
 namespace RimBank.Ext.Deposit;
 
-public class Trader_StaticChamber : VirtualTrader
+public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : VirtualTrader
 {
     public static readonly string[] TipStrings =
-    {
+    [
         "TraderStaticChamberTitle".Translate(),
         "TraderStaticChamberTitleTip".Translate(Utility.StaticChamberFeePerPawn),
         "WarehouseSilverTip".Translate(),
         "BankNoteTip".Translate()
-    };
+    ];
 
-    private static List<IntVec3> dropCells = new List<IntVec3>();
+    private static List<IntVec3> dropCells = [];
 
     private static int lastCachedTick = -1;
 
-    private readonly bool transferingDownOnly;
-
-    private readonly bool transferingUpOnly;
-
     private Dialog_AccountCtrl currentCtrlUI;
-
-    public Trader_StaticChamber(bool upOnly = false, bool downOnly = false)
-    {
-        transferingDownOnly = downOnly;
-        transferingUpOnly = upOnly;
-    }
 
     public override string TraderName => "StaticChamberLabel".Translate();
 
@@ -38,7 +28,7 @@ public class Trader_StaticChamber : VirtualTrader
     {
         get
         {
-            if (transferingUpOnly)
+            if (upOnly)
             {
                 yield break;
             }
@@ -52,7 +42,7 @@ public class Trader_StaticChamber : VirtualTrader
 
     public override IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
     {
-        if (transferingDownOnly)
+        if (downOnly)
         {
             yield break;
         }
@@ -73,7 +63,7 @@ public class Trader_StaticChamber : VirtualTrader
 
     public override void GiveSoldThingToTrader(Thing toGive, int countToGive, Pawn playerNegotiator)
     {
-        if (!(toGive is Pawn pawn))
+        if (toGive is not Pawn pawn)
         {
             var thing = toGive.SplitOff(countToGive);
             if (thing.def == ThingDefOf.Silver || Utility.isBankNote(thing))
@@ -102,14 +92,14 @@ public class Trader_StaticChamber : VirtualTrader
 
     public override void GiveSoldThingToPlayer(Thing toGive, int countToGive, Pawn playerNegotiator)
     {
-        if (!(toGive is Pawn pawn))
+        if (toGive is not Pawn pawn)
         {
             Log.Error("Tried to give a thing from StaticChamber,but it is not a pawn.");
             return;
         }
 
         Static.ExitStaticChamber(pawn);
-        if (transferingDownOnly)
+        if (downOnly)
         {
             TradeUtility.SpawnDropPod(Utility.FindDropSpotWith(playerNegotiator, true), playerNegotiator.Map, pawn);
         }
@@ -217,7 +207,7 @@ public class Trader_StaticChamber : VirtualTrader
         if (pawn.guest.Released)
         {
             pawn.guest.Released = false;
-            pawn.guest.interactionMode = PrisonerInteractionModeDefOf.NoInteraction;
+            pawn.guest.SetNoInteraction();
         }
 
         pawn.guest.SetGuestStatus(Faction.OfPlayer);
@@ -245,17 +235,6 @@ public class Trader_StaticChamber : VirtualTrader
         lastCachedTick = Find.TickManager.TicksAbs;
         var list = map.listerBuildings.allBuildingsColonist.Where(b => b.def.IsOrbitalTradeBeacon).ToList();
 
-        bool NoPower(Building b)
-        {
-            var compPowerTrader = b.TryGetComp<CompPowerTrader>();
-            return compPowerTrader is not { PowerOn: true };
-        }
-
-        bool NotEnclosed(Building b)
-        {
-            return b.GetRoom(RegionType.Normal | RegionType.Portal)?.TouchesMapEdge ?? true;
-        }
-
         list.RemoveAll(b => map.roofGrid.Roofed(b.Position) || NoPower(b));
         list.RemoveAll(NotEnclosed);
         var list2 = new List<IntVec3>();
@@ -271,5 +250,17 @@ public class Trader_StaticChamber : VirtualTrader
         }
 
         dropCells = list2;
+        return;
+
+        bool NoPower(Building b)
+        {
+            var compPowerTrader = b.TryGetComp<CompPowerTrader>();
+            return compPowerTrader is not { PowerOn: true };
+        }
+
+        bool NotEnclosed(Building b)
+        {
+            return b.GetRoom(RegionType.Normal | RegionType.Portal)?.TouchesMapEdge ?? true;
+        }
     }
 }

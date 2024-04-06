@@ -6,9 +6,9 @@ namespace RimBank.Ext.Deposit;
 
 internal static class MarketValueMultiplier
 {
-    public static readonly int[] stages = { 0, 30000, 50000, 100000, 200000 };
+    public static readonly int[] stages = [0, 30000, 50000, 100000, 200000];
 
-    public static readonly double[] multiplier = { 0.0, 0.01, 0.02, 0.04, 0.05 };
+    public static readonly double[] multiplier = [0.0, 0.01, 0.02, 0.04, 0.05];
 
     public static double Resolve(double val)
     {
@@ -46,7 +46,7 @@ internal static class MarketValueMultiplier
     {
         if (val == 0.0)
         {
-            return new List<string>();
+            return [];
         }
 
         int i;

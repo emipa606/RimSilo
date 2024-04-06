@@ -23,6 +23,8 @@ public class Trader_GlobalDropPod : VirtualTrader
 
     private static int cachedMass;
 
+    private static PawnsArrivalModeDef randomDrop = DefDatabase<PawnsArrivalModeDef>.GetNamedSilentFail("RandomDrop");
+
     public override string TraderName => "GlobalDropPodLabel".Translate();
 
     public override IEnumerable<Thing> Goods
@@ -76,7 +78,7 @@ public class Trader_GlobalDropPod : VirtualTrader
 
     public override void InvokeTradeUI()
     {
-        thingsToDrop = new List<Thing>();
+        thingsToDrop = [];
         Trade.Utility.CacheNotes();
         Find.WindowStack.Add(new Dialog_GlobalDropPod(TradeSession.playerNegotiator, TradeSession.trader));
         if (Static.IsVaultRestricted || Static.IsWarehouseGetRestricted)
@@ -135,7 +137,7 @@ public class Trader_GlobalDropPod : VirtualTrader
 
     private static void PreDeliver()
     {
-        thingsToDrop = new List<Thing>();
+        thingsToDrop = [];
         TradeSession.deal.DoExecute();
         Static.dropPodCount -= Utility.PodCountToSendMassBased(cachedMass);
     }
@@ -234,7 +236,7 @@ public class Trader_GlobalDropPod : VirtualTrader
                         {
                             PreDeliver();
                             Utility.TryDeliverThingsGlobal(thingsToDrop, target.WorldObject,
-                                ref PawnsArrivalModeDefOf.RandomDrop, false, true);
+                                ref randomDrop, false, true);
                             FinalizeTargeter();
                         }));
                     }
@@ -245,7 +247,7 @@ public class Trader_GlobalDropPod : VirtualTrader
                         {
                             PreDeliver();
                             Utility.TryDeliverThingsGlobal(thingsToDrop, target.WorldObject,
-                                ref PawnsArrivalModeDefOf.RandomDrop);
+                                ref randomDrop);
                             FinalizeTargeter();
                         }));
                     }

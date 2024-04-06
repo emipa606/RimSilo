@@ -176,8 +176,8 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         Text.Anchor = TextAnchor.UpperLeft;
         GUI.color = Color.white;
         Text.Font = GameFont.Small;
-        var unused = (float)MassUsage;
-        var unused1 = MassCapacity;
+        _ = (float)MassUsage;
+        _ = MassCapacity;
         var rect5 = rect.AtZero();
         rect5.y = TitleAreaHeight;
         // TODO: TransferableUIUtility.DrawMassInfo(rect5, num2, massCapacity, Translator.Translate("TipWarehouseMass"), -9999f, false);

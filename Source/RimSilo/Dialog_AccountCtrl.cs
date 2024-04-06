@@ -239,13 +239,12 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                 "PayButton".Translate(), delegate
                 {
                     state = count == 1 ? Flags.BuyPods : Flags.BuyPodsBulk;
-                    Utility.MakeFloatMenuSelectPaymentSource(this, Utility.DropPodCost * count, new string[]
-                    {
+                    Utility.MakeFloatMenuSelectPaymentSource(this, Utility.DropPodCost * count, [
                         "TraderTitleBuyPod".Translate(),
                         "TraderTitleTipBuyPod".Translate(),
                         "WarehouseSilverTip".Translate(),
                         "BankNoteTip".Translate()
-                    }, delegate { dlg?.Close(false); });
+                    ], delegate { dlg?.Close(false); });
                     windowToKeepAlive = dlg;
                 }, "CancelButton".Translate(), null, "DlgTitleBuyPod".Translate(), true);
             Find.WindowStack.Add(dlg);
@@ -806,13 +805,12 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         Window dlg = null;
         dlg = new Dialog_MessageBox(text, "PayButton".Translate(), delegate
         {
-            Utility.MakeFloatMenuSelectPaymentSource(this, fee, new string[]
-            {
+            Utility.MakeFloatMenuSelectPaymentSource(this, fee, [
                 "TraderPayBillTitle".Translate(),
                 "TraderPayBillTitleTip".Translate(),
                 "WarehouseSilverTip".Translate(),
                 "BankNoteTip".Translate()
-            }, delegate { dlg?.Close(); }, null, null, true);
+            ], delegate { dlg?.Close(); }, null, null, true);
             windowToKeepAlive = dlg;
         }, "CloseButton".Translate(), null, "LineBillDetailTitle".Translate());
         Find.WindowStack.Add(dlg);

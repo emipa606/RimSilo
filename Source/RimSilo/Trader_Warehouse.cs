@@ -5,33 +5,23 @@ using Verse;
 
 namespace RimBank.Ext.Deposit;
 
-public class Trader_Warehouse : VirtualTrader
+public class Trader_Warehouse(bool upOnly = false, bool downOnly = false) : VirtualTrader
 {
     public static readonly string[] TipStrings =
-    {
+    [
         "TraderWarehouseTitle".Translate(),
         "TraderWarehouseTitleTip".Translate(),
         "WarehouseSilverTip".Translate(),
         "BankNoteTip".Translate()
-    };
+    ];
 
-    private readonly bool transferingDownOnly;
-
-    private readonly bool transferingUpOnly;
-
-    public Trader_Warehouse(bool upOnly = false, bool downOnly = false)
-    {
-        transferingDownOnly = downOnly;
-        transferingUpOnly = upOnly;
-    }
-
-    public override IEnumerable<Thing> Goods => transferingUpOnly ? new List<Thing>() : Static.contentWarehouse;
+    public override IEnumerable<Thing> Goods => upOnly ? [] : Static.contentWarehouse;
 
     public override string TraderName => "WarehouseLabel".Translate();
 
     public override IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
     {
-        if (transferingDownOnly)
+        if (downOnly)
         {
             yield break;
         }
@@ -55,7 +45,7 @@ public class Trader_Warehouse : VirtualTrader
             Static.contentWarehouse.Remove(thing);
         }
 
-        TradeUtility.SpawnDropPod(Utility.FindDropSpotWith(playerNegotiator, transferingDownOnly), playerNegotiator.Map,
+        TradeUtility.SpawnDropPod(Utility.FindDropSpotWith(playerNegotiator, downOnly), playerNegotiator.Map,
             thing);
     }
 

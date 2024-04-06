@@ -31,12 +31,12 @@ internal static class Utility
         maintainanceFee = -1;
         currentColumnType = 0;
         allowDateColumnType = null;
-        columnSelectionLabels = new string[]
-        {
+        columnSelectionLabels =
+        [
             "LabelMarketValue".Translate(),
             "LabelMass".Translate(),
             "LabelDaysLeft".Translate()
-        };
+        ];
         spacewidth = null;
         spacewidth = new float[3];
         var font = Text.Font;
@@ -202,7 +202,7 @@ internal static class Utility
     [Obsolete("Use Utility.MakeFloatMenuSelectPaymentSource() instead.", true)]
     public static bool CheckSilverEnoughForFine(int fine)
     {
-        cachedSilver = new HashSet<Thing>();
+        cachedSilver = [];
         var visibleMap = Find.CurrentMap;
         foreach (var item in Building_OrbitalTradeBeacon.AllPowered(visibleMap))
         {
@@ -211,7 +211,7 @@ internal static class Utility
                 var thingList = tradeableCell.GetThingList(visibleMap);
                 foreach (var thing in thingList)
                 {
-                    if (thing.def == ThingDefOf.Silver && !cachedSilver.Contains(thing))
+                    if (thing.def == ThingDefOf.Silver)
                     {
                         cachedSilver.Add(thing);
                     }
@@ -279,7 +279,7 @@ internal static class Utility
 
     public static void Recache()
     {
-        cachedSilver = new HashSet<Thing>();
+        cachedSilver = [];
         maintainanceFee = -1;
     }
 
@@ -490,7 +490,7 @@ internal static class Utility
 
     public static void DrawDaysBeforeExpired(Rect rect, Tradeable trad)
     {
-        if (!(trad is Tradeable_Pawn tradeable_Pawn) || tradeable_Pawn.CountHeldBy(Transactor.Trader) <= 0)
+        if (trad is not Tradeable_Pawn tradeable_Pawn || tradeable_Pawn.CountHeldBy(Transactor.Trader) <= 0)
         {
             return;
         }
@@ -566,7 +566,7 @@ internal static class Utility
             rect3.xMax -= 5f;
             Widgets.Label(rect3, num.ToStringCached());
             TooltipHandler.TipRegion(rect2, "TraderCount".Translate());
-            var unused = new Rect(rect2.x - 100f, 0f, 100f, rect.height);
+            _ = new Rect(rect2.x - 100f, 0f, 100f, rect.height);
             Text.Anchor = TextAnchor.MiddleRight;
         }
 
@@ -719,7 +719,7 @@ internal static class Utility
         pod.destinationTile = target.Tile;
         Find.WorldObjects.Add(pod);
         pod.AddPod(activeDropPodInfo, false);
-        if (!forceCreateCaravan && target is MapParent { Map: { } } mapParent)
+        if (!forceCreateCaravan && target is MapParent { Map: not null } mapParent)
         {
             LongEventHandler.QueueLongEvent(delegate
             {
@@ -736,7 +736,7 @@ internal static class Utility
                 Find.TickManager.CurTimeSpeed = TimeSpeed.Paused;
                 typeof(TravelingTransportPods)
                     .GetMethod("SpawnDropPodsInMap", BindingFlags.Instance | BindingFlags.NonPublic)
-                    ?.Invoke(pod, new object[] { orGenerateMap, text });
+                    ?.Invoke(pod, [orGenerateMap, text]);
             }, "GeneratingMapForNewEncounter", false, null);
             return;
         }
@@ -757,7 +757,7 @@ internal static class Utility
         {
             typeof(TravelingTransportPods)
                 .GetMethod("GivePodContentsToCaravan", BindingFlags.Instance | BindingFlags.NonPublic)
-                ?.Invoke(pod, new object[] { (Caravan)target });
+                ?.Invoke(pod, [(Caravan)target]);
         }
         else
         {

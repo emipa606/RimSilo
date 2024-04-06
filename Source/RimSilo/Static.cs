@@ -15,13 +15,13 @@ internal static class Static
     private const int ExposableVarsCountForCheck = 16;
     private static string CopyrightStr = "RimBankExt.Deposit A17,user19990313,Baidu Tieba&Ludeon forum";
 
-    public static List<Pawn> contentStaticChamber = new List<Pawn>();
+    public static List<Pawn> contentStaticChamber = [];
 
-    public static List<int> ticksStaticChamber = new List<int>();
+    public static List<int> ticksStaticChamber = [];
 
     public static int scheduledNearestStaticChamberExpireTick = -1999;
 
-    public static List<Thing> contentWarehouse = new List<Thing>();
+    public static List<Thing> contentWarehouse = [];
 
     public static int contentVaultSilver;
 
@@ -53,18 +53,7 @@ internal static class Static
 
     public static bool IsStaticChamberNull => scheduledNearestStaticChamberExpireTick < 0;
 
-    public static bool IsWarehouseRestricted
-    {
-        get
-        {
-            if (!frozenWarehouseGet)
-            {
-                return frozenWarehousePut;
-            }
-
-            return true;
-        }
-    }
+    public static bool IsWarehouseRestricted => frozenWarehouseGet || frozenWarehousePut;
 
     public static bool IsWarehouseGetRestricted => frozenWarehouseGet;
 
@@ -107,10 +96,10 @@ internal static class Static
 
     public static void InitSetup()
     {
-        contentStaticChamber = new List<Pawn>();
-        ticksStaticChamber = new List<int>();
+        contentStaticChamber = [];
+        ticksStaticChamber = [];
         scheduledNearestStaticChamberExpireTick = -1999;
-        contentWarehouse = new List<Thing>();
+        contentWarehouse = [];
         contentVaultSilver = 0;
         contentVaultBanknote = 0;
         lastPayVaultRentTick = -1999;
@@ -320,7 +309,7 @@ internal static class Static
         }
 
         Utility.TryDeliverThings(list);
-        contentWarehouse = new List<Thing>();
+        contentWarehouse = [];
         Utility.Recache();
     }
 

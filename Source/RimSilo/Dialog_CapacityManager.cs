@@ -131,7 +131,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         var num = 18f;
         GUI.BeginGroup(inRect);
         var rect = new Rect(0f, 0f, inRect.width, 250f);
-        var unused = new Rect(0f, y, inRect.width, 35f);
+        _ = new Rect(0f, y, inRect.width, 35f);
         var rect2 = new Rect(35f, y, inRect.width - 70f, 35f);
         var rect3 = new Rect(0f, y, 35f, 35f);
         var rect4 = new Rect(inRect.width - 35f, y, 35f, 35f);
@@ -224,12 +224,11 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
             else
             {
                 Utility.MakeFloatMenuSelectPaymentSource(this,
-                    (currentSlotCount - ((capacityTop - baseCapacity) / unit)) * costPerSlot, new string[]
-                    {
+                    (currentSlotCount - ((capacityTop - baseCapacity) / unit)) * costPerSlot, [
                         "TraderCapManTitle".Translate(), "TraderCapManTitleTip".Translate(costPerSlot),
                         "WarehouseSilverTip".Translate(),
                         "BankNoteTip".Translate()
-                    });
+                    ]);
             }
 
             Event.current.Use();

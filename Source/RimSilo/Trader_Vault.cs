@@ -5,35 +5,15 @@ using Verse;
 
 namespace RimBank.Ext.Deposit;
 
-public class Trader_Vault : VirtualTrader
+public class Trader_Vault(bool upOnly = false, bool downOnly = false) : VirtualTrader
 {
-    private readonly bool transferingDownOnly;
-    private readonly bool transferingUpOnly;
-
-    public Trader_Vault(bool upOnly = false, bool downOnly = false)
-    {
-        transferingDownOnly = downOnly;
-        transferingUpOnly = upOnly;
-    }
-
     public override bool UniqueBalanceMethod => true;
 
     public override bool SilverAlsoAdjustable => true;
 
     public override string TraderName => "VaultLabel".Translate();
 
-    public override IEnumerable<Thing> Goods
-    {
-        get
-        {
-            if (transferingUpOnly)
-            {
-                return new List<Thing>();
-            }
-
-            return VaultContents;
-        }
-    }
+    public override IEnumerable<Thing> Goods => upOnly ? new List<Thing>() : VaultContents;
 
     public static IEnumerable<Thing> VaultContents
     {
@@ -50,7 +30,7 @@ public class Trader_Vault : VirtualTrader
 
     public override IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
     {
-        if (transferingDownOnly)
+        if (downOnly)
         {
             yield break;
         }
@@ -77,7 +57,7 @@ public class Trader_Vault : VirtualTrader
             Static.contentVaultBanknote -= thing.stackCount;
         }
 
-        TradeUtility.SpawnDropPod(Utility.FindDropSpotWith(playerNegotiator, transferingDownOnly), playerNegotiator.Map,
+        TradeUtility.SpawnDropPod(Utility.FindDropSpotWith(playerNegotiator, downOnly), playerNegotiator.Map,
             thing);
     }
 

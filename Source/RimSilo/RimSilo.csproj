@@ -1,28 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputPath>..\..\1.4\Assemblies</OutputPath>
+    <OutputPath>..\..\1.5\Assemblies</OutputPath>
     <TargetFramework>net48</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DebugType>None</DebugType>
     <LangVersion>latest</LangVersion>
-    <FileVersion>1.4.2</FileVersion>
+    <FileVersion>1.5.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>*</Version>
+      <Version>1.5.4055-beta</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="RimBank.Trade">
-      <HintPath>..\..\..\RimBank\1.4\Assemblies\RimBank.Trade.dll</HintPath>
+      <HintPath>..\..\..\RimBank\1.5\Assemblies\RimBank.Trade.dll</HintPath>
       <CopyLocal>False</CopyLocal>
       <Private>false</Private>
     </Reference>
     <Reference Include="RimBank.Core">
-      <HintPath>..\..\..\RimBank\1.4\Assemblies\RimBank.Core.dll</HintPath>
+      <HintPath>..\..\..\RimBank\1.5\Assemblies\RimBank.Core.dll</HintPath>
       <CopyLocal>False</CopyLocal>
       <Private>false</Private>
     </Reference>
