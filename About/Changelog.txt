@@ -1,5 +1,8 @@
 # Changelog for RimSilo
 
+1.5.1 - Steam never actually published the 1.5 update, republishing
+
+
 1.5.0 - Mod updated for 1.5 and passed autotests
 
 
