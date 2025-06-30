@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <MsgGetLocked>你的获取权限被锁定了，因此不能进行交易。</MsgGetLocked>
   <MsgPutLocked>你的存放权限被锁定了，因此不能进行交易。</MsgPutLocked>

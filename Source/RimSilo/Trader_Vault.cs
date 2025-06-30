@@ -37,7 +37,7 @@ public class Trader_Vault(bool upOnly = false, bool downOnly = false) : VirtualT
 
         foreach (var item in TradeUtility.AllLaunchableThingsForTrade(playerNegotiator.Map))
         {
-            if (item.def == ThingDefOf.Silver || Utility.isBankNote(item))
+            if (item.def == ThingDefOf.Silver || Utility.IsBankNote(item))
             {
                 yield return item;
             }

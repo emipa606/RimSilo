@@ -23,9 +23,9 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
 
     private const float SpaceBetweenTraderNameAndTraderKind = 27f;
 
-    protected readonly Vector2 AcceptButtonSize = new Vector2(160f, 40f);
+    private readonly Vector2 AcceptButtonSize = new(160f, 40f);
 
-    protected readonly Vector2 OtherBottomButtonSize = new Vector2(160f, 40f);
+    public readonly Vector2 OtherBottomButtonSize = new(160f, 40f);
 
     private Tradeable cachedCurrencyTradeable;
 
@@ -52,9 +52,9 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
         Utility.SetColumnToDateColumn();
     }
 
-    public override Vector2 InitialSize => new Vector2(1024f, UI.screenHeight);
+    public override Vector2 InitialSize => new(1024f, UI.screenHeight);
 
-    private float TopAreaHeight => 83f;
+    private static float TopAreaHeight => 83f;
 
     bool ICurrencyConsumer.Consumed
     {
@@ -73,10 +73,10 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
     public override void PostOpen()
     {
         base.PostOpen();
-        CacheTradeables();
+        cacheTradeables();
     }
 
-    private void CacheTradeables()
+    private void cacheTradeables()
     {
         cachedCurrencyTradeable = (from x in TradeSession.deal.AllTradeables
             where x.IsCurrency
@@ -99,11 +99,11 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
         TransferableUIUtility.DoTransferableSorters(sorter1, sorter2, delegate(TransferableSorterDef x)
         {
             sorter1 = x;
-            CacheTradeables();
+            cacheTradeables();
         }, delegate(TransferableSorterDef x)
         {
             sorter2 = x;
-            CacheTradeables();
+            cacheTradeables();
         });
         var num = inRect.width - 590f;
         var position = new Rect(num, 0f, inRect.width - num, TopAreaHeight);
@@ -144,7 +144,7 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
 
         var mainRect = new Rect(0f, TopAreaHeight + num2, inRect.width,
             inRect.height - TopAreaHeight - 38f - num2 - 20f);
-        FillMainRect(mainRect);
+        fillMainRect(mainRect);
         var rect4 = new Rect((inRect.width / 2f) - (AcceptButtonSize.x / 2f), inRect.height - BaseTopAreaHeight,
             AcceptButtonSize.x,
             AcceptButtonSize.y);
@@ -160,46 +160,46 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
                 }
                 else
                 {
-                    void VaultPayAction()
+                    void vaultPayAction()
                     {
                         cachedCurrencyTradeable.ForceTo(0);
                         Utility.ConsumeCurrencyVault(this, expense);
                     }
 
-                    void Action()
+                    void action()
                     {
                         if (Trader_StaticChamber.NoOneInSquad())
                         {
                             Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("NoOneInSquadConfirm".Translate(),
-                                VaultPayAction, true, "NoOneInSquadTitle".Translate()));
+                                vaultPayAction, true, "NoOneInSquadTitle".Translate()));
                         }
                         else
                         {
-                            VaultPayAction();
+                            vaultPayAction();
                         }
                     }
 
-                    void LocalPayAction()
+                    void localPayAction()
                     {
                         Trade.Utility.AskPayByBankNotes(cachedCurrencyTradeable, true);
                         Utility.Recache();
                     }
 
-                    void LocalPaymentHandler()
+                    void localPaymentHandler()
                     {
                         if (Trader_StaticChamber.NoOneInSquad())
                         {
                             Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("NoOneInSquadConfirm".Translate(),
-                                LocalPayAction, true, "NoOneInSquadTitle".Translate()));
+                                localPayAction, true, "NoOneInSquadTitle".Translate()));
                         }
                         else
                         {
-                            LocalPayAction();
+                            localPayAction();
                         }
                     }
 
-                    var vaultPaymentHandler = (Action)Action;
-                    Utility.MakeFloatMenuSelectPaymentSource(this, expense, null, null, LocalPaymentHandler,
+                    var vaultPaymentHandler = (Action)action;
+                    Utility.MakeFloatMenuSelectPaymentSource(this, expense, null, null, localPaymentHandler,
                         vaultPaymentHandler);
                 }
             }
@@ -211,7 +211,7 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
                 new Rect(rect4.x - 10f - OtherBottomButtonSize.x, rect4.y, OtherBottomButtonSize.x,
                     OtherBottomButtonSize.y), "ResetButton".Translate(), true, false))
         {
-            Reset();
+            reset();
             Event.current.Use();
         }
 
@@ -237,7 +237,7 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
         Utility.ResetColumnType();
     }
 
-    private void FillMainRect(Rect mainRect)
+    private void fillMainRect(Rect mainRect)
     {
         Text.Font = GameFont.Small;
         var height = FirstCommodityY + (cachedTradeables.Count * RowInterval);
@@ -266,10 +266,10 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
         return true;
     }
 
-    private void Reset()
+    private void reset()
     {
         SoundDefOf.Tick_Low.PlayOneShotOnCamera();
         TradeSession.deal.Reset();
-        CacheTradeables();
+        cacheTradeables();
     }
 }

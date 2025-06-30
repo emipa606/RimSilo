@@ -8,7 +8,7 @@ namespace RimBank.Ext.Deposit;
 
 public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : VirtualTrader
 {
-    public static readonly string[] TipStrings =
+    private static readonly string[] tipStrings =
     [
         "TraderStaticChamberTitle".Translate(),
         "TraderStaticChamberTitleTip".Translate(Utility.StaticChamberFeePerPawn),
@@ -54,7 +54,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
 
         foreach (var item2 in TradeUtility.AllLaunchableThingsForTrade(Find.CurrentMap))
         {
-            if (item2.def == ThingDefOf.Silver || Utility.isBankNote(item2))
+            if (item2.def == ThingDefOf.Silver || Utility.IsBankNote(item2))
             {
                 yield return item2;
             }
@@ -66,7 +66,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         if (toGive is not Pawn pawn)
         {
             var thing = toGive.SplitOff(countToGive);
-            if (thing.def == ThingDefOf.Silver || Utility.isBankNote(thing))
+            if (thing.def == ThingDefOf.Silver || Utility.IsBankNote(thing))
             {
                 thing.Destroy();
             }
@@ -86,7 +86,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         }
 
         currentCtrlUI.Notify_PawnEnteredStaticChamber(pawn);
-        TryEntitlePrisoner(pawn, isPrisoner);
+        tryEntitlePrisoner(pawn, isPrisoner);
         Static.EnterStaticChamber(pawn);
     }
 
@@ -111,11 +111,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
 
     public override void InvokeTradeUI()
     {
-        currentCtrlUI = Find.WindowStack.WindowOfType<Dialog_AccountCtrl>();
-        if (currentCtrlUI == null)
-        {
-            currentCtrlUI = new Dialog_AccountCtrl();
-        }
+        currentCtrlUI = Find.WindowStack.WindowOfType<Dialog_AccountCtrl>() ?? new Dialog_AccountCtrl();
 
         Find.WindowStack.Add(new Dialog_StaticChamber(TradeSession.playerNegotiator, TradeSession.trader));
     }
@@ -127,7 +123,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
 
     public override string TipString(int index)
     {
-        return TipStrings[index - 1];
+        return tipStrings[index - 1];
     }
 
     public override Pair<int, int> GetCurrencyFmt()
@@ -154,10 +150,10 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         }
     }
 
-    private void PawnPreEnterChamber(Pawn This, Pawn negotiator)
+    private void PawnPreEnterChamber(Pawn pawn, Pawn negotiator)
     {
-        This.Notify_Teleported();
-        This.PreTraded(TradeAction.None, negotiator, this);
+        pawn.Notify_Teleported();
+        pawn.PreTraded(TradeAction.None, negotiator, this);
     }
 
     public static bool NoOneInSquad()
@@ -192,17 +188,14 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         return true;
     }
 
-    public static void TryEntitlePrisoner(Pawn pawn, bool isPrisoner)
+    private static void tryEntitlePrisoner(Pawn pawn, bool isPrisoner)
     {
         if (!isPrisoner)
         {
             return;
         }
 
-        if (pawn.guest == null)
-        {
-            pawn.guest = new Pawn_GuestTracker();
-        }
+        pawn.guest ??= new Pawn_GuestTracker();
 
         if (pawn.guest.Released)
         {
@@ -215,7 +208,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
 
     public static IntVec3 IndoorDropCell(Map map)
     {
-        TryCacheDropCells(map);
+        tryCacheDropCells(map);
         if (!dropCells.Any())
         {
             return DropCellFinder.TradeDropSpot(map);
@@ -225,7 +218,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         return result;
     }
 
-    private static void TryCacheDropCells(Map map)
+    private static void tryCacheDropCells(Map map)
     {
         if (lastCachedTick == Find.TickManager.TicksAbs)
         {
@@ -235,8 +228,8 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         lastCachedTick = Find.TickManager.TicksAbs;
         var list = map.listerBuildings.allBuildingsColonist.Where(b => b.def.IsOrbitalTradeBeacon).ToList();
 
-        list.RemoveAll(b => map.roofGrid.Roofed(b.Position) || NoPower(b));
-        list.RemoveAll(NotEnclosed);
+        list.RemoveAll(b => map.roofGrid.Roofed(b.Position) || noPower(b));
+        list.RemoveAll(notEnclosed);
         var list2 = new List<IntVec3>();
         foreach (var item in list)
         {
@@ -252,13 +245,13 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         dropCells = list2;
         return;
 
-        bool NoPower(Building b)
+        static bool noPower(Building b)
         {
             var compPowerTrader = b.TryGetComp<CompPowerTrader>();
             return compPowerTrader is not { PowerOn: true };
         }
 
-        bool NotEnclosed(Building b)
+        static bool notEnclosed(Building b)
         {
             return b.GetRoom(RegionType.Normal | RegionType.Portal)?.TouchesMapEdge ?? true;
         }

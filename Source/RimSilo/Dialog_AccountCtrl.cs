@@ -60,7 +60,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         loginBarHeight = Text.CalcHeight("MainUILoggedIn".Translate(), 1024f);
         Text.Font = GameFont.Medium;
         factionNameHeight = Text.CalcHeight("CancelButton".Translate(), 1024f);
-        var vector = LargeStyleCalcSize("MainUIBannerTitle".Translate());
+        var vector = largeStyleCalcSize("MainUIBannerTitle".Translate());
         bannerTitleWidthLargeStyle = vector.x;
         bannerTitleHeight = vector.y;
         Text.Font = font;
@@ -77,9 +77,9 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         soundAmbient = SoundDefOf.RadioComms_Ambience;
     }
 
-    public override Vector2 InitialSize => new Vector2(750f, 500f);
+    public override Vector2 InitialSize => new(750f, 500f);
 
-    private GUIStyle LargeStyle
+    private static GUIStyle LargeStyle
     {
         get
         {
@@ -123,15 +123,15 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         }
     }
 
-    private static Vector2 LargeStyleCalcSize(string str)
+    private static Vector2 largeStyleCalcSize(string str)
     {
         tmpContent.text = str;
         return cachedStyle.CalcSize(tmpContent);
     }
 
-    public void Notify_PawnEnteredStaticChamber(Pawn pawn)
+    public void Notify_PawnEnteredStaticChamber(Pawn pawnEntering)
     {
-        if (this.pawn == pawn)
+        if (pawn == pawnEntering)
         {
             Close(false);
         }
@@ -169,17 +169,17 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         Text.Anchor = TextAnchor.UpperLeft;
         var rect3 = new Rect(0f, num + 8f, inRect.width / 2f, inRect.height / 2f);
         text = "VaultLabel".Translate();
-        vector = LargeStyleCalcSize(text);
+        vector = largeStyleCalcSize(text);
         rect2 = new Rect(rect3.x + 15f + LEDSize.x + 5f, rect3.y, vector.x, vector.y);
         GUI.Label(rect2, text, LargeStyle);
         var rect4 = new Rect(rect3.x + 15f, rect3.y + ((vector.y - LEDSize.y) / 2f), LEDSize.x, LEDSize.y);
-        DrawLED(rect4, Flags.Vault);
+        drawLed(rect4, Flags.Vault);
         var rect5 = new Rect(rect2.x, rect2.yMax, 1024f, 0f);
-        DrawCapacityLine(ref rect5, Flags.Vault);
+        drawCapacityLine(ref rect5, Flags.Vault);
         var rect6 = new Rect(rect2.x, rect5.yMax + 4f, rect3.xMax - rect2.x - 45f, 36f);
-        DrawAccessButton(rect6, Flags.Vault);
+        drawAccessButton(rect6, Flags.Vault);
         var rect7 = new Rect(rect6.x, rect6.yMax + 8f, 0f, 0f);
-        DrawManagementBar(ref rect7, Flags.Vault);
+        drawManagementBar(ref rect7, Flags.Vault);
         var rect8 = new Rect(rect3.x, rect7.yMax + 16f, rect3.width, 0f);
         rect8.height = inRect.yMax - rect8.y;
         Text.Font = GameFont.Medium;
@@ -270,17 +270,17 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         GUI.color = Color.white;
         var rect9 = new Rect(rect3.xMax, rect3.y, rect3.width, rect3.height);
         text = "WarehouseLabel".Translate();
-        vector = LargeStyleCalcSize(text);
+        vector = largeStyleCalcSize(text);
         rect2 = new Rect(rect9.x + 15f + LEDSize.x + 5f, rect9.y, vector.x, vector.y);
         GUI.Label(rect2, text, LargeStyle);
         rect4 = new Rect(rect9.x + 15f, rect9.y + ((vector.y - LEDSize.y) / 2f), LEDSize.x, LEDSize.y);
-        DrawLED(rect4, Flags.Warehouse);
+        drawLed(rect4, Flags.Warehouse);
         rect5 = new Rect(rect2.x, rect2.yMax, 1024f, 0f);
-        DrawCapacityLine(ref rect5, Flags.Warehouse);
+        drawCapacityLine(ref rect5, Flags.Warehouse);
         rect6 = new Rect(rect2.x, rect5.yMax + 4f, rect9.xMax - rect2.x - 45f, 36f);
-        DrawAccessButton(rect6, Flags.Warehouse);
+        drawAccessButton(rect6, Flags.Warehouse);
         rect7 = new Rect(rect6.x, rect6.yMax + 8f, 0f, 0f);
-        DrawManagementBar(ref rect7, Flags.Warehouse);
+        drawManagementBar(ref rect7, Flags.Warehouse);
         var rect10 = new Rect(rect9.x, rect7.yMax + 16f, rect9.width, rect8.height);
         Text.Font = GameFont.Medium;
         text = "LabelMiscBar".Translate();
@@ -297,13 +297,13 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         {
             var list = new List<FloatMenuOption>();
 
-            void Action()
+            static void action()
             {
                 Find.WindowStack.Add(new Dialog_MessageBox("DlgFAQ".Translate(), null, null, null, null,
                     "DlgTitleFAQ".Translate()));
             }
 
-            bool Func(Rect rect)
+            static bool func(Rect rect)
             {
                 rect.y += 3f;
                 rect.height = 24f;
@@ -313,12 +313,12 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                     return false;
                 }
 
-                Action();
+                action();
                 return true;
             }
 
-            var item = new FloatMenuOption("DlgTitleFAQ".Translate(), Action, extraPartWidth: 24f,
-                extraPartOnGUI: Func);
+            var item = new FloatMenuOption("DlgTitleFAQ".Translate(), action, extraPartWidth: 24f,
+                extraPartOnGUI: func);
             list.Add(item);
 
             void Action2()
@@ -341,14 +341,14 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                 return true;
             };
             item = new FloatMenuOption("CaptionManFeeCalc".Translate(), Action2, extraPartWidth: 24f,
-                extraPartOnGUI: Func);
+                extraPartOnGUI: func);
             list.Add(item);
 
-            void Action3()
+            void action3()
             {
                 if (Static.IsVaultRented)
                 {
-                    ShowBill(Flags.CheckBill);
+                    showBill(Flags.CheckBill);
                 }
                 else
                 {
@@ -367,16 +367,16 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                     return false;
                 }
 
-                Action3();
+                action3();
                 return true;
             };
-            item = new FloatMenuOption("CaptionBillPreview".Translate(), Action3, extraPartWidth: 24f,
-                extraPartOnGUI: Func);
+            item = new FloatMenuOption("CaptionBillPreview".Translate(), action3, extraPartWidth: 24f,
+                extraPartOnGUI: func);
             list.Add(item);
 
-            void Action4()
+            void action4()
             {
-                ShowBill(Flags.PayBill);
+                showBill(Flags.PayBill);
             }
 
             var unused2 = delegate(Rect rect)
@@ -396,20 +396,20 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                     return false;
                 }
 
-                Action4();
+                action4();
                 return true;
             };
             item = new FloatMenuOption(
                 !Static.IsWarehouseRestricted && !Static.IsVaultRestricted
                     ? "CaptionPayFineDisabled".Translate()
-                    : "CaptionPayFineEnabled".Translate(), Action4,
-                extraPartWidth: 24f, extraPartOnGUI: Func)
+                    : "CaptionPayFineEnabled".Translate(), action4,
+                extraPartWidth: 24f, extraPartOnGUI: func)
             {
                 Disabled = !Static.IsWarehouseRestricted && !Static.IsVaultRestricted
             };
             list.Add(item);
 
-            void Action5A()
+            void action5A()
             {
                 if (!Utility.RemoveAllTickComponentsFromGame())
                 {
@@ -424,9 +424,9 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                 }
             }
 
-            void Action5()
+            void action5()
             {
-                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("DlgDeleteAccount".Translate(), Action5A,
+                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("DlgDeleteAccount".Translate(), action5A,
                     true, "DlgTitleDeleteAccount".Translate()));
             }
 
@@ -440,11 +440,11 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
                     return false;
                 }
 
-                Action5();
+                action5();
                 return true;
             };
-            item = new FloatMenuOption("CaptionDeleteAccount".Translate(), Action5, extraPartWidth: 24f,
-                extraPartOnGUI: Func);
+            item = new FloatMenuOption("CaptionDeleteAccount".Translate(), action5, extraPartWidth: 24f,
+                extraPartOnGUI: func);
             list.Add(item);
             Find.WindowStack.Add(new FloatMenu(list));
         }
@@ -479,7 +479,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         GC.Collect(1);
     }
 
-    private void DrawLED(Rect rect, Flags usage)
+    private static void drawLed(Rect rect, Flags usage)
     {
         switch (usage)
         {
@@ -523,7 +523,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         GUI.color = Color.white;
     }
 
-    private void DrawCapacityLine(ref Rect rect, Flags usage)
+    private void drawCapacityLine(ref Rect rect, Flags usage)
     {
         GUI.color = Color.gray;
         string text = null;
@@ -548,14 +548,14 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
             rect.width = vector.x;
             rect.height = vector.y;
             Widgets.DrawHighlightIfMouseover(rect);
-            TooltipHandler.TipRegion(rect, ResolveCapacityTip(usage));
+            TooltipHandler.TipRegion(rect, resolveCapacityTip(usage));
         }
 
         Widgets.Label(rect, text);
         GUI.color = Color.white;
     }
 
-    private string ResolveCapacityTip(Flags usage)
+    private static string resolveCapacityTip(Flags usage)
     {
         string text;
         if (usage == Flags.Vault)
@@ -581,7 +581,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         return text;
     }
 
-    private void DrawAccessButton(Rect rect, Flags usage)
+    private void drawAccessButton(Rect rect, Flags usage)
     {
         if (!Widgets.ButtonText(rect,
                 usage == Flags.Vault && Static.IsVaultRented || usage == Flags.Warehouse && Static.IsWarehouseRented
@@ -605,11 +605,11 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         }
         else
         {
-            TryRentService(usage);
+            tryRentService(usage);
         }
     }
 
-    private void TryRentService(Flags usage)
+    private void tryRentService(Flags usage)
     {
         state = usage;
         if (!Static.IsVaultRented && usage == Flags.Warehouse)
@@ -644,7 +644,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         Find.WindowStack.Add(dlg);
     }
 
-    private void DrawManagementBar(ref Rect rect, Flags usage)
+    private static void drawManagementBar(ref Rect rect, Flags usage)
     {
         GUI.color = Color.gray;
         string text = "TextManBar".Translate();
@@ -658,7 +658,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
             Find.WindowStack.Add(new Dialog_MessageBox(
                 usage == Flags.Vault
                     ? "MainClause_Vault".Translate(CapacityExpansion.VaultBaseRent, CapacityExpansion.VaultBaseRent / 2)
-                    : "MainClause_Warehouse".Translate(MarketValueMultiplier.stages[1],
+                    : "MainClause_Warehouse".Translate(MarketValueMultiplier.Stages[1],
                         CapacityExpansion.WarehouseBaseRent, CapacityExpansion.WarehouseBaseRent / 2,
                         Utility.MassValue), null, null, null, null, "MainClauseTitle".Translate()));
             Event.current.Use();
@@ -718,7 +718,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
         TooltipHandler.TipRegion(rect3, "TipAbortIcon".Translate());
     }
 
-    private void ShowBill(Flags usage)
+    private void showBill(Flags usage)
     {
         state = usage;
         var val = -1f;

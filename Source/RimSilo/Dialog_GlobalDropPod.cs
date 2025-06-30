@@ -22,9 +22,9 @@ public class Dialog_GlobalDropPod : Window
 
     private const float SpaceBetweenTraderNameAndTraderKind = 27f;
 
-    protected readonly Vector2 AcceptButtonSize = new Vector2(160f, 40f);
+    private readonly Vector2 acceptButtonSize = new(160f, 40f);
 
-    protected readonly Vector2 OtherBottomButtonSize = new Vector2(160f, 40f);
+    private readonly Vector2 otherBottomButtonSize = new(160f, 40f);
 
     private Tradeable cachedCurrencyTradeable;
 
@@ -58,9 +58,9 @@ public class Dialog_GlobalDropPod : Window
         Utility.ResetColumnType();
     }
 
-    public override Vector2 InitialSize => new Vector2(1024f, UI.screenHeight);
+    public override Vector2 InitialSize => new(1024f, UI.screenHeight);
 
-    private float TopAreaHeight => 83f;
+    private static float TopAreaHeight => 83f;
 
     private double MassUsage
     {
@@ -108,15 +108,15 @@ public class Dialog_GlobalDropPod : Window
         }
     }
 
-    private float MassCapacity => Utility.DropPodCapacityTotal;
+    private static float MassCapacity => Utility.DropPodCapacityTotal;
 
     public override void PostOpen()
     {
         base.PostOpen();
-        CacheTradeables();
+        cacheTradeables();
     }
 
-    private void CacheTradeables()
+    private void cacheTradeables()
     {
         cachedCurrencyTradeable = (from x in TradeSession.deal.AllTradeables
             where x.IsCurrency
@@ -131,7 +131,7 @@ public class Dialog_GlobalDropPod : Window
             .ThenBy(tr => tr.AnyThing.HitPoints)
             .ToList();
         cachedNotesTradeable = (from x in TradeSession.deal.AllTradeables
-            where Utility.isBankNote(x)
+            where Utility.IsBankNote(x)
             orderby x.AnyThing.HitPoints descending
             select x).FirstOrDefault();
         Trade.Utility.CacheNotes();
@@ -142,11 +142,11 @@ public class Dialog_GlobalDropPod : Window
         TransferableUIUtility.DoTransferableSorters(sorter1, sorter2, delegate(TransferableSorterDef x)
         {
             sorter1 = x;
-            CacheTradeables();
+            cacheTradeables();
         }, delegate(TransferableSorterDef x)
         {
             sorter2 = x;
-            CacheTradeables();
+            cacheTradeables();
         });
         var num = inRect.width - 590f;
         var rect = new Rect(num, 0f, inRect.width - num, TopAreaHeight);
@@ -190,7 +190,7 @@ public class Dialog_GlobalDropPod : Window
             Utility.DrawTradeableRow(rect5, cachedCurrencyTradeable, 1, true, true);
             if (countToTransfer != cachedCurrencyTradeable.CountToTransfer)
             {
-                CountToTransferChanged();
+                countToTransferChanged();
             }
 
             num3 += 30f;
@@ -201,7 +201,7 @@ public class Dialog_GlobalDropPod : Window
                 Utility.DrawTradeableRow(rect6, cachedNotesTradeable, 2, true, true);
                 if (countToTransfer != cachedNotesTradeable.CountToTransfer)
                 {
-                    CountToTransferChanged();
+                    countToTransferChanged();
                 }
 
                 indexOffset = 1;
@@ -220,9 +220,9 @@ public class Dialog_GlobalDropPod : Window
 
         var mainRect = new Rect(0f, TopAreaHeight + num3, inRect.width,
             inRect.height - TopAreaHeight - 38f - num3 - 20f);
-        FillMainRect(mainRect, indexOffset);
-        var rect7 = new Rect((inRect.width / 2f) - (AcceptButtonSize.x / 2f), inRect.height - 55f, AcceptButtonSize.x,
-            AcceptButtonSize.y);
+        fillMainRect(mainRect, indexOffset);
+        var rect7 = new Rect((inRect.width / 2f) - (acceptButtonSize.x / 2f), inRect.height - 55f, acceptButtonSize.x,
+            acceptButtonSize.y);
         if (Widgets.ButtonText(rect7, "AcceptButton".Translate(), true, false))
         {
             if (MassUsage > MassCapacity)
@@ -243,14 +243,14 @@ public class Dialog_GlobalDropPod : Window
         }
 
         if (Widgets.ButtonText(
-                new Rect(rect7.x - 10f - OtherBottomButtonSize.x, rect7.y, OtherBottomButtonSize.x,
-                    OtherBottomButtonSize.y), "ResetButton".Translate(), true, false))
+                new Rect(rect7.x - 10f - otherBottomButtonSize.x, rect7.y, otherBottomButtonSize.x,
+                    otherBottomButtonSize.y), "ResetButton".Translate(), true, false))
         {
-            Reset();
+            reset();
             Event.current.Use();
         }
 
-        if (!Widgets.ButtonText(new Rect(rect7.xMax + 10f, rect7.y, OtherBottomButtonSize.x, OtherBottomButtonSize.y),
+        if (!Widgets.ButtonText(new Rect(rect7.xMax + 10f, rect7.y, otherBottomButtonSize.x, otherBottomButtonSize.y),
                 "CancelButton".Translate(), true, false))
         {
             return;
@@ -280,7 +280,7 @@ public class Dialog_GlobalDropPod : Window
         Trader_GlobalDropPod.TrySendQueuedDrop((int)Math.Ceiling(MassUsage));
     }
 
-    private void FillMainRect(Rect mainRect, int indexOffset)
+    private void fillMainRect(Rect mainRect, int indexOffset)
     {
         Text.Font = GameFont.Small;
         var height = 6f + (cachedTradeables.Count * 30f);
@@ -299,7 +299,7 @@ public class Dialog_GlobalDropPod : Window
                 Utility.DrawTradeableRow(rect, tradeable, num4);
                 if (countToTransfer != tradeable.CountToTransfer)
                 {
-                    CountToTransferChanged();
+                    countToTransferChanged();
                 }
             }
 
@@ -315,15 +315,15 @@ public class Dialog_GlobalDropPod : Window
         return true;
     }
 
-    private void Reset()
+    private void reset()
     {
         SoundDefOf.Tick_Low.PlayOneShotOnCamera();
         TradeSession.deal.Reset();
-        CacheTradeables();
-        CountToTransferChanged();
+        cacheTradeables();
+        countToTransferChanged();
     }
 
-    private void CountToTransferChanged()
+    private void countToTransferChanged()
     {
         massUsageDirty = true;
     }

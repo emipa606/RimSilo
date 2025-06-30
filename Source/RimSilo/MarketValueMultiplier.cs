@@ -6,31 +6,31 @@ namespace RimBank.Ext.Deposit;
 
 internal static class MarketValueMultiplier
 {
-    public static readonly int[] stages = [0, 30000, 50000, 100000, 200000];
+    public static readonly int[] Stages = [0, 30000, 50000, 100000, 200000];
 
-    public static readonly double[] multiplier = [0.0, 0.01, 0.02, 0.04, 0.05];
+    private static readonly double[] multiplier = [0.0, 0.01, 0.02, 0.04, 0.05];
 
     public static double Resolve(double val)
     {
         var num = 0.0;
-        for (var num2 = stages.Length - 1; num2 > -1; num2--)
+        for (var num2 = Stages.Length - 1; num2 > -1; num2--)
         {
-            if (!(val > stages[num2]))
+            if (!(val > Stages[num2]))
             {
                 continue;
             }
 
-            num += (val - stages[num2]) * multiplier[num2];
-            val = stages[num2];
+            num += (val - Stages[num2]) * multiplier[num2];
+            val = Stages[num2];
         }
 
         return num;
     }
 
-    public static double ResolveMaxMultiplier(double val)
+    private static double resolveMaxMultiplier(double val)
     {
         int i;
-        for (i = 1; i < stages.Length && !(val <= stages[i]); i++)
+        for (i = 1; i < Stages.Length && !(val <= Stages[i]); i++)
         {
         }
 
@@ -39,7 +39,7 @@ internal static class MarketValueMultiplier
 
     public static string ResolveMaxMultiplierString(double val)
     {
-        return $"{ResolveMaxMultiplier(val) * 100.0:F0}%";
+        return $"{resolveMaxMultiplier(val) * 100.0:F0}%";
     }
 
     public static List<string> ResolveRawExplanationString(double val)
@@ -50,7 +50,7 @@ internal static class MarketValueMultiplier
         }
 
         int i;
-        for (i = 1; i < stages.Length && !(val <= stages[i]); i++)
+        for (i = 1; i < Stages.Length && !(val <= Stages[i]); i++)
         {
         }
 
@@ -58,10 +58,10 @@ internal static class MarketValueMultiplier
         for (i--; i > -1; i--)
         {
             list.Add($"{multiplier[i] * 100.0:F0}%");
-            list.Add(((val - stages[i]) * multiplier[i]).ToString("F0"));
+            list.Add(((val - Stages[i]) * multiplier[i]).ToString("F0"));
             list.Add(val.ToString("F0"));
-            list.Add(stages[i].ToString());
-            val = stages[i];
+            list.Add(Stages[i].ToString());
+            val = Stages[i];
         }
 
         return list;
@@ -71,15 +71,15 @@ internal static class MarketValueMultiplier
     public static List<string> ResolveExplanation(double val)
     {
         var list = new List<string>();
-        for (var num = stages.Length - 1; num > -1; num--)
+        for (var num = Stages.Length - 1; num > -1; num--)
         {
-            if (!(val > stages[num]))
+            if (!(val > Stages[num]))
             {
                 continue;
             }
 
-            var num2 = (val - stages[num]) * multiplier[num];
-            var text = $"{stages[num].ToString(),6} ~ {val:F2}";
+            var num2 = (val - Stages[num]) * multiplier[num];
+            var text = $"{Stages[num].ToString(),6} ~ {val:F2}";
             if (text.Length < 15)
             {
                 text = text.PadRight(15);
@@ -88,7 +88,7 @@ internal static class MarketValueMultiplier
             text = $"{text}  :  $ {num2:F0}";
             text = $"{text} ({multiplier[num] * 100.0:F0}%)";
             list.Add(text);
-            val = stages[num];
+            val = Stages[num];
         }
 
         list.Reverse();
@@ -98,7 +98,7 @@ internal static class MarketValueMultiplier
     public static Color ResolveColor(double val)
     {
         int i;
-        for (i = 1; i < stages.Length && !(val <= stages[i]); i++)
+        for (i = 1; i < Stages.Length && !(val <= Stages[i]); i++)
         {
         }
 

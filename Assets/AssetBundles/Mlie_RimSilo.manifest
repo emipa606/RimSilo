@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 165443106
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0b46e55b76d36cbfc1a5e5748424d3b1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 0b46e55b76d36cbfc1a5e5748424d3b1
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.RimSilo/Textures/UI/Calc.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/LEDBase.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Increase.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Bill.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/IncOrDec.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Put.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Get.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Info.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Lock.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Pin.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/RedCrossDiag.png
+- Assets/Data/Mlie.RimSilo/Textures/UI/Decrease.png
+Dependencies: []

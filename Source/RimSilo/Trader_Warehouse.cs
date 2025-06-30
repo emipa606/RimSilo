@@ -7,7 +7,7 @@ namespace RimBank.Ext.Deposit;
 
 public class Trader_Warehouse(bool upOnly = false, bool downOnly = false) : VirtualTrader
 {
-    public static readonly string[] TipStrings =
+    private static readonly string[] tipStrings =
     [
         "TraderWarehouseTitle".Translate(),
         "TraderWarehouseTitleTip".Translate(),
@@ -53,7 +53,7 @@ public class Trader_Warehouse(bool upOnly = false, bool downOnly = false) : Virt
     {
         var thing = toGive.SplitOff(countToGive);
         thing.PreTraded(TradeAction.PlayerSells, playerNegotiator, this);
-        if (thing.def == ThingDefOf.Silver || Utility.isBankNote(thing))
+        if (thing.def == ThingDefOf.Silver || Utility.IsBankNote(thing))
         {
             thing.Destroy();
             return;
@@ -90,6 +90,6 @@ public class Trader_Warehouse(bool upOnly = false, bool downOnly = false) : Virt
 
     public override string TipString(int index)
     {
-        return TipStrings[index - 1];
+        return tipStrings[index - 1];
     }
 }

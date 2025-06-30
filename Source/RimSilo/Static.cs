@@ -19,7 +19,7 @@ internal static class Static
 
     public static List<int> ticksStaticChamber = [];
 
-    public static int scheduledNearestStaticChamberExpireTick = -1999;
+    private static int scheduledNearestStaticChamberExpireTick = -1999;
 
     public static List<Thing> contentWarehouse = [];
 
@@ -33,7 +33,7 @@ internal static class Static
 
     public static int scheduledPayVaultRentTick = -1999;
 
-    public static int scheduledPayWarehouseRentTick = -1999;
+    private static int scheduledPayWarehouseRentTick = -1999;
 
     private static bool frozenVault;
 
@@ -162,7 +162,7 @@ internal static class Static
 
         var vaultRent = Utility.VaultRent;
         var warehouseRent = Utility.WarehouseRent;
-        var warehouseMaintainanceFee = Utility.WarehouseMaintainanceFee;
+        var warehouseMaintainableFee = Utility.WarehouseMaintainanceFee;
         var num = 0;
         var num2 = Utility.CalculateVaultUsage();
         var text3 = "";
@@ -177,24 +177,24 @@ internal static class Static
                 {
                     num += warehouseRent;
                     text3 = text3 + "LineRentdWarehouse".Translate(warehouseRent) + "\n";
-                    if (dropped && num2 >= num + warehouseMaintainanceFee)
+                    if (dropped && num2 >= num + warehouseMaintainableFee)
                     {
-                        num += warehouseMaintainanceFee;
-                        text3 = text3 + "LineRentdMaintainanceFee".Translate(warehouseMaintainanceFee) +
+                        num += warehouseMaintainableFee;
+                        text3 = text3 + "LineRentdMaintainanceFee".Translate(warehouseMaintainableFee) +
                                 "\n";
                     }
                     else
                     {
-                        text4 = "LineUnRentdMaintainanceFee".Translate(warehouseMaintainanceFee) + "\n";
+                        text4 = "LineUnRentdMaintainanceFee".Translate(warehouseMaintainableFee) + "\n";
                         frozenWarehousePut = true;
                     }
                 }
                 else
                 {
                     text4 = "LineUnRentdWarehouse".Translate(warehouseRent) + "\n";
-                    if (warehouseMaintainanceFee > 0)
+                    if (warehouseMaintainableFee > 0)
                     {
-                        text4 = text4 + "LineUnRentdMaintainanceFee".Translate(warehouseMaintainanceFee) +
+                        text4 = text4 + "LineUnRentdMaintainanceFee".Translate(warehouseMaintainableFee) +
                                 "\n";
                     }
 
@@ -210,9 +210,9 @@ internal static class Static
             if (IsWarehouseRented)
             {
                 text4 = text4 + "LineUnRentdWarehouse".Translate(warehouseRent) + "\n";
-                if (warehouseMaintainanceFee > 0)
+                if (warehouseMaintainableFee > 0)
                 {
-                    text4 = text4 + "LineUnRentdMaintainanceFee".Translate(warehouseMaintainanceFee) + "\n";
+                    text4 = text4 + "LineUnRentdMaintainanceFee".Translate(warehouseMaintainableFee) + "\n";
                 }
 
                 frozenWarehouseGet = true;
@@ -223,7 +223,7 @@ internal static class Static
         var pair = Utility.SimulateExchange(contentVaultSilver, contentVaultBanknote, num);
         contentVaultBanknote = pair.First;
         contentVaultSilver = pair.Second;
-        ScheduleNext();
+        scheduleNext();
         string text5 = "LetterTitleNorm".Translate();
         text += text3;
         var letterDef = LetterDefOf.NeutralEvent;
@@ -262,7 +262,7 @@ internal static class Static
         scheduledPayWarehouseRentTick = scheduledPayVaultRentTick;
     }
 
-    private static void ScheduleNext()
+    private static void scheduleNext()
     {
         if (IsVaultRented)
         {
@@ -340,7 +340,7 @@ internal static class Static
         if (contentStaticChamber.Count != ticksStaticChamber.Count)
         {
             Log.ErrorOnce(
-                "StaticChamber pawns count doesnt equal to ticks count.That means the storage is affected and bugged.",
+                "StaticChamber pawns count doesn't equal to ticks count.That means the storage is affected and bugged.",
                 330671);
         }
 

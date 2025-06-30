@@ -31,7 +31,7 @@ public class Trader_CurrencyConsumer(Window parent, string[] tipstrings, bool is
 
         foreach (var item in TradeUtility.AllLaunchableThingsForTrade(playerNegotiator.Map))
         {
-            if (item.def == ThingDefOf.Silver || Utility.isBankNote(item))
+            if (item.def == ThingDefOf.Silver || Utility.IsBankNote(item))
             {
                 yield return item;
             }

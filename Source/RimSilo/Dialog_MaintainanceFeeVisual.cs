@@ -10,7 +10,7 @@ public class Dialog_MaintainanceFeeVisual : Window
 
     private float x;
 
-    public override Vector2 InitialSize => new Vector2(1024f, 400f);
+    public override Vector2 InitialSize => new(1024f, 400f);
 
     public override void PreOpen()
     {
@@ -35,19 +35,19 @@ public class Dialog_MaintainanceFeeVisual : Window
         var position2 = new Rect(x - 12f, position.y - 25f, 25f, 25f);
         var color2 = GUI.color = MarketValueMultiplier.ResolveColor(num);
         GUI.DrawTexture(position2, StaticConstructor.TexPin);
-        DrawLineVertical(x, position.y - 1f, position.height, color2);
+        drawLineVertical(x, position.y - 1f, position.height, color2);
         var text = MarketValueMultiplier.ResolveMaxMultiplierString(num);
         var vector = Text.CalcSize(text);
         Widgets.Label(new Rect(x + 5f, position.yMax - vector.y - 7f, vector.x, vector.y), text);
         GUI.color = Color.gray;
         var yMax = position.yMax;
         var vector2 = default(Vector2);
-        foreach (var stage in MarketValueMultiplier.stages)
+        foreach (var stage in MarketValueMultiplier.Stages)
         {
             var text2 = stage.ToString();
             vector2 = Text.CalcSize(text2);
             var rect = new Rect(inRect.width * stage / 250000f, yMax, vector2.x, vector2.y);
-            DrawLineVertical(inRect.width * stage / 250000f, yMax - 5f, 5f, Color.gray);
+            drawLineVertical(inRect.width * stage / 250000f, yMax - 5f, 5f, Color.gray);
             Widgets.Label(rect, text2);
         }
 
@@ -98,7 +98,7 @@ public class Dialog_MaintainanceFeeVisual : Window
         GC.Collect();
     }
 
-    public static void DrawLineVertical(float x, float y, float length, Color color)
+    private static void drawLineVertical(float x, float y, float length, Color color)
     {
         GUI.DrawTexture(new Rect(x, y, 1f, length), SolidColorMaterials.NewSolidColorTexture(color));
     }

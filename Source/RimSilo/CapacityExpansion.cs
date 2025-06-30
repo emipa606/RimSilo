@@ -14,7 +14,7 @@ internal static class CapacityExpansion
 
     public static int VaultSubscriptionPerUnit => 1700;
 
-    public static int VaultMaxCapacity => 500000;
+    private static int VaultMaxCapacity => 500000;
 
     public static int WarehouseBaseCapacity => 6000;
 
@@ -24,9 +24,9 @@ internal static class CapacityExpansion
 
     public static int WarehouseRentPerUnit => 50;
 
-    public static int WarehouseSubscriptonPerUnit => 1600;
+    public static int WarehouseSubscriptionPerUnit => 1600;
 
-    public static int WarehouseMaxCapacity => 30000;
+    private static int WarehouseMaxCapacity => 30000;
 
     public static int WarehouseExpansionSlotsCount =>
         (WarehouseMaxCapacity - WarehouseBaseCapacity) / WarehouseCapacityPerUnit;

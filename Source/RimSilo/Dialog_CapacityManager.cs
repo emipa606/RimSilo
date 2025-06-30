@@ -54,7 +54,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
             Init_Warehouse();
         }
 
-        xMax = InitReportStringsAndxMax();
+        xMax = initReportStringsAndxMax();
         descPt2YPos = Text.CalcHeight(cacheDescString, 1024f);
         closeOnCancel = true;
         forcePause = true;
@@ -64,7 +64,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         soundAmbient = SoundDefOf.RadioComms_Ambience;
     }
 
-    public override Vector2 InitialSize => new Vector2(900f, 400f);
+    public override Vector2 InitialSize => new(900f, 400f);
 
     bool ICurrencyConsumer.Consumed
     {
@@ -79,16 +79,15 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
             {
                 Static.extensionsWarehouse = currentSlotCount;
                 Init_Warehouse();
-                xMax = InitReportStringsAndxMax();
-                capPosX = null;
             }
             else
             {
                 Static.extensionsVault = currentSlotCount;
                 Init_Vault();
-                xMax = InitReportStringsAndxMax();
-                capPosX = null;
             }
+
+            xMax = initReportStringsAndxMax();
+            capPosX = null;
         }
     }
 
@@ -120,7 +119,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         unit = CapacityExpansion.WarehouseCapacityPerUnit;
         rentPerUnit = CapacityExpansion.WarehouseRentPerUnit;
         rentCurrent = CapacityExpansion.WarehouseRent;
-        costPerSlot = CapacityExpansion.WarehouseSubscriptonPerUnit;
+        costPerSlot = CapacityExpansion.WarehouseSubscriptionPerUnit;
         cacheDescString = "CapacityExpansionDesc".Translate("FormatMass".Translate(unit), rentPerUnit, costPerSlot);
         currentSlotCount = Static.extensionsWarehouse;
     }
@@ -128,7 +127,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
     public override void DoWindowContents(Rect inRect)
     {
         var y = 120f;
-        var num = 18f;
+        const float num = 18f;
         GUI.BeginGroup(inRect);
         var rect = new Rect(0f, 0f, inRect.width, 250f);
         _ = new Rect(0f, y, inRect.width, 35f);
@@ -166,12 +165,12 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
             GUI.DrawTexture(rect4, StaticConstructor.TexIncrease);
         }
 
-        var num2 = rect2.yMax + FillBlocks(rect2);
+        var num2 = rect2.yMax + fillBlocks(rect2);
         if (capPosX == null)
         {
             capPosX = new float[2];
-            CachePos(capacityTop, 0);
-            CachePos(capacityUsage, 1);
+            cachePos(capacityTop, 0);
+            cachePos(capacityUsage, 1);
             labels = new Rect[2];
             var vector = Text.CalcSize("LabelCurrentMax".Translate());
             var source = new Rect(capPosX[0] - (vector.x / 2f), rect2.y - num - vector.y + 2f, vector.x, vector.y);
@@ -201,7 +200,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         Text.Anchor = usageAnchor;
         Widgets.Label(labels[1], "LabelCurrentUsage".Translate(capacityUsage));
         Text.Anchor = TextAnchor.UpperLeft;
-        ReportExpense(rect);
+        reportExpense(rect);
         var rect5 = new Rect(0f, num2 + 2f, inRect.width, 100f);
         Widgets.Label(rect5, cacheDescString);
         rect5.y += descPt2YPos;
@@ -250,9 +249,9 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         GC.Collect();
     }
 
-    private float FillBlocks(Rect rect)
+    private float fillBlocks(Rect rect)
     {
-        var num = 2f;
+        const float num = 2f;
         var num2 = extensionSlotsCount;
         if (blocks == null)
         {
@@ -278,7 +277,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         Widgets.Label(rect3, text);
         for (var j = 0; j <= num2; j++)
         {
-            TryFill(j);
+            tryFill(j);
             text = (baseCapacity + (j * unit)).ToString();
             vector = Text.CalcSize(text);
             rect3 = new Rect(blocks[j].xMax + num - (vector.x / 2f), blocks[j].yMax + 1f, vector.x, vector.y);
@@ -291,7 +290,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         return vector.y;
     }
 
-    private void TryFill(int index)
+    private void tryFill(int index)
     {
         GUI.DrawTexture(blocks[index],
             index > currentSlotCount
@@ -299,7 +298,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
                 : StaticConstructor.FillableTexOccupiedSlot);
     }
 
-    private void CachePos(int num, int idx)
+    private void cachePos(int num, int idx)
     {
         for (var i = 0; i <= extensionSlotsCount; i++)
         {
@@ -329,7 +328,7 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         }
     }
 
-    private float InitReportStringsAndxMax()
+    private float initReportStringsAndxMax()
     {
         reports = new string[6];
         reports[0] = "ReportStrCapacity".Translate(capacityTop);
@@ -356,11 +355,11 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
         return Math.Max(val, num3);
     }
 
-    private void ReportExpense(Rect rect)
+    private void reportExpense(Rect rect)
     {
-        var num = 5f;
-        var num2 = 7f;
-        var num3 = 2f;
+        const float num = 5f;
+        const float num2 = 7f;
+        const float num3 = 2f;
         string text;
         string text2 = null;
         var canFillMore = true;

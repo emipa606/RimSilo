@@ -67,7 +67,7 @@ public class Trader_GlobalDropPod : VirtualTrader
                 num += allTradeable.CountToTransfer;
             }
 
-            if (Utility.isBankNote(allTradeable))
+            if (Utility.IsBankNote(allTradeable))
             {
                 num2 += allTradeable.CountToTransfer;
             }
@@ -113,7 +113,7 @@ public class Trader_GlobalDropPod : VirtualTrader
         {
             Static.contentVaultSilver -= thing.stackCount;
         }
-        else if (Utility.isBankNote(thing))
+        else if (Utility.IsBankNote(thing))
         {
             Static.contentVaultBanknote -= thing.stackCount;
         }
@@ -132,31 +132,31 @@ public class Trader_GlobalDropPod : VirtualTrader
     public static void TrySendQueuedDrop(int mass)
     {
         cachedMass = mass;
-        StartChoosingDestination();
+        startChoosingDestination();
     }
 
-    private static void PreDeliver()
+    private static void preDeliver()
     {
         thingsToDrop = [];
         TradeSession.deal.DoExecute();
         Static.dropPodCount -= Utility.PodCountToSendMassBased(cachedMass);
     }
 
-    private static void FinalizeTargeter()
+    private static void finalizeTargeter()
     {
         CameraJumper.TryHideWorld();
         Find.WorldTargeter.StopTargeting();
     }
 
-    public static void StartChoosingDestination()
+    private static void startChoosingDestination()
     {
         CameraJumper.TryJump(CameraJumper.GetWorldTarget(TradeSession.playerNegotiator));
         Find.WorldSelector.ClearSelection();
-        Find.WorldTargeter.BeginTargeting(ChoseWorldTarget, enableTileDrop, StaticConstructor.TargeterMouseAttachment,
-            false, null, GetTileLabel);
+        Find.WorldTargeter.BeginTargeting(choseWorldTarget, enableTileDrop, StaticConstructor.TargeterMouseAttachment,
+            false, null, getTileLabel);
     }
 
-    private static string GetTileLabel(GlobalTargetInfo target)
+    private static TaggedString getTileLabel(GlobalTargetInfo target)
     {
         if (!target.IsValid || Find.World.Impassable(target.Tile))
         {
@@ -181,9 +181,9 @@ public class Trader_GlobalDropPod : VirtualTrader
         return null;
     }
 
-    private static bool ChoseWorldTarget(GlobalTargetInfo target)
+    private static bool choseWorldTarget(GlobalTargetInfo target)
     {
-        if (!GetTileLabel(target).NullOrEmpty())
+        if (!getTileLabel(target).NullOrEmpty())
         {
             Messages.Message("MessageTransportPodsDestinationIsInvalid".Translate(), MessageTypeDefOf.RejectInput);
             return false;
@@ -195,11 +195,11 @@ public class Trader_GlobalDropPod : VirtualTrader
             {
                 var map = mapParent.Map;
                 Current.Game.CurrentMap = map;
-                FinalizeTargeter();
+                finalizeTargeter();
                 Find.CameraDriver.JumpToCurrentMapLoc(map.rememberedCameraPos.rootPos);
                 Find.Targeter.BeginTargeting(TargetingParameters.ForDropPodsDestination(), delegate(LocalTargetInfo x)
                 {
-                    PreDeliver();
+                    preDeliver();
                     Utility.TryDeliverThingsLocalNearPos(thingsToDrop, map, x.Cell);
                 }, null, null, StaticConstructor.TargeterMouseAttachment);
                 return true;
@@ -214,10 +214,10 @@ public class Trader_GlobalDropPod : VirtualTrader
                     list.Add(new FloatMenuOption("VisitSettlement".Translate(target.WorldObject.Label),
                         delegate
                         {
-                            PreDeliver();
+                            preDeliver();
                             Utility.TryDeliverThingsGlobal(thingsToDrop, target.WorldObject,
                                 ref PawnsArrivalModeDefOf.EdgeDrop, true);
-                            FinalizeTargeter();
+                            finalizeTargeter();
                         }));
                 }
 
@@ -227,17 +227,17 @@ public class Trader_GlobalDropPod : VirtualTrader
                     {
                         list.Add(new FloatMenuOption("DropAtEdge".Translate(), delegate
                         {
-                            PreDeliver();
+                            preDeliver();
                             Utility.TryDeliverThingsGlobal(thingsToDrop, target.WorldObject,
                                 ref PawnsArrivalModeDefOf.EdgeDrop, false, true);
-                            FinalizeTargeter();
+                            finalizeTargeter();
                         }));
                         list.Add(new FloatMenuOption("DropInCenter".Translate(), delegate
                         {
-                            PreDeliver();
+                            preDeliver();
                             Utility.TryDeliverThingsGlobal(thingsToDrop, target.WorldObject,
                                 ref randomDrop, false, true);
-                            FinalizeTargeter();
+                            finalizeTargeter();
                         }));
                     }
 
@@ -245,10 +245,10 @@ public class Trader_GlobalDropPod : VirtualTrader
                     {
                         list.Add(new FloatMenuOption("DropInCenter".Translate() + "(Friendly)(Dev)", delegate
                         {
-                            PreDeliver();
+                            preDeliver();
                             Utility.TryDeliverThingsGlobal(thingsToDrop, target.WorldObject,
                                 ref randomDrop);
-                            FinalizeTargeter();
+                            finalizeTargeter();
                         }));
                     }
                 }
@@ -266,7 +266,7 @@ public class Trader_GlobalDropPod : VirtualTrader
             return false;
         }
 
-        PreDeliver();
+        preDeliver();
         Utility.TryDeliverThingsGlobal(thingsToDrop, caravan, ref PawnsArrivalModeDefOf.EdgeDrop);
         return true;
     }

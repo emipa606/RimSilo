@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>RimSilo</name>
   <author>user19990313</author>
@@ -6,18 +6,18 @@
   <targetVersion>0.18.1722</targetVersion>
   <description>
 
-&lt;size=20&gt;RimSilo™&lt;/size&gt;
+&lt;size=20>RimSilo™&lt;/size>
 [Sub mod, must be loaded after "RimBank"]
 
 简体中文介绍接在英文介绍之后，请往下拉。
 
-&lt;size=11&gt;*Disclaimer : Any of the [™] marks in this mod in any translation texts are only used to make the gaming experience more authentic. They shall never stand for any kinds of trademarks, properties or so. If you do consider them as an infringement on your rights, please submit this case to the author, the author will remove any of those marks. It will be regarded as an acknowledgement and acceptance of this disclaimer if you proceed and use this mod.&lt;/size&gt;
+&lt;size=11>*Disclaimer : Any of the [™] marks in this mod in any translation texts are only used to make the gaming experience more authentic. They shall never stand for any kinds of trademarks, properties or so. If you do consider them as an infringement on your rights, please submit this case to the author, the author will remove any of those marks. It will be regarded as an acknowledgement and acceptance of this disclaimer if you proceed and use this mod.&lt;/size>
 
 What's diffenent in B18 update :
-+Max Vault capacity : 170000 -&gt; 230000
--Vault subscription fee : 1000 -&gt; 850
-+Initial Warehouse capacity : 2000kg -&gt; 3000kg
-+Max Warehouse capacity : 10000kg -&gt; 15000kg
++Max Vault capacity : 170000 -> 230000
+-Vault subscription fee : 1000 -> 850
++Initial Warehouse capacity : 2000kg -> 3000kg
++Max Warehouse capacity : 10000kg -> 15000kg
 *Fixed a bug that there are -2 notes in a vault after a transfer
 *Notification letter types remade
 
@@ -72,16 +72,16 @@ user19990313(ArchAuthor,Dll parts), WishingLaws(En translation), duduluu(Preview
 
 
 
-&lt;size=20&gt;RimSilo™边缘仓储™&lt;/size&gt;
+&lt;size=20>RimSilo™边缘仓储™&lt;/size>
 [子mod，必须排在Rimbank边缘银行之后加载]
 
-&lt;size=11&gt;*免责声明：在本mod任何语言翻译的文本中出现的[™]标记仅做仿真之用，不表示任何形式的企业注册商标、产权或其他。若您认为该标记确实对您的权益产生损害，请提交书面材料通知作者，作者将立刻进行修改。若您开始使用本mod，视为您同意了上述声明。&lt;/size&gt;
+&lt;size=11>*免责声明：在本mod任何语言翻译的文本中出现的[™]标记仅做仿真之用，不表示任何形式的企业注册商标、产权或其他。若您认为该标记确实对您的权益产生损害，请提交书面材料通知作者，作者将立刻进行修改。若您开始使用本mod，视为您同意了上述声明。&lt;/size>
 
 B18更新內容：
-+保险库容量上限：170000 -&gt; 230000
--保险库扩容手续费：1000 -&gt; 850
-+仓库初始容量：2000kg -&gt; 3000kg
-+仓库容量上限：10000kg -&gt; 15000kg
++保险库容量上限：170000 -> 230000
+-保险库扩容手续费：1000 -> 850
++仓库初始容量：2000kg -> 3000kg
++仓库容量上限：10000kg -> 15000kg
 *修复了可能导致保险库钞票为-2的bug
 *缴费通知更换了信封类型
 

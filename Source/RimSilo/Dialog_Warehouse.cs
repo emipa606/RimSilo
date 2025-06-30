@@ -23,11 +23,11 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
 
     private const float SpaceBetweenTraderNameAndTraderKind = 27f;
 
-    protected readonly Vector2 AcceptButtonSize = new Vector2(160f, 40f);
+    private readonly Vector2 acceptButtonSize = new(160f, 40f);
 
     private readonly double cachedWarehouseMarketValue = Utility.CalculateWarehouseMarketValue();
 
-    protected readonly Vector2 OtherBottomButtonSize = new Vector2(160f, 40f);
+    private readonly Vector2 otherBottomButtonSize = new(160f, 40f);
 
     private readonly double warehouseMassUsage = Utility.CalculateWarehouseUsage();
 
@@ -62,9 +62,9 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         sorter2 = TransferableSorterDefOf.MarketValue;
     }
 
-    public override Vector2 InitialSize => new Vector2(1024f, UI.screenHeight);
+    public override Vector2 InitialSize => new(1024f, UI.screenHeight);
 
-    private float TopAreaHeight => 83f;
+    private static float TopAreaHeight => 83f;
 
     private double MassUsage
     {
@@ -99,7 +99,7 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         }
     }
 
-    private float MassCapacity => Utility.WarehouseCapacity;
+    private static float MassCapacity => Utility.WarehouseCapacity;
 
     bool ICurrencyConsumer.Consumed
     {
@@ -119,10 +119,10 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
     {
         base.PostOpen();
         Static.TryMessageBoxRestrictedPermissionWarehouse();
-        CacheTradeables();
+        cacheTradeables();
     }
 
-    private void CacheTradeables()
+    private void cacheTradeables()
     {
         cachedCurrencyTradeable = (from x in TradeSession.deal.AllTradeables
             where x.IsCurrency
@@ -145,11 +145,11 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         TransferableUIUtility.DoTransferableSorters(sorter1, sorter2, delegate(TransferableSorterDef x)
         {
             sorter1 = x;
-            CacheTradeables();
+            cacheTradeables();
         }, delegate(TransferableSorterDef x)
         {
             sorter2 = x;
-            CacheTradeables();
+            cacheTradeables();
         });
         var num = inRect.width - 590f;
         var rect = new Rect(num, 0f, inRect.width - num, TopAreaHeight);
@@ -236,10 +236,10 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
 
         var mainRect = new Rect(0f, TopAreaHeight + num8, inRect.width,
             inRect.height - TopAreaHeight - 38f - num8 - 20f);
-        FillMainRect(mainRect);
-        var rect10 = new Rect((inRect.width / 2f) - (AcceptButtonSize.x / 2f), inRect.height - BaseTopAreaHeight,
-            AcceptButtonSize.x,
-            AcceptButtonSize.y);
+        fillMainRect(mainRect);
+        var rect10 = new Rect((inRect.width / 2f) - (acceptButtonSize.x / 2f), inRect.height - BaseTopAreaHeight,
+            acceptButtonSize.x,
+            acceptButtonSize.y);
         if (Widgets.ButtonText(rect10, "AcceptButton".Translate(), true, false))
         {
             TradeSession.deal.UpdateCurrencyCountMassBased();
@@ -262,20 +262,20 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
                     }
                     else
                     {
-                        void VaultPaymentHandler()
+                        void vaultPaymentHandler()
                         {
                             cachedCurrencyTradeable.ForceTo(0);
                             Utility.ConsumeCurrencyVault(this, expense);
                         }
 
-                        void LocalPaymentHandler()
+                        void localPaymentHandler()
                         {
                             Trade.Utility.AskPayByBankNotes(cachedCurrencyTradeable, true);
                             Utility.Recache();
                         }
 
-                        Utility.MakeFloatMenuSelectPaymentSource(this, expense, null, null, LocalPaymentHandler,
-                            VaultPaymentHandler);
+                        Utility.MakeFloatMenuSelectPaymentSource(this, expense, null, null, localPaymentHandler,
+                            vaultPaymentHandler);
                     }
                 }
             }
@@ -284,14 +284,14 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         }
 
         if (Widgets.ButtonText(
-                new Rect(rect10.x - 10f - OtherBottomButtonSize.x, rect10.y, OtherBottomButtonSize.x,
-                    OtherBottomButtonSize.y), "ResetButton".Translate(), true, false))
+                new Rect(rect10.x - 10f - otherBottomButtonSize.x, rect10.y, otherBottomButtonSize.x,
+                    otherBottomButtonSize.y), "ResetButton".Translate(), true, false))
         {
-            Reset();
+            reset();
             Event.current.Use();
         }
 
-        if (!Widgets.ButtonText(new Rect(rect10.xMax + 10f, rect10.y, OtherBottomButtonSize.x, OtherBottomButtonSize.y),
+        if (!Widgets.ButtonText(new Rect(rect10.xMax + 10f, rect10.y, otherBottomButtonSize.x, otherBottomButtonSize.y),
                 "CancelButton".Translate(), true, false))
         {
             return;
@@ -313,7 +313,7 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         Utility.Recache();
     }
 
-    private void FillMainRect(Rect mainRect)
+    private void fillMainRect(Rect mainRect)
     {
         Text.Font = GameFont.Small;
         var height = FirstCommodityY + (cachedTradeables.Count * RowInterval);
@@ -332,7 +332,7 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
                 Utility.DrawTradeableRow(rect, tradeable, num4);
                 if (countToTransfer != tradeable.CountToTransfer)
                 {
-                    CountToTransferChanged();
+                    countToTransferChanged();
                 }
             }
 
@@ -348,15 +348,15 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         return true;
     }
 
-    private void Reset()
+    private void reset()
     {
         SoundDefOf.Tick_Low.PlayOneShotOnCamera();
         TradeSession.deal.Reset();
-        CacheTradeables();
-        CountToTransferChanged();
+        cacheTradeables();
+        countToTransferChanged();
     }
 
-    private void CountToTransferChanged()
+    private void countToTransferChanged()
     {
         massUsageDirty = true;
         marketValueDirty = true;

@@ -300,10 +300,7 @@ internal static class Utility
         Action preAction = null, Action localPaymentHandler = null, Action vaultPaymentHandler = null,
         bool enableVaultEvenRestricted = false)
     {
-        if (preAction == null)
-        {
-            preAction = delegate { };
-        }
+        preAction ??= delegate { };
 
         var list = new List<FloatMenuOption>();
         string text;
@@ -385,11 +382,8 @@ internal static class Utility
 
     public static void DrawColumnSelectionButton(Rect rect)
     {
-        if (!allowDateColumnType.HasValue)
-        {
-            allowDateColumnType = TradeSession.trader is Trader_StaticChamber ||
-                                  TradeSession.trader is Trader_GlobalDropPod && !Static.IsStaticChamberNull;
-        }
+        allowDateColumnType ??= TradeSession.trader is Trader_StaticChamber ||
+                                TradeSession.trader is Trader_GlobalDropPod && !Static.IsStaticChamberNull;
 
         if (Widgets.ButtonText(rect, columnSelectionLabels[currentColumnType], true, false))
         {
@@ -420,23 +414,23 @@ internal static class Utility
         allowDateColumnType = null;
     }
 
-    public static void TryDrawCustomColumn(Rect rect, Tradeable trad, bool drawMassForCurrency = false)
+    private static void tryDrawCustomColumn(Rect rect, Tradeable trad, bool drawMassForCurrency = false)
     {
         switch (currentColumnType)
         {
             case 0:
-                DrawMarketValueColumn(rect, trad);
+                drawMarketValueColumn(rect, trad);
                 break;
             case 1:
-                DrawMassColumn(rect, trad, drawMassForCurrency);
+                drawMassColumn(rect, trad, drawMassForCurrency);
                 break;
             case 2:
-                DrawDaysBeforeExpired(rect, trad);
+                drawDaysBeforeExpired(rect, trad);
                 break;
         }
     }
 
-    public static void DrawMarketValueColumn(Rect rect, Tradeable trad)
+    private static void drawMarketValueColumn(Rect rect, Tradeable trad)
     {
         if (!ShouldBeTradeable(trad))
         {
@@ -462,7 +456,7 @@ internal static class Utility
         Widgets.Label(rect2, trad.BaseMarketValue.ToStringMoney());
     }
 
-    public static void DrawMassColumn(Rect rect, Tradeable trad, bool drawForCurrency = false)
+    private static void drawMassColumn(Rect rect, Tradeable trad, bool drawForCurrency = false)
     {
         if (!ShouldBeTradeable(trad) && !drawForCurrency)
         {
@@ -488,9 +482,9 @@ internal static class Utility
         Widgets.Label(rect2, "FormatMass".Translate(trad.ThingDef.BaseMass.ToString("F2")));
     }
 
-    public static void DrawDaysBeforeExpired(Rect rect, Tradeable trad)
+    private static void drawDaysBeforeExpired(Rect rect, Tradeable trad)
     {
-        if (trad is not Tradeable_Pawn tradeable_Pawn || tradeable_Pawn.CountHeldBy(Transactor.Trader) <= 0)
+        if (trad is not Tradeable_Pawn tradeablePawn || tradeablePawn.CountHeldBy(Transactor.Trader) <= 0)
         {
             return;
         }
@@ -502,13 +496,13 @@ internal static class Utility
         }
 
         TooltipHandler.TipRegion(rect, new TipSignal("TipDaysLeft".Translate(), rect.GetHashCode() / 2));
-        var array = new double[tradeable_Pawn.thingsTrader.Count];
+        var array = new double[tradeablePawn.thingsTrader.Count];
         int i;
         for (i = 0; i < array.Length; i++)
         {
             array[i] = 420000 - Find.TickManager.TicksAbs +
                        Static.ticksStaticChamber[
-                           Static.contentStaticChamber.IndexOf((Pawn)tradeable_Pawn.thingsTrader[i])];
+                           Static.contentStaticChamber.IndexOf((Pawn)tradeablePawn.thingsTrader[i])];
             array[i] /= 60000.0;
         }
 
@@ -586,7 +580,7 @@ internal static class Utility
         width -= 240f;
         var rect5 = new Rect(width - 100f, 0f, 100f, rect.height);
         Text.Anchor = TextAnchor.MiddleLeft;
-        TryDrawCustomColumn(rect5, trad, forceDrawMass);
+        tryDrawCustomColumn(rect5, trad, forceDrawMass);
         var num2 = trad.CountHeldBy(Transactor.Colony);
         if (num2 != 0)
         {
@@ -691,7 +685,7 @@ internal static class Utility
         }
     }
 
-    public static void TryDeliverThingsGlobal(List<Thing> list)
+    private static void tryDeliverThingsGlobal(List<Thing> list)
     {
         Find.WorldObjects.Caravans.Where(c => c.IsPlayerControlled).TryRandomElement(out var result);
         TryDeliverThingsGlobal(list, result, ref PawnsArrivalModeDefOf.EdgeDrop);
@@ -700,25 +694,22 @@ internal static class Utility
     public static void TryDeliverThingsGlobal(List<Thing> list, WorldObject target, ref PawnsArrivalModeDef arriveMode,
         bool forceCreateCaravan = false, bool forceAttack = false)
     {
-        if (arriveMode == null)
-        {
-            arriveMode = PawnsArrivalModeDefOf.EdgeDrop;
-        }
+        arriveMode ??= PawnsArrivalModeDefOf.EdgeDrop;
 
         //IL_0052: Unknown result type (might be due to invalid IL or missing references)
         //IL_0054: Unknown result type (might be due to invalid IL or missing references)
-        var activeDropPodInfo = new ActiveDropPodInfo();
+        var activeDropPodInfo = new ActiveTransporterInfo();
         activeDropPodInfo.innerContainer.TryAddRangeOrTransfer(list);
-        var pod = new TravelingTransportPods
+        var pod = new TravellingTransporters
         {
-            def = WorldObjectDefOf.TravelingTransportPods
+            def = WorldObjectDefOf.TravellingTransporters
         };
         pod.SetFaction(Faction.OfPlayer);
-        pod.arrivalAction = new TransportPodsArrivalAction_GiveGift();
+        pod.arrivalAction = new TransportersArrivalAction_GiveGift();
         pod.Tile = target.Tile;
         pod.destinationTile = target.Tile;
         Find.WorldObjects.Add(pod);
-        pod.AddPod(activeDropPodInfo, false);
+        pod.AddTransporter(activeDropPodInfo, false);
         if (!forceCreateCaravan && target is MapParent { Map: not null } mapParent)
         {
             LongEventHandler.QueueLongEvent(delegate
@@ -734,7 +725,7 @@ internal static class Utility
                 }
 
                 Find.TickManager.CurTimeSpeed = TimeSpeed.Paused;
-                typeof(TravelingTransportPods)
+                typeof(TravellingTransporters)
                     .GetMethod("SpawnDropPodsInMap", BindingFlags.Instance | BindingFlags.NonPublic)
                     ?.Invoke(pod, [orGenerateMap, text]);
             }, "GeneratingMapForNewEncounter", false, null);
@@ -755,13 +746,13 @@ internal static class Utility
 
         if (noPawns && !forceCreateCaravan)
         {
-            typeof(TravelingTransportPods)
+            typeof(TravellingTransporters)
                 .GetMethod("GivePodContentsToCaravan", BindingFlags.Instance | BindingFlags.NonPublic)
                 ?.Invoke(pod, [(Caravan)target]);
         }
         else
         {
-            typeof(TravelingTransportPods)
+            typeof(TravellingTransporters)
                 .GetMethod("SpawnCaravanAtDestinationTile", BindingFlags.Instance | BindingFlags.NonPublic)
                 ?.Invoke(pod, null);
         }
@@ -785,7 +776,7 @@ internal static class Utility
             return;
         }
 
-        TryDeliverThingsGlobal(list);
+        tryDeliverThingsGlobal(list);
     }
 
     public static bool RemoveAllTickComponentsFromGame()
@@ -808,25 +799,22 @@ internal static class Utility
 
     public static bool ShouldBeTradeable(Tradeable t)
     {
-        return !t.IsCurrency && !isBankNote(t);
+        return !t.IsCurrency && !IsBankNote(t);
     }
 
-    public static bool isBankNote(Tradeable t)
+    public static bool IsBankNote(Tradeable t)
     {
         return t.ThingDef.defName == "BankNote";
     }
 
-    public static bool isBankNote(Thing t)
+    public static bool IsBankNote(Thing t)
     {
         return t.def.defName == "BankNote";
     }
 
     public static ThingDef BankNoteDef()
     {
-        if (bankNoteDef == null)
-        {
-            bankNoteDef = DefDatabase<ThingDef>.GetNamed("BankNote");
-        }
+        bankNoteDef ??= DefDatabase<ThingDef>.GetNamed("BankNote");
 
         return bankNoteDef;
     }
