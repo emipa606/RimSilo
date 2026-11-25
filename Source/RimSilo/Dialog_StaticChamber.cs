@@ -25,7 +25,7 @@ public class Dialog_StaticChamber : Window, ICurrencyConsumer
 
     private readonly Vector2 AcceptButtonSize = new(160f, 40f);
 
-    public readonly Vector2 OtherBottomButtonSize = new(160f, 40f);
+    private readonly Vector2 OtherBottomButtonSize = new(160f, 40f);
 
     private Tradeable cachedCurrencyTradeable;
 

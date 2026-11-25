@@ -131,7 +131,7 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         return new Pair<int, int>(0, 0);
     }
 
-    private IEnumerable<Pawn> AllPotentialPawnsInMap(Map map)
+    private static IEnumerable<Pawn> AllPotentialPawnsInMap(Map map)
     {
         foreach (var item in map.mapPawns.PrisonersOfColonySpawned)
         {
@@ -233,12 +233,10 @@ public class Trader_StaticChamber(bool upOnly = false, bool downOnly = false) : 
         var list2 = new List<IntVec3>();
         foreach (var item in list)
         {
-            foreach (var cell in item.GetRoom(RegionType.Normal | RegionType.Portal).Cells)
+            foreach (var cell in item.GetRoom(RegionType.Normal | RegionType.Portal).Cells
+                         .Where(cell => !map.roofGrid.Roofed(cell)))
             {
-                if (!map.roofGrid.Roofed(cell))
-                {
-                    list2.Add(cell);
-                }
+                list2.Add(cell);
             }
         }
 

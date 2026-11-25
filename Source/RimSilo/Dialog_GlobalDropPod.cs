@@ -28,8 +28,6 @@ public class Dialog_GlobalDropPod : Window
 
     private Tradeable cachedCurrencyTradeable;
 
-    private double cachedMassUsage;
-
     private Tradeable cachedNotesTradeable;
 
     private List<Tradeable> cachedTradeables;
@@ -68,7 +66,7 @@ public class Dialog_GlobalDropPod : Window
         {
             if (!massUsageDirty)
             {
-                return cachedMassUsage;
+                return field;
             }
 
             massUsageDirty = false;
@@ -82,9 +80,9 @@ public class Dialog_GlobalDropPod : Window
                 }
             }
 
-            cachedMassUsage = TradeSession.deal.CalculateMass(true).First + num;
+            field = TradeSession.deal.CalculateMass(true).First + num;
 
-            return cachedMassUsage;
+            return field;
         }
     }
 
@@ -172,7 +170,6 @@ public class Dialog_GlobalDropPod : Window
         _ = MassCapacity;
         var rect4 = rect.AtZero();
         rect4.y = 30f;
-        // TODO: TransferableUIUtility.DrawMassInfo(rect4, num2, massCapacity, Translator.Translate("TipPodMass"), -9999f, false);
         rect4.y = 47f;
         GUI.color = Color.gray;
         Widgets.Label(rect4, "TextPodUsage".Translate(Utility.PodCountToSendMassBased((int)Math.Ceiling(MassUsage))));

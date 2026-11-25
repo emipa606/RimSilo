@@ -82,75 +82,78 @@ internal static class Utility
         }
     }
 
-    public static void UpdateCurrencyCountMassBased(this TradeDeal This)
+    extension(TradeDeal This)
     {
-        var pair = This.CalculateMass();
-        var num = (int)Math.Ceiling(((pair.First + pair.Second) * MassValue) - 0.0001);
-        This.CurrencyTradeable.ForceTo(-num);
-    }
-
-    public static void UpdateCurrencyCountStaticChamber(this TradeDeal This)
-    {
-        var num = 0;
-        foreach (var allTradeable in This.AllTradeables)
+        public void UpdateCurrencyCountMassBased()
         {
-            if (allTradeable is Tradeable_Pawn { ActionToDo: TradeAction.PlayerSells } tradeable_Pawn)
-            {
-                num -= tradeable_Pawn.CountToTransfer * StaticChamberFeePerPawn;
-            }
+            var pair = This.CalculateMass();
+            var num = (int)Math.Ceiling(((pair.First + pair.Second) * MassValue) - 0.0001);
+            This.CurrencyTradeable.ForceTo(-num);
         }
 
-        This.CurrencyTradeable.ForceTo(-num);
-    }
-
-    public static Pair<double, double> CalculateMass(this TradeDeal This, bool skipPawn = false)
-    {
-        var num = 0.0;
-        var num2 = 0.0;
-        foreach (var allTradeable in This.AllTradeables)
+        public void UpdateCurrencyCountStaticChamber()
         {
-            if (!ShouldBeTradeable(allTradeable) || (!skipPawn || allTradeable is Tradeable_Pawn) && skipPawn)
+            var num = 0;
+            foreach (var allTradeable in This.AllTradeables)
             {
-                continue;
+                if (allTradeable is Tradeable_Pawn { ActionToDo: TradeAction.PlayerSells } tradeable_Pawn)
+                {
+                    num -= tradeable_Pawn.CountToTransfer * StaticChamberFeePerPawn;
+                }
             }
 
-            switch (allTradeable.ActionToDo)
-            {
-                case TradeAction.PlayerBuys:
-                    num += allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
-                    break;
-                case TradeAction.PlayerSells:
-                    num2 -= allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
-                    break;
-            }
+            This.CurrencyTradeable.ForceTo(-num);
         }
 
-        return new Pair<double, double>(num, num2);
-    }
-
-    public static double CalculateMarketValue(this TradeDeal This)
-    {
-        var num = 0.0;
-        var num2 = 0.0;
-        foreach (var allTradeable in This.AllTradeables)
+        public Pair<double, double> CalculateMass(bool skipPawn = false)
         {
-            if (!ShouldBeTradeable(allTradeable))
+            var num = 0.0;
+            var num2 = 0.0;
+            foreach (var allTradeable in This.AllTradeables)
             {
-                continue;
+                if (!ShouldBeTradeable(allTradeable) || (!skipPawn || allTradeable is Tradeable_Pawn) && skipPawn)
+                {
+                    continue;
+                }
+
+                switch (allTradeable.ActionToDo)
+                {
+                    case TradeAction.PlayerBuys:
+                        num += allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
+                        break;
+                    case TradeAction.PlayerSells:
+                        num2 -= allTradeable.CountToTransfer * allTradeable.ThingDef.BaseMass;
+                        break;
+                }
             }
 
-            switch (allTradeable.ActionToDo)
-            {
-                case TradeAction.PlayerBuys:
-                    num += allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
-                    break;
-                case TradeAction.PlayerSells:
-                    num2 -= allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
-                    break;
-            }
+            return new Pair<double, double>(num, num2);
         }
 
-        return num2 - num;
+        public double CalculateMarketValue()
+        {
+            var num = 0.0;
+            var num2 = 0.0;
+            foreach (var allTradeable in This.AllTradeables)
+            {
+                if (!ShouldBeTradeable(allTradeable))
+                {
+                    continue;
+                }
+
+                switch (allTradeable.ActionToDo)
+                {
+                    case TradeAction.PlayerBuys:
+                        num += allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
+                        break;
+                    case TradeAction.PlayerSells:
+                        num2 -= allTradeable.CountToTransfer * allTradeable.AnyThing.MarketValue;
+                        break;
+                }
+            }
+
+            return num2 - num;
+        }
     }
 
     public static double CalculateWarehouseUsage()
@@ -287,8 +290,8 @@ internal static class Utility
         bool isVaultDefault = false)
     {
         var pawn = isVaultDefault
-            ? Find.WorldPawns.AllPawnsAlive.First()
-            : Find.CurrentMap.mapPawns.FreeColonistsSpawned.First();
+            ? Find.WorldPawns.AllPawnsAlive[0]
+            : Find.CurrentMap.mapPawns.FreeColonistsSpawned[0];
         TradeSession.SetupWith(new Trader_CurrencyConsumer(parent, tipstrings, isVaultDefault), pawn, false);
         Trade.Utility.CacheNotes();
         var silverTradeable = TradeSession.deal.CurrencyTradeable;

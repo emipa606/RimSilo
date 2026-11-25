@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using RimBank.Trade.Ext;
 using RimWorld;
 using UnityEngine;
@@ -516,14 +515,28 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
 
         GUI.DrawTexture(rect, StaticConstructor.TexLEDBase);
         Widgets.DrawHighlightIfMouseover(rect);
-        var text = GUI.color == Color.green ? "LEDTipOk" :
-            GUI.color == Color.gray ? "LEDTipNotRented" :
-            GUI.color == Color.red ? "LEDTipDanger" : "LEDTipCaution";
+        string text;
+        if (GUI.color == Color.green)
+        {
+            text = "LEDTipOk";
+        }
+        else
+        {
+            if (GUI.color == Color.gray)
+            {
+                text = "LEDTipNotRented";
+            }
+            else
+            {
+                text = GUI.color == Color.red ? "LEDTipDanger" : "LEDTipCaution";
+            }
+        }
+
         TooltipHandler.TipRegion(rect, text.Translate());
         GUI.color = Color.white;
     }
 
-    private void drawCapacityLine(ref Rect rect, Flags usage)
+    private static void drawCapacityLine(ref Rect rect, Flags usage)
     {
         GUI.color = Color.gray;
         string text = null;
@@ -789,7 +802,7 @@ public class Dialog_AccountCtrl : Window, ICurrencyConsumer
             fee += list2[num];
         }
 
-        text = $"{text}\n{list.Last().PadLeft(val)} : {fee}";
+        text = $"{text}\n{list[^1].PadLeft(val)} : {fee}";
         if (usage == Flags.CheckBill)
         {
             Find.WindowStack.Add(new Dialog_MessageBox(text, null, null, null, null,

@@ -15,11 +15,11 @@ public class Dialog_CapacityManager : Window, ICurrencyConsumer
 
     private string cacheDescString;
 
+    private float[] capPosX;
+
     private int capacityTop;
 
     private int capacityUsage;
-
-    private float[] capPosX;
 
     private int costPerSlot;
 

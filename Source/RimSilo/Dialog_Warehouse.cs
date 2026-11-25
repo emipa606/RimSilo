@@ -25,11 +25,7 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
 
     private readonly Vector2 acceptButtonSize = new(160f, 40f);
 
-    private readonly double cachedWarehouseMarketValue = Utility.CalculateWarehouseMarketValue();
-
     private readonly Vector2 otherBottomButtonSize = new(160f, 40f);
-
-    private readonly double warehouseMassUsage = Utility.CalculateWarehouseUsage();
 
     private Tradeable cachedCurrencyTradeable;
 
@@ -77,11 +73,11 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
 
             massUsageDirty = false;
             var pair = TradeSession.deal.CalculateMass();
-            cachedMassUsage = pair.Second - pair.First + warehouseMassUsage;
+            cachedMassUsage = pair.Second - pair.First + field;
 
             return cachedMassUsage;
         }
-    }
+    } = Utility.CalculateWarehouseUsage();
 
     private double MarketValue
     {
@@ -93,11 +89,11 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
             }
 
             marketValueDirty = false;
-            cachedMarketValue = cachedWarehouseMarketValue + TradeSession.deal.CalculateMarketValue();
+            cachedMarketValue = field + TradeSession.deal.CalculateMarketValue();
 
             return cachedMarketValue;
         }
-    }
+    } = Utility.CalculateWarehouseMarketValue();
 
     private static float MassCapacity => Utility.WarehouseCapacity;
 
@@ -180,7 +176,6 @@ public class Dialog_Warehouse : Window, ICurrencyConsumer
         _ = MassCapacity;
         var rect5 = rect.AtZero();
         rect5.y = TitleAreaHeight;
-        // TODO: TransferableUIUtility.DrawMassInfo(rect5, num2, massCapacity, Translator.Translate("TipWarehouseMass"), -9999f, false);
         var text2 = "TotalValueLabel".Translate(MarketValue.ToString("F2"));
         var vector = Text.CalcSize(text2);
         var rect6 = new Rect(rect5.xMax - vector.x, TitleAreaHeight, vector.x, vector.y);

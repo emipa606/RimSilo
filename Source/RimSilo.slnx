@@ -3,4 +3,25 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="RimSilo/RimSilo.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/_ModCoreChecker.xml" />
+    <File Path="../Languages/English/Keyed/BillDetails.xml" />
+    <File Path="../Languages/English/Keyed/Clauses.xml" />
+    <File Path="../Languages/English/Keyed/FAQ.xml" />
+    <File Path="../Languages/English/Keyed/FloatMenuPaymentSource.xml" />
+    <File Path="../Languages/English/Keyed/LetterLines.xml" />
+    <File Path="../Languages/English/Keyed/MainUI.xml" />
+    <File Path="../Languages/English/Keyed/Notifications.xml" />
+    <File Path="../Languages/English/Keyed/Traders.xml" />
+    <File Path="../Languages/English/Keyed/TradeUI_GlobalDropPod.xml" />
+    <File Path="../Languages/English/Keyed/TradeUI_StaticChamber.xml" />
+    <File Path="../Languages/English/Keyed/TradeUI_Warehouse.xml" />
+    <File Path="../Languages/English/Keyed/UIMisc.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
 </Solution>
